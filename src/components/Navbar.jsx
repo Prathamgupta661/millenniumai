@@ -5,27 +5,27 @@ const Navbar = () => {
     const [Isopen, setIsopen] = useState(false);
   return (
     <>
-    <div className='p-5 min-h-[4rem] shadow-md flex justify-between'>
+    <nav className='p-5 min-h-[4rem] shadow-md flex justify-between bg-gradient-to-r from-cyan-500 to-pink-500'>
         <div>
-            <h1>Millianium</h1>
+            <h1 className='cursor-pointer text-xl'>Millianium</h1>
         </div>
         <ul className='hidden gap-5 md:flex'>
-            <NavLink to='/' className='cursor-pointer'>Home</NavLink>
-            <NavLink to='/about' className='cursor-pointer'>About</NavLink>
-            <NavLink to='/services' className='cursor-pointer'>Services</NavLink>
-            <NavLink to='/contact' className='cursor-pointer'>Contact Us</NavLink>
+            <NavLink to='/' className='cursor-pointer hover:text-gray-500 text-lg'>Home</NavLink>
+            <NavLink to='/about' className='cursor-pointer hover:text-gray-500 text-lg'>About</NavLink>
+            <NavLink to='/services' className='cursor-pointer hover:text-gray-500 text-lg'>Services</NavLink>
+            <NavLink to='/contact' className='cursor-pointer hover:text-gray-500 text-lg'>Contact Us</NavLink>
         </ul>
-        <button className='md:hidden cursor-pointer' onClick={()=>setIsopen(!Isopen)}>{Isopen ? "X" :"="}</button>
-    </div>
+        <button className='md:hidden cursor-pointer ' onClick={()=>setIsopen(!Isopen)}>{Isopen ? "X" :"="}</button>
+    </nav>
     {Isopen && (
-        <div>
+        <nav className='absolute bg-white w-full'>
             <ul className='flex flex-col gap-5 p-6 '>
-            <NavLink>Home</NavLink>
-            <NavLink>About</NavLink>
-            <NavLink>Services</NavLink>
-            <NavLink>Contact Us</NavLink>
+            <NavLink classname='bg-gray-500'>Home</NavLink>
+            <NavLink classname='bg-gray-500'>About</NavLink>
+            <NavLink classname='bg-gray-500'>Services</NavLink>
+            <NavLink classname='bg-gray-500'>Contact Us</NavLink>
         </ul>
-        </div>
+        </nav>
     )}
     </>
 
