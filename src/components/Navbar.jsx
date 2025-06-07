@@ -20,10 +20,10 @@ const Navbar = () => {
     {Isopen && (
         <nav className='absolute bg-white w-full'>
             <ul className='flex flex-col gap-5 p-6 '>
-            <NavLink classname='bg-gray-500'>Home</NavLink>
-            <NavLink classname='bg-gray-500'>About</NavLink>
-            <NavLink classname='bg-gray-500'>Services</NavLink>
-            <NavLink classname='bg-gray-500'>Contact Us</NavLink>
+            <NavLink to='/' classname='bg-gray-500'>Home</NavLink>
+            <NavLink to='/about' classname='bg-gray-500'>About</NavLink>
+            <NavLink to='/services' classname='bg-gray-500'>Services</NavLink>
+            <NavLink to='/contact' classname='bg-gray-500'>Contact Us</NavLink>
         </ul>
         </nav>
     )}

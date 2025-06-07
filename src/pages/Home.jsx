@@ -47,7 +47,7 @@ const Home = () => {
           </button>
         </div>
         <div className="w-full flex items-center justify-center bg-white py-5">
-          <img src={img1} alt="" className='w-80 h-100'/>
+          <img src={img1} alt="" className='w-80 h-100' loading='lazy'/>
         </div>
       </section>
     </section>

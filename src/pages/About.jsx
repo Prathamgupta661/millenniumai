@@ -15,7 +15,7 @@ const About = () => {
           </div>
           <div className="w-full m-2 flex items-center justify-center">
             
-          <img src={img1} alt="img" className="sm:w-95 w-80 h-80 sm:h-70 rounded-2xl" />
+          <img src={img1} alt="img" className="sm:w-95 w-80 h-80 sm:h-70 rounded-2xl" loading="lazy"/>
           </div>
         </div>
               <h1 className="my-5 text-center font-dm text-2xl font-bold">About Us</h1>
