@@ -2,54 +2,54 @@ import img1 from "../assets/about.webp";
 
 const About = () => {
   return (
-    <section className="mx-5 ">
-      <div className="my-6">
-        <div className="sm:flex  gap-10 items-center">
-          <div className="w-full flex flex-col items-center justify-center m-2">
-            <h2 className=" text-center w-[70%] text-4xl leading-15 font-bold font-dm">
-              Where Artificial Intelligence Meets Full-Stack Innovation
-            </h2>
-            <button className="cursor-pointer px-5 py-2 bg-gradient-to-r from-cyan-500 to-pink-500 font-dm rounded-md h-11 hover:border border-black">
+    <section className="mx-auto my-20 max-w-6xl px-4">
+      {/* Hero/About Banner */}
+      <div className="flex flex-col-reverse sm:flex-row gap-10 items-center bg-gradient-to-r from-cyan-50 to-pink-50 rounded-2xl shadow-lg p-8">
+        <div className="w-full flex flex-col items-center justify-center">
+          <h2 className="text-center w-full text-3xl sm:text-4xl leading-tight font-bold font-dm mb-6 bg-gradient-to-r from-cyan-500 to-pink-500 text-transparent bg-clip-text">
+            Where Artificial Intelligence Meets Full-Stack Innovation
+          </h2>
+          <a href="/contact">
+            <button className="cursor-pointer px-6 py-3 bg-gradient-to-r from-cyan-500 to-pink-500 font-dm rounded-lg text-white text-lg font-semibold shadow hover:scale-105 transition">
               Contact Us
             </button>
-          </div>
-          <div className="w-full m-2 flex items-center justify-center">
-            
-          <img src={img1} alt="img" className="sm:w-95 w-80 h-80 sm:h-70 rounded-2xl" loading="lazy"/>
-          </div>
+          </a>
         </div>
-              <h1 className="my-5 text-center font-dm text-2xl font-bold">About Us</h1>
+        <div className="w-full flex items-center justify-center">
+          <img
+            src={img1}
+            alt="About MillenniumAi"
+            className="w-72 h-72 sm:w-80 sm:h-80 object-cover rounded-2xl shadow-md border border-gray-100"
+            loading="lazy"
+          />
+        </div>
+      </div>
 
-
-        <p className="text-lg text-gray-500 w-[90%] mx-auto ">
-          MillenniumAi started with a singular vision — to power AI systems with
-          high-quality, human-labeled data. Today, we’ve evolved into a
-          multi-disciplinary technology powerhouse delivering end-to-end
-          solutions that span AI Data Annotation, Web Development, Mobile &
-          Gaming App Development, SEO, and Full Stack Software Engineering.
+      {/* About Content */}
+      <div className="mt-12 bg-white rounded-2xl shadow p-8">
+        <h1 className="mb-6 text-center font-dm text-2xl font-bold text-cyan-600">About Us</h1>
+        <p className="text-lg text-gray-600 w-full max-w-3xl mx-auto mb-5">
+          MillenniumAi started with a singular vision — to power AI systems with high-quality, human-labeled data. Today, we’ve evolved into a multi-disciplinary technology powerhouse delivering end-to-end solutions that span AI Data Annotation, Web Development, Mobile & Gaming App Development, SEO, and Full Stack Software Engineering.
         </p>
-
-        <p className="text-lg text-gray-500 w-[90%] mx-auto mt-5">
-          With a diverse team of engineers, annotators, developers, designers,
-          and strategists, we’ve successfully served clients in eCommerce,
-          EdTech, Fitness, Healthcare, Logistics, and more.
+        <p className="text-lg text-gray-600 w-full max-w-3xl mx-auto mb-5">
+          With a diverse team of engineers, annotators, developers, designers, and strategists, we’ve successfully served clients in eCommerce, EdTech, Fitness, Healthcare, Logistics, and more.
         </p>
-        <ul className="text-lg text-gray-500 list-disc w-[90%] mx-auto mt-5">
-          <p>We take pride in being:</p>
-          <li className="ml-10">
-            A trusted partner to over 25 growing and established companies
-          </li>
-          <li className="ml-10">
-            {" "}
-            One of the fastest-growing digital transformation companies in India
-          </li>
-          <li className="ml-10"> A seamless blend of AI intelligence and human creativity</li>
-        </ul>
-
-        <p className="text-lg text-gray-500 w-[90%] mx-auto mt-5">
-          At MillenniumAi, innovation isn’t just a buzzword — it’s the
-          foundation of how we deliver excellence and build long-term
-          partnerships.
+        <div className="w-full max-w-3xl mx-auto">
+          <p className="text-lg text-gray-600 mb-2">We take pride in being:</p>
+          <ul className="text-lg text-gray-600 list-disc pl-8 mb-5">
+            <li>
+              A trusted partner to over <span className="font-semibold text-cyan-600">25+</span> growing and established companies
+            </li>
+            <li>
+              One of the fastest-growing digital transformation companies in India
+            </li>
+            <li>
+              A seamless blend of AI intelligence and human creativity
+            </li>
+          </ul>
+        </div>
+        <p className="text-lg text-gray-600 w-full max-w-3xl mx-auto">
+          At MillenniumAi, innovation isn’t just a buzzword — it’s the foundation of how we deliver excellence and build long-term partnerships.
         </p>
       </div>
     </section>
