@@ -1,3 +1,4 @@
+import img1 from '../assets/home_img_1.webp'
 const Home = () => {
   return (
     <section className="w-full min-h-full overflow-hidden flex flex-col">
@@ -17,7 +18,7 @@ const Home = () => {
           Get Started
         </button>
       </div>
-      <section className="mt-40 mx-auto m-5 w-[95%] sm:flex shadow-xl border border-transparent rounded-lg bg-clip-border bg-gradient-to-r from-cyan-500 to bg-pink-500">
+      <section className="mt-40 mx-auto m-5 w-[95%] sm:flex shadow-sm border border-transparent rounded-lg bg-clip-border bg-gradient-to-r from-cyan-500 to bg-pink-500">
         <div className="w-full p-5 bg-white">
           <h2 className="font-dm text-xl font-bold">
             Empowering Innovation with AI & Full-Stack Development
@@ -45,8 +46,8 @@ const Home = () => {
             </span>
           </button>
         </div>
-        <div className="w-full flex items-center justify-center bg-white">
-          <h1>img</h1>
+        <div className="w-full flex items-center justify-center bg-white py-5">
+          <img src={img1} alt="" className='w-80 h-100'/>
         </div>
       </section>
     </section>
