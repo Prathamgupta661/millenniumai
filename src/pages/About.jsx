@@ -1,19 +1,20 @@
+import { Link } from "react-router-dom";
 import img1 from "../assets/about.webp";
 
 const About = () => {
   return (
-    <section className="mx-auto my-20 max-w-6xl px-4">
+    <section className="mx-auto mt-36 max-w-6xl px-4">
       {/* Hero/About Banner */}
       <div className="flex flex-col-reverse sm:flex-row gap-10 items-center bg-gradient-to-r from-cyan-50 to-pink-50 rounded-2xl shadow-lg p-8">
         <div className="w-full flex flex-col items-center justify-center">
           <h2 className="text-center w-full text-3xl sm:text-4xl leading-tight font-bold font-dm mb-6 bg-gradient-to-r from-cyan-500 to-pink-500 text-transparent bg-clip-text">
             Where Artificial Intelligence Meets Full-Stack Innovation
           </h2>
-          <a href="/contact">
+          <Link to="/contact">
             <button className="cursor-pointer px-6 py-3 bg-gradient-to-r from-cyan-500 to-pink-500 font-dm rounded-lg text-white text-lg font-semibold shadow hover:scale-105 transition">
               Contact Us
             </button>
-          </a>
+          </Link>
         </div>
         <div className="w-full flex items-center justify-center">
           <img

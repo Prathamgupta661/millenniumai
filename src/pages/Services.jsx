@@ -3,7 +3,7 @@ import Card from "../components/Card";
 
 const Services = () => {
   return (
-    <section className="my-28 px-2">
+    <section className="mt-36 px-2">
       <h1 className="text-3xl sm:text-4xl font-dm font-bold text-center bg-gradient-to-r from-cyan-500 to-pink-500 text-transparent bg-clip-text mb-4">
         Comprehensive Technology Solutions Under One Roof
       </h1>

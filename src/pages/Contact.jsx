@@ -2,8 +2,8 @@ import React from 'react'
 
 const Contact = () => {
   return (
-    <section className="my-20 flex items-center justify-center px-2 bg-gradient-to-br from-white via-cyan-50 to-pink-50">
-      <div className="shadow-lg rounded-2xl flex flex-col md:flex-row w-full max-w-4xl border border-transparent bg-clip-border bg-gradient-to-r from-cyan-500 to-pink-500">
+    <section className="mt-36 flex items-center justify-center px-2 ">
+      <div className="shadow-lg rounded-xl flex flex-col md:flex-row w-full max-w-4xl border border-transparent bg-clip-border bg-gradient-to-r from-cyan-500 to-pink-500">
         {/* Info Section */}
         <div className="flex flex-col items-center bg-white p-8 md:w-1/2 w-full h-full">
           <h1 className="text-3xl font-bold font-dm text-center mb-4 bg-gradient-to-r from-cyan-500 to-pink-500 text-transparent bg-clip-text">

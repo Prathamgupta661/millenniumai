@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { NavLink } from 'react-router-dom';
+import logo from '../assets/Weblogo-removebg-preview.png';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -10,10 +11,10 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="p-4 min-h-[4rem] shadow-md flex justify-between items-center bg-gradient-to-r from-cyan-500 to-pink-500 fixed top-0 left-0 right-0 z-50">
+      <nav className="p-4 min-h-[4rem] shadow-md flex justify-between items-center bg-gradient-to-r from-cyan-700 to-pink-500 fixed top-0 left-0 right-0 z-50 rounded-md">
         <div>
-          <NavLink to="/" className="text-2xl font-bold font-dm tracking-wide text-white hover:text-cyan-100 transition">
-            MillenniumAi
+          <NavLink to="/" className="text-2xl font-bold font-dm tracking-wide text-white transition">
+            <img src={logo} alt="Company logo" className='w-50 h-16'/>
           </NavLink>
         </div>
         <ul className="hidden md:flex gap-8 items-center">
@@ -32,7 +33,7 @@ const Navbar = () => {
       </nav>
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="fixed top-[4rem] left-0 w-full bg-white shadow-lg z-40 md:hidden animate-fade-in">
+        <div className="fixed top-[5.5rem] left-0 w-full bg-white shadow-lg z-40 md:hidden animate-fade-in">
           <ul className="flex flex-col gap-6 p-6">
             <NavLink
               to="/"
