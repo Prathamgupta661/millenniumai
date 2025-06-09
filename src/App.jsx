@@ -11,7 +11,9 @@ import Footer from "./components/Footer";
 function App() {
   return (
     <BrowserRouter>
-      <div className="flex flex-col min-h-screen bg-gradient-to-br from-white via-cyan-50 to-pink-50">
+      <div className="flex flex-col min-h-screen" style={{
+          background: 'radial-gradient(ellipse at top left, #2d234a 0%, #18122b 100%)'
+        }}>
         <Navbar />
         <main className="">
           <Routes>
