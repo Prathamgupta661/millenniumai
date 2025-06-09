@@ -1,6 +1,9 @@
 import img1 from "../assets/home_img_1.webp";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { HiPhone, HiMail, HiLocationMarker } from "react-icons/hi";
+import { FaWhatsapp } from "react-icons/fa";
+
 
 // Modern geometric & organic SVG props for hero background
 const HeroProps = () => (
@@ -404,6 +407,136 @@ const Home = () => {
           </div>
         </div>
       </section>
+
+      {/* Contact Section */}
+      <section className="my-16 mx-auto w-[95%] max-w-6xl">
+  <h2 className="text-center text-3xl sm:text-4xl font-bold font-dm mb-12 bg-gradient-to-r from-cyan-400 to-pink-400 text-transparent bg-clip-text">
+    Get In Touch
+  </h2>
+  
+  <div className="flex flex-col md:flex-row gap-10">
+    <div className="flex flex-col gap-6 w-full md:w-1/2">
+      <div className="w-full h-[20rem] rounded-xl shadow-xl overflow-hidden border border-[#2d234a]/40">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3499.8384334011416!2d77.47539417520481!3d28.69447928126543!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cf22d73537953%3A0xd71a5a10c873f830!2sBalaji%20Enclave%20%2CGovind%20Puram%20Ghaziabad-201013!5e0!3m2!1sen!2sin!4v1749466936086!5m2!1sen!2sin"
+          loading="lazy"
+          referrerPolicy="no-referrer-when-downgrade"
+          className="w-full h-full"
+          title="Google Map Location"
+        />
+      </div>
+
+      <div className="group relative bg-gradient-to-br from-[#232046]/90 via-[#18122b]/90 to-[#2d234a]/90 backdrop-blur-md rounded-xl p-8 border border-[#2d234a]/40">
+        <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/10 to-pink-500/10 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-xl" />
+        <div className="relative z-10">
+          <h3 className="font-dm text-2xl font-bold mb-6 bg-gradient-to-r from-cyan-400 to-pink-400 text-transparent bg-clip-text">
+            Contact Information
+          </h3>
+          <p className="text-gray-300 mb-8">Let's Get Connected</p>
+          
+          <div className="space-y-6">
+            <a href="tel:+911234567890" className="flex items-center gap-4 text-gray-300 group/item hover:text-cyan-400 transition-colors">
+              <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-cyan-500/20 to-pink-500/20 flex items-center justify-center shadow-lg group-hover/item:from-cyan-500/30 group-hover/item:to-pink-500/30 transition-all">
+                <HiPhone className="w-5 h-5" />
+              </div>
+              <div>
+                <p className="text-sm text-gray-400">Phone</p>
+                <p className="font-medium">+91 123 456 7890</p>
+              </div>
+            </a>
+
+            <a href="mailto:info@millenniumai.com" className="flex items-center gap-4 text-gray-300 group/item hover:text-pink-400 transition-colors">
+              <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-pink-500/20 to-purple-500/20 flex items-center justify-center shadow-lg group-hover/item:from-pink-500/30 group-hover/item:to-purple-500/30 transition-all">
+                <HiMail className="w-5 h-5" />
+              </div>
+              <div>
+                <p className="text-sm text-gray-400">Email</p>
+                <p className="font-medium">info@millenniumai.com</p>
+              </div>
+            </a>
+
+            <div className="flex items-center gap-4 text-gray-300 group/item hover:text-purple-400 transition-colors">
+              <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-purple-500/20 to-cyan-500/20 flex items-center justify-center shadow-lg group-hover/item:from-purple-500/30 group-hover/item:to-cyan-500/30 transition-all">
+                <HiLocationMarker className="w-5 h-5" />
+              </div>
+              <div>
+                <p className="text-sm text-gray-400">Address</p>
+                <p className="font-medium">Balaji Enclave, Govind Puram</p>
+                <p className="font-medium">Ghaziabad, UP 201013</p>
+              </div>
+            </div>
+
+            <a href="https://wa.me/911234567890" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 text-gray-300 group/item hover:text-green-400 transition-colors">
+              <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-green-500/20 to-emerald-500/20 flex items-center justify-center shadow-lg group-hover/item:from-green-500/30 group-hover/item:to-emerald-500/30 transition-all">
+                <FaWhatsapp className="w-5 h-5" />
+              </div>
+              <div>
+                <p className="text-sm text-gray-400">WhatsApp</p>
+                <p className="font-medium">+91 123 456 7890</p>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div className="w-full md:w-1/2">
+      <div className="group relative bg-gradient-to-br from-[#232046]/90 via-[#18122b]/90 to-[#2d234a]/90 backdrop-blur-md rounded-xl p-8 border border-[#2d234a]/40">
+        <div className="absolute inset-0 bg-gradient-to-r from-pink-500/10 to-cyan-500/10 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-xl" />
+        <div className="relative z-10">
+          <h3 className="text-3xl sm:text-4xl font-bold font-dm mb-8 bg-gradient-to-r from-cyan-400 to-pink-400 text-transparent bg-clip-text">
+            Send us a Message
+          </h3>
+          
+          <form className="flex flex-col gap-6">
+            {/* < className="flex flex-col sm:flex-row gap-6"> */}
+              <input
+                type="text"
+                placeholder="First Name"
+                required
+                className="flex-1 px-4 py-3 rounded-lg bg-white/5 border border-[#2d234a]/60 text-gray-200 placeholder:text-gray-400 focus:outline-none focus:border-cyan-500/50 transition-colors"
+              />
+              <input
+                type="text"
+                placeholder="Last Name"
+                required
+                className="flex-1 px-4 py-3 rounded-lg bg-white/5 border border-[#2d234a]/60 text-gray-200 placeholder:text-gray-400 focus:outline-none focus:border-cyan-500/50 transition-colors"
+              />
+            
+            
+            <input
+              type="email"
+              placeholder="Email Address"
+              required
+              className="px-4 py-3 rounded-lg bg-white/5 border border-[#2d234a]/60 text-gray-200 placeholder:text-gray-400 focus:outline-none focus:border-cyan-500/50 transition-colors"
+            />
+            
+            <input
+              type="tel"
+              placeholder="Phone Number"
+              required
+              className="px-4 py-3 rounded-lg bg-white/5 border border-[#2d234a]/60 text-gray-200 placeholder:text-gray-400 focus:outline-none focus:border-cyan-500/50 transition-colors"
+            />
+            
+            <textarea
+              placeholder="Your Message"
+              rows="5"
+              required
+              className="px-4 py-3 rounded-lg bg-white/5 border border-[#2d234a]/60 text-gray-200 placeholder:text-gray-400 focus:outline-none focus:border-cyan-500/50 transition-colors resize-none"
+            ></textarea>
+            
+            <button
+              type="submit"
+              className="w-full sm:w-auto px-8 py-3 bg-gradient-to-r from-cyan-500 to-pink-500 text-white rounded-lg font-semibold shadow-lg hover:shadow-cyan-500/25 hover:scale-[1.02] transition-all duration-200"
+            >
+              Send Message
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
     </section>
   );
 };
