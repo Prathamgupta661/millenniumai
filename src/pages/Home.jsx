@@ -492,145 +492,54 @@ const Home = () => {
             </div>
           </div>
 
-          <div className="w-full md:w-1/2">
-            <div className="group relative bg-gradient-to-br from-[#232046]/90 via-[#18122b]/90 to-[#2d234a]/90 backdrop-blur-md rounded-xl p-8 border border-[#2d234a]/40 hover:shadow-[0_0_30px_rgba(0,238,255,0.15)] transition-all duration-500">
-              <div className="absolute inset-0 bg-gradient-to-r from-pink-500/10 to-cyan-500/10 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-xl" />
+          <div className="w-full md:w-1/2 p-8 bg-transparent rounded-xl text-white">
+            <h2 className="text-4xl font-bold mb-8">Contact Us</h2>
 
-              {/* Decorative Elements */}
-              <div className="absolute -top-10 -right-10 w-40 h-40 bg-gradient-to-br from-cyan-500/20 to-transparent rounded-full blur-3xl" />
-              <div className="absolute -bottom-8 -left-8 w-40 h-40 bg-gradient-to-tr from-pink-500/20 to-transparent rounded-full blur-3xl" />
+            <form className="flex flex-col gap-6">
+                
+                  <input
+                    type="text"
+                    placeholder="First Name"
+                    required
+                    className="w-full px-4 py-3 bg-transparent border-b-2 border-white/50 text-white placeholder-white/70 focus:outline-none focus:border-white transition-colors"
+                  />
 
-              <div className="relative z-10">
-                <div className="flex items-center gap-4 mb-8">
-                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-cyan-500/20 to-pink-500/20 flex items-center justify-center">
-                    <svg
-                      className="w-6 h-6 text-cyan-400"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={1.5}
-                        d="M20 13V6a2 2 0 00-2-2H6a2 2 0 00-2 2v7m16 0v5a2 2 0 01-2 2H6a2 2 0 01-2-2v-5m16 0h-2.586a1 1 0 00-.707.293l-2.414 2.414a1 1 0 01-.707.293h-3.172a1 1 0 01-.707-.293l-2.414-2.414A1 1 0 006.586 13H4"
-                      />
-                    </svg>
-                  </div>
-                  <h3 className="text-3xl sm:text-4xl font-bold font-dm bg-gradient-to-r from-cyan-400 to-pink-400 text-transparent bg-clip-text">
-                    Send us a Message
-                  </h3>
-                </div>
+                  <input
+                    type="text"
+                    placeholder="Last Name"
+                    required
+                    className="w-full px-4 py-3 bg-transparent border-b-2 border-white/50 text-white placeholder-white/70 focus:outline-none focus:border-white transition-colors"
+                  />
 
-                <form className="flex flex-col gap-6">
-                  <div className="flex flex-col sm:flex-row gap-6">
-                    <div className="relative flex-1 group/input">
-                      <input
-                        type="text"
-                        required
-                        className="peer w-full px-4 pt-6 pb-2 rounded-lg bg-white/5 border-2 border-[#2d234a]/60 text-gray-200 focus:outline-none focus:border-cyan-500/50 transition-all duration-300"
-                      />
-                      <label
-                        className="absolute left-4 top-4 text-gray-400 transition-all duration-300 transform origin-left cursor-text
-              peer-focus:-translate-y-3 peer-focus:scale-90 peer-focus:text-cyan-400
-              peer-valid:-translate-y-3 peer-valid:scale-90"
-                      >
-                        First Name
-                      </label>
-                      <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-cyan-500 to-pink-500 transition-all duration-300 group-hover/input:w-full" />
-                    </div>
+              <input
+                type="email"
+                placeholder="Email"
+                required
+                className="w-full px-4 py-3 bg-transparent border-b-2 border-white/50 text-white placeholder-white/70 focus:outline-none focus:border-white transition-colors"
+              />
 
-                    <div className="relative flex-1 group/input">
-                      <input
-                        type="text"
-                        required
-                        className="peer w-full px-4 pt-6 pb-2 rounded-lg bg-white/5 border-2 border-[#2d234a]/60 text-gray-200 focus:outline-none focus:border-pink-500/50 transition-all duration-300"
-                      />
-                      <label
-                        className="absolute left-4 top-4 text-gray-400 transition-all duration-300 transform origin-left cursor-text
-              peer-focus:-translate-y-3 peer-focus:scale-90 peer-focus:text-pink-400
-              peer-valid:-translate-y-3 peer-valid:scale-90"
-                      >
-                        Last Name
-                      </label>
-                      <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-pink-500 to-purple-500 transition-all duration-300 group-hover/input:w-full" />
-                    </div>
-                  </div>
+              <input
+                type="tel"
+                placeholder="Contact Number"
+                required
+                className="w-full px-4 py-3 bg-transparent border-b-2 border-white/50 text-white placeholder-white/70 focus:outline-none focus:border-white transition-colors"
+              />
 
-                  <div className="relative group/input">
-                    <input
-                      type="email"
-                      required
-                      className="peer w-full px-4 pt-6 pb-2 rounded-lg bg-white/5 border-2 border-[#2d234a]/60 text-gray-200 focus:outline-none focus:border-cyan-500/50 transition-all duration-300"
-                    />
-                    <label
-                      className="absolute left-4 top-4 text-gray-400 transition-all duration-300 transform origin-left cursor-text
-            peer-focus:-translate-y-3 peer-focus:scale-90 peer-focus:text-cyan-400
-            peer-valid:-translate-y-3 peer-valid:scale-90"
-                    >
-                      Email Address
-                    </label>
-                    <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-cyan-500 to-pink-500 transition-all duration-300 group-hover/input:w-full" />
-                  </div>
+              <textarea
+                placeholder="Message"
+                rows="4"
+                required
+                className="w-full px-4 py-3 bg-transparent border-b-2 border-white/50 text-white placeholder-white/70 focus:outline-none focus:border-white transition-colors resize-none"
+              ></textarea>
 
-                  <div className="relative group/input">
-                    <input
-                      type="tel"
-                      required
-                      className="peer w-full px-4 pt-6 pb-2 rounded-lg bg-white/5 border-2 border-[#2d234a]/60 text-gray-200 focus:outline-none focus:border-pink-500/50 transition-all duration-300"
-                    />
-                    <label
-                      className="absolute left-4 top-4 text-gray-400 transition-all duration-300 transform origin-left cursor-text
-            peer-focus:-translate-y-3 peer-focus:scale-90 peer-focus:text-pink-400
-            peer-valid:-translate-y-3 peer-valid:scale-90"
-                    >
-                      Phone Number
-                    </label>
-                    <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-pink-500 to-purple-500 transition-all duration-300 group-hover/input:w-full" />
-                  </div>
+                <button
+                  type="submit"
+                  className="px-8 py-3 text-white bg-gradient-to-r from-cyan-400 to bg-pink-400 cursor-pointer rounded-full font-semibold hover:bg-cyan-500/90 hover:to-pink-500/90 transition-colors shadow-lg"
+                >
+                  Send Message
+                </button>
+            </form>
 
-                  <div className="relative group/input">
-                    <textarea
-                      required
-                      rows="5"
-                      className="peer w-full px-4 pt-6 pb-2 rounded-lg bg-white/5 border-2 border-[#2d234a]/60 text-gray-200 focus:outline-none focus:border-cyan-500/50 transition-all duration-300 resize-none"
-                    ></textarea>
-                    <label
-                      className="absolute left-4 top-4 text-gray-400 transition-all duration-300 transform origin-left cursor-text
-            peer-focus:-translate-y-3 peer-focus:scale-90 peer-focus:text-cyan-400
-            peer-valid:-translate-y-3 peer-valid:scale-90"
-                    >
-                      Your Message
-                    </label>
-                    <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-cyan-500 to-pink-500 transition-all duration-300 group-hover/input:w-full" />
-                  </div>
-
-                  <button
-                    type="submit"
-                    className="group relative w-full sm:w-auto px-8 py-3 bg-gradient-to-r from-cyan-500 to-pink-500 text-white rounded-lg font-semibold overflow-hidden transition-all duration-300 hover:scale-[1.02] hover:shadow-lg hover:shadow-cyan-500/25"
-                  >
-                    <div className="absolute inset-0 bg-gradient-to-r from-pink-500 to-cyan-500 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                    <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/50 to-pink-500/50 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                    <span className="relative z-10 flex items-center justify-center gap-2">
-                      Send Message
-                      <svg
-                        className="w-5 h-5 transform group-hover:translate-x-1 transition-transform"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M13 7l5 5m0 0l-5 5m5-5H6"
-                        />
-                      </svg>
-                    </span>
-                  </button>
-                </form>
-              </div>
-            </div>
           </div>
         </div>
       </section>
