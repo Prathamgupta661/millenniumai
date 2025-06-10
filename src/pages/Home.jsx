@@ -413,7 +413,7 @@ const Home = () => {
           Get In Touch
         </h2>
 
-        <div className="flex flex-col md:flex-row gap-10">
+        <div className="flex flex-col md:flex-row gap-10 bg-gradient-to-r from-cyan-100 via-white to-pink-100 w-full rounded-xl p-8 shadow-lg border border-gray-200">
           <div className="flex flex-col gap-6 w-full md:w-1/2">
             <div className="w-full h-[20rem] rounded-xl shadow-xl overflow-hidden border border-[#2d234a]/40">
               <iframe
@@ -492,44 +492,44 @@ const Home = () => {
             </div>
           </div>
 
-          <div className="w-full md:w-1/2 p-8 bg-transparent rounded-xl text-white">
+          <div className="w-full md:w-1/2 p-8 bg-transparent rounded-xl">
             <h2 className="text-4xl font-bold mb-8">Contact Us</h2>
 
-            <form className="flex flex-col gap-6">
+            <form className="flex flex-col gap-6 ">
                 
                   <input
                     type="text"
                     placeholder="First Name"
                     required
-                    className="w-full px-4 py-3 bg-transparent border-b-2 border-white/50 text-white placeholder-white/70 focus:outline-none focus:border-white transition-colors"
+                    className="w-full px-4 py-3 bg-transparent border-b-2 border-black  placeholder-black focus:outline-none focus:border-cyan-400 transition-colors"
                   />
 
                   <input
                     type="text"
                     placeholder="Last Name"
                     required
-                    className="w-full px-4 py-3 bg-transparent border-b-2 border-white/50 text-white placeholder-white/70 focus:outline-none focus:border-white transition-colors"
+                    className="w-full px-4 py-3 bg-transparent border-b-2 border-black  placeholder-black focus:outline-none focus:border-pink-400 transition-colors"
                   />
 
               <input
                 type="email"
                 placeholder="Email"
                 required
-                className="w-full px-4 py-3 bg-transparent border-b-2 border-white/50 text-white placeholder-white/70 focus:outline-none focus:border-white transition-colors"
+                className="w-full px-4 py-3 bg-transparent border-b-2 border-black placeholder-black focus:outline-none focus:border-cyan-400 transition-colors"
               />
 
               <input
                 type="tel"
                 placeholder="Contact Number"
                 required
-                className="w-full px-4 py-3 bg-transparent border-b-2 border-white/50 text-white placeholder-white/70 focus:outline-none focus:border-white transition-colors"
+                className="w-full px-4 py-3 bg-transparent border-b-2 border-black placeholder-black focus:outline-none focus:border-pink-400 transition-colors"
               />
 
               <textarea
                 placeholder="Message"
                 rows="4"
                 required
-                className="w-full px-4 py-3 bg-transparent border-b-2 border-white/50 text-white placeholder-white/70 focus:outline-none focus:border-white transition-colors resize-none"
+                className="w-full px-4 py-3 bg-transparent border-b-2 border-black placeholder-black focus:outline-none focus:border-cyan-400 transition-colors resize-none"
               ></textarea>
 
                 <button
