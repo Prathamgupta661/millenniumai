@@ -3,6 +3,18 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { HiPhone, HiMail, HiLocationMarker } from "react-icons/hi";
 import { FaWhatsapp } from "react-icons/fa";
+import {
+  FaHeartbeat,
+  FaShoppingCart,
+  FaUniversity,
+  FaTruck,
+  FaCar,
+  FaFilm,
+  FaGraduationCap,
+  FaSatelliteDish,
+  FaRocket,
+} from "react-icons/fa";
+import { HiSparkles } from "react-icons/hi2";
 
 // Modern geometric & organic SVG props for hero background
 const HeroProps = () => (
@@ -165,7 +177,7 @@ const Home = () => {
       </div>
 
       {/* Why Choose MillenniumAi Section */}
-      <section className="mt-28 mx-auto w-[95%] max-w-7xl">
+      <section className="my-28 mx-auto w-[95%] max-w-7xl">
         <h2 className="text-center text-3xl sm:text-4xl font-bold font-dm mb-8 bg-gradient-to-r from-cyan-400 to-pink-400 text-transparent bg-clip-text">
           Why Choose MillenniumAi?
         </h2>
@@ -264,7 +276,7 @@ const Home = () => {
       </section>
 
       {/* Services Section */}
-      <section className="my-28 flex flex-col justify-center items-center">
+      <section className="my-10 flex flex-col justify-center items-center">
         <h2 className="text-center text-3xl sm:text-4xl font-bold font-dm mb-12 bg-gradient-to-r from-cyan-400 to-pink-400 text-transparent bg-clip-text">
           Our Services
         </h2>
@@ -404,6 +416,228 @@ const Home = () => {
               </ul>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* About MillenniumAi */}
+      <section className="w-[95%] max-w-7xl mx-auto my-20">
+        <div className="bg-gradient-to-br from-cyan-50 via-white to-pink-50 rounded-2xl shadow-xl border border-cyan-100/40 p-8 md:p-16 flex flex-col gap-8">
+          <h2 className="text-3xl sm:text-4xl font-bold font-dm text-center bg-gradient-to-r from-cyan-400 to-pink-400 text-transparent bg-clip-text mb-4">
+            Shaping the Future with Intelligence, Innovation, and Integrity
+          </h2>
+          <p className="text-lg text-gray-700 text-center max-w-3xl mx-auto">
+            At <span className="font-bold text-cyan-700">MILLENNIUMAI</span>, we
+            are more than just a technology service provider — we are a
+            strategic partner in your digital evolution. Founded in 2025 and
+            headquartered in Ghaziabad, India, MILLENNIUMAI was established with
+            a clear vision: to deliver world-class technology and data-driven
+            services that are both cost-effective and quality-assured.
+          </p>
+          <p className="text-lg text-gray-700 text-center max-w-3xl mx-auto">
+            In an era defined by artificial intelligence, automation, and rapid
+            digital transformation, our goal is simple — to help businesses
+            harness the power of data and software innovation to achieve
+            operational excellence, scale faster, and grow smarter.
+          </p>
+        </div>
+      </section>
+
+      {/* Who We Are & Expertise */}
+      <section className="w-[95%] max-w-7xl mx-auto my-20">
+        <div className="relative group flex flex-col md:flex-row gap-10 rounded-2xl shadow-2xl border border-cyan-700/30 bg-gradient-to-br from-[#18122b]/95 via-[#232046]/90 to-[#2d234a]/95 backdrop-blur-xl p-8 md:p-16 overflow-hidden transition-all duration-500 hover:scale-[1.015] hover:shadow-cyan-500/20">
+          {/* Glow border on hover */}
+          <div className="pointer-events-none absolute inset-0 rounded-2xl border-2 border-transparent group-hover:border-cyan-400/40 group-hover:shadow-[0_0_40px_10px_rgba(34,211,238,0.15)] transition-all duration-500"></div>
+          {/* Left: Who We Are */}
+          <div className="md:w-1/2 flex flex-col gap-4">
+            <h3 className="text-2xl font-bold bg-gradient-to-r from-cyan-400 to-pink-400 text-transparent bg-clip-text mb-2 drop-shadow">
+              Who We Are
+            </h3>
+            <p className="text-slate-200">
+              We are a dynamic team of 50–80 professionals — a unique blend of
+              developers, data scientists, project managers, and domain experts.
+              Each team member is committed to excellence, working
+              collaboratively to deliver custom solutions for businesses ranging
+              from early-stage startups to large enterprises.
+            </p>
+            <p className="text-slate-200">
+              From data annotation for AI/ML models to enterprise-grade web and
+              app development, we offer end-to-end digital solutions designed to
+              fit seamlessly into our clients’ workflows and goals.
+            </p>
+            <div>
+              <h4 className="font-semibold mb-2 text-cyan-400">
+                Our deep domain expertise covers:
+              </h4>
+              <ul className="list-disc list-inside text-slate-200 grid grid-cols-1 sm:grid-cols-2 gap-x-9 gap-y-1">
+                <li className="transition-colors duration-300 hover:text-cyan-400">
+                  Natural Language Processing
+                </li>
+                <li className="transition-colors duration-300 hover:text-pink-400">
+                  Computer Vision
+                </li>
+                <li className="transition-colors duration-300 hover:text-cyan-400">
+                  Medical Data Annotation
+                </li>
+                <li className="transition-colors duration-300 hover:text-pink-400">
+                  E-commerce Product Tagging
+                </li>
+                <li className="transition-colors duration-300 hover:text-cyan-400">
+                  Geospatial and 3D Annotation
+                </li>
+                <li className="transition-colors duration-300 hover:text-pink-400">
+                  Mobile & Web App Development
+                </li>
+                <li className="transition-colors duration-300 hover:text-cyan-400">
+                  Game and Software Development
+                </li>
+                <li className="transition-colors duration-300 hover:text-pink-400">
+                  Custom APIs & SaaS Products
+                </li>
+              </ul>
+            </div>
+            <p className="text-slate-300 mt-4 italic">
+              Every project we undertake is approached with precision, agility,
+              and a relentless commitment to delivering on time — without
+              compromising on quality.
+            </p>
+          </div>
+
+          {/* Right: What Sets Us Apart */}
+          <div className="md:w-1/2 flex flex-col gap-6">
+            <h3 className="text-2xl font-bold bg-gradient-to-r from-cyan-400 to-pink-400 text-transparent bg-clip-text mb-2 drop-shadow">
+              What Sets Us Apart
+            </h3>
+            <ul className="space-y-4 text-slate-200">
+              <li className="flex items-start gap-2 hover:text-cyan-400 transition-colors duration-300">
+                <span>✅</span>
+                <span>
+                  <span className="font-semibold">
+                    Unmatched Quality Control:
+                  </span>{" "}
+                  With rigorous multi-level quality checks and experienced QA
+                  teams, we guarantee 99–100% data accuracy and bug-free
+                  software deployments.
+                </span>
+              </li>
+              <li className="flex items-start gap-2 hover:text-pink-400 transition-colors duration-300">
+                <span>✅</span>
+                <span>
+                  <span className="font-semibold">
+                    Cost-Effective Delivery:
+                  </span>{" "}
+                  We proudly offer some of the lowest project costs globally
+                  without sacrificing quality or timelines — making us the ideal
+                  partner for scale-ups and enterprise needs.
+                </span>
+              </li>
+              <li className="flex items-start gap-2 hover:text-cyan-400 transition-colors duration-300">
+                <span>✅</span>
+                <span>
+                  <span className="font-semibold">Fast Turnaround Time:</span>{" "}
+                  Whether it’s a large-volume data labeling project or a
+                  full-fledged mobile application, we deliver fast — with the
+                  capability to scale our team within 24–48 hours.
+                </span>
+              </li>
+              <li className="flex items-start gap-2 hover:text-pink-400 transition-colors duration-300">
+                <span>✅</span>
+                <span>
+                  <span className="font-semibold">Complete Customization:</span>{" "}
+                  No two businesses are the same. We tailor our services to
+                  align perfectly with your vision, industry standards, and
+                  future goals.
+                </span>
+              </li>
+              <li className="flex items-start gap-2 hover:text-cyan-400 transition-colors duration-300">
+                <span>✅</span>
+                <span>
+                  <span className="font-semibold">
+                    Client-Centric Approach:
+                  </span>{" "}
+                  We believe in building long-term relationships. Our support
+                  doesn’t end with delivery — we provide ongoing guidance,
+                  technical support, and process optimization.
+                </span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      {/* Industries We Serve - With Icons */}
+      <section className="w-[95%] max-w-7xl mx-auto my-16">
+        <div className="relative rounded-2xl shadow-2xl border border-cyan-700/30 bg-gradient-to-br from-[#18122b]/95 via-[#232046]/90 to-[#2d234a]/95 backdrop-blur-xl p-8 md:p-16 overflow-hidden group transition-all duration-500 hover:scale-[1.015] hover:shadow-cyan-500/20">
+          <div className="pointer-events-none absolute inset-0 rounded-2xl border-2 border-transparent group-hover:border-pink-400/40 group-hover:shadow-[0_0_40px_10px_rgba(236,72,153,0.15)] transition-all duration-500"></div>
+          <h3 className="text-2xl font-bold bg-gradient-to-r from-cyan-400 to-pink-400 text-transparent bg-clip-text mb-16 text-center drop-shadow">
+            Industries We Serve
+          </h3>
+          <ul className="list-none grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 text-slate-200 font-medium text-lg justify-items-center">
+            <li className="flex flex-col items-center gap-2 transition-colors duration-300 hover:text-cyan-400 hover:scale-105">
+              <FaHeartbeat className="text-3xl mb-1" />
+              Healthcare & Life Sciences
+            </li>
+            <li className="flex flex-col items-center gap-2 transition-colors duration-300 hover:text-pink-400 hover:scale-105">
+              <FaShoppingCart className="text-3xl mb-1" />
+              Retail & E-Commerce
+            </li>
+            <li className="flex flex-col items-center gap-2 transition-colors duration-300 hover:text-cyan-400 hover:scale-105">
+              <FaUniversity className="text-3xl mb-1" />
+              Finance & Banking
+            </li>
+            <li className="flex flex-col items-center gap-2 transition-colors duration-300 hover:text-pink-400 hover:scale-105">
+              <FaTruck className="text-3xl mb-1" />
+              Logistics & Transportation
+            </li>
+            <li className="flex flex-col items-center gap-2 transition-colors duration-300 hover:text-cyan-400 hover:scale-105">
+              <FaCar className="text-3xl mb-1" />
+              Automotive AI
+            </li>
+            <li className="flex flex-col items-center gap-2 transition-colors duration-300 hover:text-pink-400 hover:scale-105">
+              <FaFilm className="text-3xl mb-1" />
+              Media & Entertainment
+            </li>
+            <li className="flex flex-col items-center gap-2 transition-colors duration-300 hover:text-cyan-400 hover:scale-105">
+              <FaGraduationCap className="text-3xl mb-1" />
+              EdTech & eLearning
+            </li>
+            <li className="flex flex-col items-center gap-2 transition-colors duration-300 hover:text-pink-400 hover:scale-105">
+              <FaSatelliteDish className="text-3xl mb-1" />
+              Agriculture & Satellite Imaging
+            </li>
+          </ul>
+          <p className="text-slate-400 mt-8 text-center italic">
+            Our versatile experience allows us to adapt quickly to new
+            industries and deliver relevant, impactful solutions.
+          </p>
+        </div>
+      </section>
+
+      {/* Call to Action Section - With Icon */}
+      <section className="w-[95%] max-w-4xl mx-auto my-12">
+        <div className="bg-gradient-to-br from-cyan-50 via-white to-pink-50 rounded-2xl shadow-xl border border-cyan-100/40 p-10 flex flex-col items-center gap-6 hover:shadow-pink-200/40 transition-shadow duration-500">
+          <HiSparkles className="text-5xl text-cyan-400 mb-2 animate-bounce" />
+          <h3 className="text-3xl font-bold bg-gradient-to-r from-cyan-400 to-pink-400 text-transparent bg-clip-text mb-2 text-center">
+            Let’s Build the Future Together
+          </h3>
+          <p className="text-gray-700 max-w-2xl text-center mb-2 text-lg">
+            At <span className="font-bold text-cyan-700">MILLENNIUMAI</span>, we
+            don’t just deliver projects — we create value, build partnerships,
+            and drive transformation. Whether you’re building an AI product that
+            requires precise annotated datasets or need a robust digital
+            solution to elevate your business — we are here to support you every
+            step of the way.
+          </p>
+          <p className="text-gray-700 max-w-2xl text-center text-lg">
+            <span className="font-semibold">
+              Partner with us to unlock your next stage of growth.
+            </span>
+          </p>
+          <Link to="/contact">
+            <button className="mt-4 px-8 py-3 bg-gradient-to-r from-cyan-500 to-pink-500 text-white rounded-full font-semibold shadow-lg hover:scale-105 transition flex items-center gap-2">
+              <FaRocket className="text-xl" />
+              Get Started
+            </button>
+          </Link>
         </div>
       </section>
 
