@@ -2,7 +2,14 @@ import img1 from "../assets/home_img_1.webp";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { HiPhone, HiMail, HiLocationMarker } from "react-icons/hi";
-import { FaWhatsapp } from "react-icons/fa";
+import {
+  FaBolt,
+  FaCheckCircle,
+  FaCogs,
+  FaHandshake,
+  FaUserShield,
+  FaWhatsapp,
+} from "react-icons/fa";
 import {
   FaHeartbeat,
   FaShoppingCart,
@@ -15,6 +22,7 @@ import {
   FaRocket,
 } from "react-icons/fa";
 import { HiSparkles } from "react-icons/hi2";
+import ServiceCard from "../components/ServiceCard";
 
 // Modern geometric & organic SVG props for hero background
 const HeroProps = () => (
@@ -100,7 +108,7 @@ const Home = () => {
 
   return (
     <section
-      className="w-full overflow-hidden flex flex-col mt-20 relative"
+      className="w-full overflow-hidden flex flex-col mt-20 relative font-playfair"
       style={{
         background:
           "radial-gradient(ellipse at top left, #2d234a 0%, #18122b 100%)",
@@ -114,19 +122,19 @@ const Home = () => {
             animate ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
           }`}
         >
-          <h1 className="text-center w-full max-w-4xl mx-auto text-4xl sm:text-7xl font-bold font-dm leading-tight drop-shadow-lg">
+          <h1 className="text-center w-full max-w-4xl mx-auto text-4xl sm:text-7xl font-bold font-playfair leading-tight drop-shadow-lg">
             Accelerate Your{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-pink-400">
               AI
             </span>{" "}
             with Precision Annotation
           </h1>
-          <p className="mt-6 text-center text-slate-200 text-lg sm:text-2xl max-w-2xl drop-shadow">
+          <p className="mt-6 text-center text-slate-200 text-lg sm:text-2xl max-w-2xl drop-shadow font-playfair">
             Image, Video & Geospatial Annotation Services powered by experts and
             smart tech.
           </p>
           <Link to="/contact" className="mt-8">
-            <button className="cursor-pointer px-8 py-3 bg-gradient-to-r from-cyan-500 to-pink-500 font-dm rounded-lg text-white text-lg font-semibold shadow-lg hover:scale-105 transition">
+            <button className="cursor-pointer px-8 py-3 bg-gradient-to-r from-cyan-500 to-pink-500 font-playfair rounded-lg text-white text-lg font-semibold shadow-lg hover:scale-105 transition">
               Get Started
             </button>
           </Link>
@@ -141,7 +149,7 @@ const Home = () => {
         <section className="relative flex flex-col md:flex-row shadow-xl rounded-2xl overflow-hidden bg-gradient-to-br from-[#232046]/90 via-[#18122b]/90 to-[#2d234a]/90 backdrop-blur-md border border-[#2d234a]/40">
           {/* Text Content */}
           <div className="w-full md:w-1/2 p-8 flex flex-col justify-center text-white">
-            <h2 className="font-dm text-3xl font-bold mb-4 bg-gradient-to-r from-cyan-400 to-pink-400 text-transparent bg-clip-text drop-shadow">
+            <h2 className="font-playfair text-3xl font-bold mb-4 bg-gradient-to-r from-cyan-400 to-pink-400 text-transparent bg-clip-text drop-shadow">
               Empowering Innovation with AI & Full-Stack Development
             </h2>
             <p className="mb-4 text-slate-200 text-base sm:text-lg">
@@ -178,106 +186,78 @@ const Home = () => {
 
       {/* Why Choose MillenniumAi Section */}
       <section className="my-28 mx-auto w-[95%] max-w-7xl">
-        <h2 className="text-center text-3xl sm:text-4xl font-bold font-dm mb-8 bg-gradient-to-r from-cyan-400 to-pink-400 text-transparent bg-clip-text">
+        <h2 className="text-center text-3xl sm:text-4xl font-bold font-playfair mb-8 bg-gradient-to-r from-cyan-400 to-pink-400 text-transparent bg-clip-text">
           Why Choose MillenniumAi?
         </h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {/* Enhanced Card Components */}
-          <div className="group relative bg-white/90 backdrop-blur-sm rounded-xl shadow-lg p-6 border border-cyan-900/10 hover:shadow-2xl hover:border-cyan-500/20 transition-all duration-300">
-            <CardBackground />
-            <div className="relative z-10">
-              <div className="flex items-center gap-3 mb-3">
-                <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-cyan-500 to-cyan-600 flex items-center justify-center shadow-lg">
-                  <svg
-                    className="w-5 h-5 text-white"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M13 10V3L4 14h7v7l9-11h-7z"
-                    />
-                  </svg>
-                </div>
-                <h3 className="text-xl font-semibold bg-gradient-to-r from-cyan-600 to-cyan-800 text-transparent bg-clip-text">
-                  Expertise
-                </h3>
-              </div>
-              <p className="text-gray-600 group-hover:text-gray-700 transition-colors">
-                Our team consists of seasoned professionals with deep expertise
-                in AI, web, and mobile development.
-              </p>
-            </div>
-          </div>
-
-          <div className="group relative bg-white/90 backdrop-blur-sm rounded-xl shadow-lg p-6 border border-pink-900/10 hover:shadow-2xl hover:border-pink-500/20 transition-all duration-300">
-            <CardBackground />
-            <div className="relative z-10">
-              <div className="flex items-center gap-3 mb-3">
-                <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-pink-500 to-pink-600 flex items-center justify-center shadow-lg">
-                  <svg
-                    className="w-5 h-5 text-white"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"
-                    />
-                  </svg>
-                </div>
-                <h3 className="text-xl font-semibold bg-gradient-to-r from-pink-600 to-pink-800 text-transparent bg-clip-text">
-                  Innovation
-                </h3>
-              </div>
-              <p className="text-gray-600 group-hover:text-gray-700 transition-colors">
-                We leverage the latest technologies and methodologies to deliver
-                innovative solutions that drive results.
-              </p>
-            </div>
-          </div>
-
-          <div className="group relative bg-white/90 backdrop-blur-sm rounded-xl shadow-lg p-6 border border-cyan-900/10 hover:shadow-2xl hover:border-cyan-500/20 transition-all duration-300">
-            <CardBackground />
-            <div className="relative z-10">
-              <div className="flex items-center gap-3 mb-3">
-                <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-cyan-500 to-cyan-600 flex items-center justify-center shadow-lg">
-                  <svg
-                    className="w-5 h-5 text-white"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M14 10h4.764a2 2 0 011.789 2.894l-3.5 7A2 2 0 0115.263 21h-4.017c-.163 0-.326-.02-.485-.06L7 20m7-10V5a2 2 0 00-2-2h-.095c-.5 0-.905.405-.905.905 0 .714-.211 1.412-.608 2.006L7 11v9m7-10h-2M7 20H5a2 2 0 01-2-2v-6a2 2 0 012-2h2.5"
-                    />
-                  </svg>
-                </div>
-                <h3 className="text-xl font-semibold bg-gradient-to-r from-cyan-600 to-cyan-800 text-transparent bg-clip-text">
-                  Partnership
-                </h3>
-              </div>
-              <p className="text-gray-600 group-hover:text-gray-700 transition-colors">
-                We believe in building long-term partnerships with our clients,
-                ensuring their success is our success.
-              </p>
-            </div>
-          </div>
+        <div className="w-[95%] max-w-7xl grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 px-4 mx-auto">
+          <ServiceCard
+            icon={<FaCheckCircle className="w-6 h-6 text-white" />}
+            title="Unmatched Quality Control"
+            description="With rigorous multi-level quality checks and experienced QA teams, we guarantee 99–100% data accuracy and bug-free software deployments."
+            features={[
+              { text: "99–100% Data Accuracy", dotColor: "bg-cyan-400" },
+              { text: "Experienced QA Teams", dotColor: "bg-pink-400" },
+              { text: "Bug-Free Deployments", dotColor: "bg-cyan-400" },
+            ]}
+          />
+          <ServiceCard
+            icon={<FaBolt className="w-6 h-6 text-white" />}
+            title="Fast Turnaround Time"
+            description="Whether it’s a large-volume data labeling project or a full-fledged mobile application, we deliver fast — with the capability to scale our team within 24–48 hours."
+            features={[
+              { text: "Rapid Delivery", dotColor: "bg-pink-400" },
+              { text: "Scalable Teams", dotColor: "bg-purple-400" },
+              { text: "24–48h Scaling", dotColor: "bg-pink-400" },
+            ]}
+            iconBgFrom="from-pink-500"
+            iconBgTo="to-purple-600"
+            titleGradient="from-pink-400 to-purple-400"
+          />
+          <ServiceCard
+            icon={<FaCogs className="w-6 h-6 text-white" />}
+            title="Complete Customization"
+            description="No two businesses are the same. We tailor our services to align perfectly with your vision, industry standards, and future goals."
+            features={[
+              { text: "Tailored Solutions", dotColor: "bg-cyan-400" },
+              { text: "Industry Standards", dotColor: "bg-purple-400" },
+              { text: "Future-Ready", dotColor: "bg-cyan-400" },
+            ]}
+            iconBgFrom="from-cyan-500"
+            iconBgTo="to-purple-600"
+            titleGradient="from-cyan-400 to-purple-400"
+          />
+          <ServiceCard
+            icon={<FaHandshake className="w-6 h-6 text-white" />}
+            title="Cost-Effective Delivery"
+            description="We proudly offer some of the lowest project costs globally without sacrificing quality or timelines — making us the ideal partner for scale-ups and enterprise needs."
+            features={[
+              { text: "Lowest Project Costs", dotColor: "bg-cyan-400" },
+              { text: "No Quality Sacrifice", dotColor: "bg-pink-400" },
+              { text: "Ideal for Scale-Ups", dotColor: "bg-cyan-400" },
+            ]}
+            iconBgFrom="from-pink-500"
+            iconBgTo="to-cyan-600"
+            titleGradient="from-pink-400 to-cyan-400"
+          />
+          <ServiceCard
+            icon={<FaUserShield className="w-6 h-6 text-white" />}
+            title="Client-Centric Approach"
+            description="We believe in building long-term relationships. Our support doesn’t end with delivery — we provide ongoing guidance, technical support, and process optimization."
+            features={[
+              { text: "Long-Term Relationships", dotColor: "bg-cyan-400" },
+              { text: "Ongoing Support", dotColor: "bg-pink-400" },
+              { text: "Process Optimization", dotColor: "bg-cyan-400" },
+            ]}
+            iconBgFrom="from-cyan-500"
+            iconBgTo="to-pink-600"
+            titleGradient="from-cyan-400 to-pink-400"
+          />
         </div>
       </section>
 
       {/* Services Section */}
       <section className="my-10 flex flex-col justify-center items-center">
-        <h2 className="text-center text-3xl sm:text-4xl font-bold font-dm mb-12 bg-gradient-to-r from-cyan-400 to-pink-400 text-transparent bg-clip-text">
+        <h2 className="text-center text-3xl sm:text-4xl font-bold font-playfair mb-12 bg-gradient-to-r from-cyan-400 to-pink-400 text-transparent bg-clip-text">
           Our Services
         </h2>
 
@@ -302,7 +282,7 @@ const Home = () => {
                     />
                   </svg>
                 </div>
-                <h3 className="text-xl font-bold font-dm text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-pink-400">
+                <h3 className="text-xl font-bold font-playfair text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-pink-400">
                   Web Development
                 </h3>
               </div>
@@ -347,7 +327,7 @@ const Home = () => {
                     />
                   </svg>
                 </div>
-                <h3 className="text-xl font-bold font-dm text-transparent bg-clip-text bg-gradient-to-r from-pink-400 to-purple-400">
+                <h3 className="text-xl font-bold font-playfair text-transparent bg-clip-text bg-gradient-to-r from-pink-400 to-purple-400">
                   Mobile Development
                 </h3>
               </div>
@@ -392,11 +372,11 @@ const Home = () => {
                     />
                   </svg>
                 </div>
-                <h3 className="text-xl font-bold font-dm text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-400">
+                <h3 className="text-xl font-bold font-playfair text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-400">
                   AI Solutions
                 </h3>
               </div>
-              <p className="text-gray-300 group-hover:text-gray-200 transition-colors">
+              <p className="text-gray-300 group-hover:text-gray-200 transition-colors font-playfair">
                 Cutting-edge AI services that power next-generation
                 applications. Our offerings include:
               </p>
@@ -421,24 +401,29 @@ const Home = () => {
 
       {/* About MillenniumAi */}
       <section className="w-[95%] max-w-7xl mx-auto my-20">
-        <div className="bg-gradient-to-br from-cyan-50 via-white to-pink-50 rounded-2xl shadow-xl border border-cyan-100/40 p-8 md:p-16 flex flex-col gap-8">
-          <h2 className="text-3xl sm:text-4xl font-bold font-dm text-center bg-gradient-to-r from-cyan-400 to-pink-400 text-transparent bg-clip-text mb-4">
-            Shaping the Future with Intelligence, Innovation, and Integrity
-          </h2>
-          <p className="text-lg text-gray-700 text-center max-w-3xl mx-auto">
-            At <span className="font-bold text-cyan-700">MILLENNIUMAI</span>, we
-            are more than just a technology service provider — we are a
-            strategic partner in your digital evolution. Founded in 2025 and
-            headquartered in Ghaziabad, India, MILLENNIUMAI was established with
-            a clear vision: to deliver world-class technology and data-driven
-            services that are both cost-effective and quality-assured.
-          </p>
-          <p className="text-lg text-gray-700 text-center max-w-3xl mx-auto">
-            In an era defined by artificial intelligence, automation, and rapid
-            digital transformation, our goal is simple — to help businesses
-            harness the power of data and software innovation to achieve
-            operational excellence, scale faster, and grow smarter.
-          </p>
+        <div className="group relative bg-gradient-to-br from-[#232046]/90 via-[#18122b]/90 to-[#2d234a]/90 backdrop-blur-md border border-[#2d234a]/40 rounded-xl p-6 hover:shadow-2xl transition-all duration-300">
+          <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/10 to-purple-500/10 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-xl" />
+          <div className="relative z-10">
+            <h2 className="text-3xl sm:text-4xl font-bold font-playfair text-center bg-gradient-to-r from-cyan-400 to-pink-400 text-transparent bg-clip-text mt-4 mb-6 drop-shadow">
+              Shaping the Future with Intelligence, Innovation, and Integrity
+            </h2>
+            <p className="text-lg mt-15 text-white text-center max-w-3xl mx-auto font-playfair">
+              At <span className="font-bold text-cyan-700">MILLENNIUMAI</span>,
+              we are more than just a technology service provider — we are a
+              strategic partner in your digital evolution. Founded in 2025 and
+              headquartered in Ghaziabad, India, MILLENNIUMAI was established
+              with a clear vision: to deliver world-class technology and
+              data-driven services that are both cost-effective and
+              quality-assured.
+            </p>
+
+            <p className="text-lg mt-15 mb-10 text-white text-center max-w-3xl mx-auto font-playfair">
+              In an era defined by artificial intelligence, automation, and
+              rapid digital transformation, our goal is simple — to help
+              businesses harness the power of data and software innovation to
+              achieve operational excellence, scale faster, and grow smarter.
+            </p>
+          </div>
         </div>
       </section>
 
@@ -564,7 +549,7 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Industries We Serve - With Icons */}
+      {/* Industries We Serve */}
       <section className="w-[95%] max-w-7xl mx-auto my-16">
         <div className="relative rounded-2xl shadow-2xl border border-cyan-700/30 bg-gradient-to-br from-[#18122b]/95 via-[#232046]/90 to-[#2d234a]/95 backdrop-blur-xl p-8 md:p-16 overflow-hidden group transition-all duration-500 hover:scale-[1.015] hover:shadow-cyan-500/20">
           <div className="pointer-events-none absolute inset-0 rounded-2xl border-2 border-transparent group-hover:border-pink-400/40 group-hover:shadow-[0_0_40px_10px_rgba(236,72,153,0.15)] transition-all duration-500"></div>
@@ -612,171 +597,176 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Call to Action Section - With Icon */}
+      {/* Call to Action Section */}
       <section className="w-[95%] max-w-4xl mx-auto my-12">
-        <div className="bg-gradient-to-br from-cyan-50 via-white to-pink-50 rounded-2xl shadow-xl border border-cyan-100/40 p-10 flex flex-col items-center gap-6 hover:shadow-pink-200/40 transition-shadow duration-500">
-          <HiSparkles className="text-5xl text-cyan-400 mb-2 animate-bounce" />
-          <h3 className="text-3xl font-bold bg-gradient-to-r from-cyan-400 to-pink-400 text-transparent bg-clip-text mb-2 text-center">
-            Let’s Build the Future Together
-          </h3>
-          <p className="text-gray-700 max-w-2xl text-center mb-2 text-lg">
-            At <span className="font-bold text-cyan-700">MILLENNIUMAI</span>, we
-            don’t just deliver projects — we create value, build partnerships,
-            and drive transformation. Whether you’re building an AI product that
-            requires precise annotated datasets or need a robust digital
-            solution to elevate your business — we are here to support you every
-            step of the way.
-          </p>
-          <p className="text-gray-700 max-w-2xl text-center text-lg">
-            <span className="font-semibold">
-              Partner with us to unlock your next stage of growth.
-            </span>
-          </p>
-          <Link to="/contact">
-            <button className="mt-4 px-8 py-3 bg-gradient-to-r from-cyan-500 to-pink-500 text-white rounded-full font-semibold shadow-lg hover:scale-105 transition flex items-center gap-2">
-              <FaRocket className="text-xl" />
-              Get Started
-            </button>
-          </Link>
+        <div className=" group relative bg-gradient-to-br from-[#232046]/90 via-[#18122b]/90 to-[#2d234a]/90 backdrop-blur-md border border-[#2d234a]/40 rounded-xl p-6 hover:shadow-2xl transition-all duration-300">
+          <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/10 to-purple-500/10 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-xl" />
+          <div className="relative z-10 text-center flex flex-col items-center gap-5">
+            <HiSparkles className="text-5xl text-cyan-400 mb-2 animate-bounce text-center " />
+            <h3 className="text-3xl font-bold bg-gradient-to-r from-cyan-400 to-pink-400 text-transparent bg-clip-text mb-2 text-center">
+              Let’s Build the Future Together
+            </h3>
+            <p className="text-white max-w-2xl text-center mb-2 text-lg">
+              At <span className="font-bold text-cyan-700">MILLENNIUMAI</span>,
+              we don’t just deliver projects — we create value, build
+              partnerships, and drive transformation. Whether you’re building an
+              AI product that requires precise annotated datasets or need a
+              robust digital solution to elevate your business — we are here to
+              support you every step of the way.
+            </p>
+            <p className="text-white max-w-2xl text-center text-lg">
+              <span className="font-semibold">
+                Partner with us to unlock your next stage of growth.
+              </span>
+            </p>
+            <Link to="/contact">
+              <button className="mt-4 px-8 py-3 bg-gradient-to-r from-cyan-500 to-pink-500 text-white rounded-full font-semibold shadow-lg hover:scale-105 transition flex items-center gap-2 mb-5">
+                <FaRocket className="text-xl" />
+                Get Started
+              </button>
+            </Link>
+          </div>
         </div>
       </section>
 
       {/* Contact Section */}
-      <section className="mt-16 mx-auto w-[95%] max-w-7xl">
-        <h2 className="text-center text-3xl sm:text-4xl font-bold font-dm mb-12 bg-gradient-to-r from-cyan-400 to-pink-400 text-transparent bg-clip-text">
-          Get In Touch
-        </h2>
+<section className="mt-16 mx-auto w-[95%] max-w-7xl">
+  <h2 className="text-center text-3xl sm:text-4xl font-bold font-playfair mb-12 bg-gradient-to-r from-cyan-400 to-pink-400 text-transparent bg-clip-text">
+    Get In Touch
+  </h2>
 
-        <div className="flex flex-col md:flex-row gap-10 bg-gradient-to-r from-cyan-100 via-white to-pink-100 w-full rounded-xl p-8 shadow-lg border border-gray-200">
-          <div className="flex flex-col gap-6 w-full md:w-1/2">
-            <div className="w-full h-[20rem] rounded-xl shadow-xl overflow-hidden border border-[#2d234a]/40">
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3499.8384334011416!2d77.47539417520481!3d28.69447928126543!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cf22d73537953%3A0xd71a5a10c873f830!2sBalaji%20Enclave%20%2CGovind%20Puram%20Ghaziabad-201013!5e0!3m2!1sen!2sin!4v1749466936086!5m2!1sen!2sin"
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                className="w-full h-full"
-                title="Google Map Location"
-              />
-            </div>
+  <div className="group relative flex flex-col md:flex-row gap-10 bg-gradient-to-br from-[#232046]/90 via-[#18122b]/90 to-[#2d234a]/90 backdrop-blur-md border border-[#2d234a]/40 w-full rounded-xl p-8 shadow-lg transition-all duration-300 hover:shadow-2xl">
 
-            <div className="group relative bg-gradient-to-br from-[#232046]/90 via-[#18122b]/90 to-[#2d234a]/90 backdrop-blur-md rounded-xl p-8 border border-[#2d234a]/40">
-              <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/10 to-pink-500/10 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-xl" />
-              <div className="relative z-10">
-                <h3 className="font-dm text-2xl font-bold mb-6 bg-gradient-to-r from-cyan-400 to-pink-400 text-transparent bg-clip-text">
-                  Contact Information
-                </h3>
-                <p className="text-gray-300 mb-8">Let's Get Connected</p>
+    <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/10 to-purple-500/10 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-xl pointer-events-none" />
+    <div className="flex flex-col gap-6 w-full md:w-1/2 relative z-10">
+      <div className="w-full h-[20rem] rounded-xl shadow-xl overflow-hidden border border-[#2d234a]/40">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3499.8384334011416!2d77.47539417520481!3d28.69447928126543!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cf22d73537953%3A0xd71a5a10c873f830!2sBalaji%20Enclave%20%2CGovind%20Puram%20Ghaziabad-201013!5e0!3m2!1sen!2sin!4v1749466936086!5m2!1sen!2sin"
+          loading="lazy"
+          referrerPolicy="no-referrer-when-downgrade"
+          className="w-full h-full"
+          title="Google Map Location"
+        />
+      </div>
 
-                <div className="space-y-6">
-                  <a
-                    href="tel:+911234567890"
-                    className="flex items-center gap-4 text-gray-300 group/item hover:text-cyan-400 transition-colors"
-                  >
-                    <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-cyan-500/20 to-pink-500/20 flex items-center justify-center shadow-lg group-hover/item:from-cyan-500/30 group-hover/item:to-pink-500/30 transition-all">
-                      <HiPhone className="w-5 h-5" />
-                    </div>
-                    <div>
-                      <p className="text-sm text-gray-400">Phone</p>
-                      <p className="font-medium">+91 123 456 7890</p>
-                    </div>
-                  </a>
+      <div className="group relative bg-gradient-to-br from-[#232046]/90 via-[#18122b]/90 to-[#2d234a]/90 backdrop-blur-md rounded-xl p-8 border border-[#2d234a]/40">
+        <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/10 to-pink-500/10 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-xl" />
+        <div className="relative z-10">
+          <h3 className="font-playfair text-2xl font-bold mb-6 bg-gradient-to-r from-cyan-400 to-pink-400 text-transparent bg-clip-text">
+            Contact Information
+          </h3>
+          <p className="text-gray-300 mb-8">Let's Get Connected</p>
 
-                  <a
-                    href="mailto:info@millenniumai.com"
-                    className="flex items-center gap-4 text-gray-300 group/item hover:text-pink-400 transition-colors"
-                  >
-                    <div className="w-12 h-10 rounded-lg bg-gradient-to-br from-pink-500/20 to-purple-500/20 flex items-center justify-center shadow-lg group-hover/item:from-pink-500/30 group-hover/item:to-purple-500/30 transition-all">
-                      <HiMail className="w-5 h-5" />
-                    </div>
-                    <div className="flex flex-col w-full">
-                      <p className="text-sm text-gray-400">Email</p>
-                      <p className="font-medium break-all">
-                        info@millenniumai.com
-                      </p>
-                    </div>
-                  </a>
+          <div className="space-y-6">
+            <a
+              href="tel:+911234567890"
+              className="flex items-center gap-4 text-gray-300 group/item hover:text-cyan-400 transition-colors"
+            >
+              <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-cyan-500/20 to-pink-500/20 flex items-center justify-center shadow-lg group-hover/item:from-cyan-500/30 group-hover/item:to-pink-500/30 transition-all">
+                <HiPhone className="w-5 h-5" />
+              </div>
+              <div>
+                <p className="text-sm text-gray-400">Phone</p>
+                <p className="font-medium">+91 123 456 7890</p>
+              </div>
+            </a>
 
-                  <div className="flex items-center gap-4 text-gray-300 group/item hover:text-purple-400 transition-colors">
-                    <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-purple-500/20 to-cyan-500/20 flex items-center justify-center shadow-lg group-hover/item:from-purple-500/30 group-hover/item:to-cyan-500/30 transition-all">
-                      <HiLocationMarker className="w-5 h-5" />
-                    </div>
-                    <div>
-                      <p className="text-sm text-gray-400">Address</p>
-                      <p className="font-medium">
-                        Balaji Enclave, Govind Puram
-                      </p>
-                      <p className="font-medium">Ghaziabad, UP 201013</p>
-                    </div>
-                  </div>
+            <a
+              href="mailto:info@millenniumai.com"
+              className="flex items-center gap-4 text-gray-300 group/item hover:text-pink-400 transition-colors"
+            >
+              <div className="w-12 h-10 rounded-lg bg-gradient-to-br from-pink-500/20 to-purple-500/20 flex items-center justify-center shadow-lg group-hover/item:from-pink-500/30 group-hover/item:to-purple-500/30 transition-all">
+                <HiMail className="w-5 h-5" />
+              </div>
+              <div className="flex flex-col w-full">
+                <p className="text-sm text-gray-400">Email</p>
+                <p className="font-medium break-all">
+                  info@millenniumai.com
+                </p>
+              </div>
+            </a>
 
-                  <a
-                    href="https://wa.me/911234567890"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-4 text-gray-300 group/item hover:text-green-400 transition-colors"
-                  >
-                    <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-green-500/20 to-emerald-500/20 flex items-center justify-center shadow-lg group-hover/item:from-green-500/30 group-hover/item:to-emerald-500/30 transition-all">
-                      <FaWhatsapp className="w-5 h-5" />
-                    </div>
-                    <div>
-                      <p className="text-sm text-gray-400">WhatsApp</p>
-                      <p className="font-medium">+91 123 456 7890</p>
-                    </div>
-                  </a>
-                </div>
+            <div className="flex items-center gap-4 text-gray-300 group/item hover:text-purple-400 transition-colors">
+              <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-purple-500/20 to-cyan-500/20 flex items-center justify-center shadow-lg group-hover/item:from-purple-500/30 group-hover/item:to-cyan-500/30 transition-all">
+                <HiLocationMarker className="w-5 h-5" />
+              </div>
+              <div>
+                <p className="text-sm text-gray-400">Address</p>
+                <p className="font-medium">
+                  Balaji Enclave, Govind Puram
+                </p>
+                <p className="font-medium">Ghaziabad, UP 201013</p>
               </div>
             </div>
-          </div>
 
-          <div className="w-full md:w-1/2 p-8 bg-transparent rounded-xl">
-            <h2 className="text-4xl font-bold mb-8">Contact Us</h2>
-
-            <form className="flex flex-col gap-6 ">
-              <input
-                type="text"
-                placeholder="First Name"
-                required
-                className="w-full px-4 py-3 bg-transparent border-b-2 border-black  placeholder-black focus:outline-none focus:border-cyan-400 transition-colors"
-              />
-
-              <input
-                type="text"
-                placeholder="Last Name"
-                required
-                className="w-full px-4 py-3 bg-transparent border-b-2 border-black  placeholder-black focus:outline-none focus:border-pink-400 transition-colors"
-              />
-
-              <input
-                type="email"
-                placeholder="Email"
-                required
-                className="w-full px-4 py-3 bg-transparent border-b-2 border-black placeholder-black focus:outline-none focus:border-cyan-400 transition-colors"
-              />
-
-              <input
-                type="tel"
-                placeholder="Contact Number"
-                required
-                className="w-full px-4 py-3 bg-transparent border-b-2 border-black placeholder-black focus:outline-none focus:border-pink-400 transition-colors"
-              />
-
-              <textarea
-                placeholder="Message"
-                rows="4"
-                required
-                className="w-full px-4 py-3 bg-transparent border-b-2 border-black placeholder-black focus:outline-none focus:border-cyan-400 transition-colors resize-none"
-              ></textarea>
-
-              <button
-                type="submit"
-                className="px-8 py-3 text-white bg-gradient-to-r from-cyan-400 to bg-pink-400 cursor-pointer rounded-full font-semibold hover:bg-cyan-500/90 hover:to-pink-500/90 transition-colors shadow-lg"
-              >
-                Send Message
-              </button>
-            </form>
+            <a
+              href="https://wa.me/911234567890"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-4 text-gray-300 group/item hover:text-green-400 transition-colors"
+            >
+              <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-green-500/20 to-emerald-500/20 flex items-center justify-center shadow-lg group-hover/item:from-green-500/30 group-hover/item:to-emerald-500/30 transition-all">
+                <FaWhatsapp className="w-5 h-5" />
+              </div>
+              <div>
+                <p className="text-sm text-gray-400">WhatsApp</p>
+                <p className="font-medium">+91 123 456 7890</p>
+              </div>
+            </a>
           </div>
         </div>
-      </section>
+      </div>
+    </div>
+
+    <div className="w-full md:w-1/2 p-8 bg-transparent rounded-xl relative z-10">
+      <h2 className="text-4xl font-bold mb-8 text-white">Contact Us</h2>
+
+      <form className="flex flex-col gap-6 ">
+        <input
+          type="text"
+          placeholder="First Name"
+          required
+          className="w-full px-4 py-3 bg-transparent border-b-2 border-white text-white placeholder-white focus:outline-none focus:border-cyan-400 transition-colors"
+        />
+
+        <input
+          type="text"
+          placeholder="Last Name"
+          required
+          className="w-full px-4 py-3 bg-transparent border-b-2 border-white text-white placeholder-white focus:outline-none focus:border-pink-400 transition-colors"
+        />
+
+        <input
+          type="email"
+          placeholder="Email"
+          required
+          className="w-full px-4 py-3 bg-transparent border-b-2 border-white text-white placeholder-white focus:outline-none focus:border-cyan-400 transition-colors"
+        />
+
+        <input
+          type="tel"
+          placeholder="Contact Number"
+          required
+          className="w-full px-4 py-3 bg-transparent border-b-2 border-white text-white placeholder-white focus:outline-none focus:border-pink-400 transition-colors"
+        />
+
+        <textarea
+          placeholder="Message"
+          rows="4"
+          required
+          className="w-full px-4 py-3 bg-transparent border-b-2 border-white text-white placeholder-white focus:outline-none focus:border-cyan-400 transition-colors resize-none"
+        ></textarea>
+
+        <button
+          type="submit"
+          className="px-8 py-3 text-white bg-gradient-to-r from-cyan-400 to-pink-400 cursor-pointer rounded-full font-semibold hover:bg-cyan-500/90 hover:to-pink-500/90 transition-colors shadow-lg"
+        >
+          Send Message
+        </button>
+      </form>
+    </div>
+  </div>
+</section>
     </section>
   );
 };
