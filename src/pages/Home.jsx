@@ -121,7 +121,7 @@ const Home = () => {
         </div>
       </div>
       {/* Themed Services Section with Hover Effect */}
-      <div className="mt-12 mx-auto w-[95%] max-w-6xl relative group">
+      <div className="mt-12 mx-auto w-[95%] max-w-7xl relative group">
         {/* Hover Effect Overlay */}
         <div className="absolute inset-0 bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-2xl blur-[8px] opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
@@ -165,7 +165,7 @@ const Home = () => {
       </div>
 
       {/* Why Choose MillenniumAi Section */}
-      <section className="mt-28 mx-auto w-[95%] max-w-6xl">
+      <section className="mt-28 mx-auto w-[95%] max-w-7xl">
         <h2 className="text-center text-3xl sm:text-4xl font-bold font-dm mb-8 bg-gradient-to-r from-cyan-400 to-pink-400 text-transparent bg-clip-text">
           Why Choose MillenniumAi?
         </h2>
@@ -269,7 +269,7 @@ const Home = () => {
           Our Services
         </h2>
 
-        <div className="w-[95%] max-w-6xl grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 px-4">
+        <div className="w-[95%] max-w-7xl grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 px-4">
           {/* Web Development Card */}
           <div className="group relative bg-gradient-to-br from-[#232046]/90 via-[#18122b]/90 to-[#2d234a]/90 backdrop-blur-md border border-[#2d234a]/40 rounded-xl p-6 hover:shadow-2xl transition-all duration-300">
             <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/10 to-pink-500/10 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-xl" />
@@ -408,7 +408,7 @@ const Home = () => {
       </section>
 
       {/* Contact Section */}
-      <section className="my-16 mx-auto w-[95%] max-w-6xl">
+      <section className="mt-16 mx-auto w-[95%] max-w-7xl">
         <h2 className="text-center text-3xl sm:text-4xl font-bold font-dm mb-12 bg-gradient-to-r from-cyan-400 to-pink-400 text-transparent bg-clip-text">
           Get In Touch
         </h2>
@@ -451,12 +451,14 @@ const Home = () => {
                     href="mailto:info@millenniumai.com"
                     className="flex items-center gap-4 text-gray-300 group/item hover:text-pink-400 transition-colors"
                   >
-                    <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-pink-500/20 to-purple-500/20 flex items-center justify-center shadow-lg group-hover/item:from-pink-500/30 group-hover/item:to-purple-500/30 transition-all">
+                    <div className="w-12 h-10 rounded-lg bg-gradient-to-br from-pink-500/20 to-purple-500/20 flex items-center justify-center shadow-lg group-hover/item:from-pink-500/30 group-hover/item:to-purple-500/30 transition-all">
                       <HiMail className="w-5 h-5" />
                     </div>
-                    <div>
+                    <div className="flex flex-col w-full">
                       <p className="text-sm text-gray-400">Email</p>
-                      <p className="font-medium">info@millenniumai.com</p>
+                      <p className="font-medium break-all">
+                        info@millenniumai.com
+                      </p>
                     </div>
                   </a>
 
@@ -496,20 +498,19 @@ const Home = () => {
             <h2 className="text-4xl font-bold mb-8">Contact Us</h2>
 
             <form className="flex flex-col gap-6 ">
-                
-                  <input
-                    type="text"
-                    placeholder="First Name"
-                    required
-                    className="w-full px-4 py-3 bg-transparent border-b-2 border-black  placeholder-black focus:outline-none focus:border-cyan-400 transition-colors"
-                  />
+              <input
+                type="text"
+                placeholder="First Name"
+                required
+                className="w-full px-4 py-3 bg-transparent border-b-2 border-black  placeholder-black focus:outline-none focus:border-cyan-400 transition-colors"
+              />
 
-                  <input
-                    type="text"
-                    placeholder="Last Name"
-                    required
-                    className="w-full px-4 py-3 bg-transparent border-b-2 border-black  placeholder-black focus:outline-none focus:border-pink-400 transition-colors"
-                  />
+              <input
+                type="text"
+                placeholder="Last Name"
+                required
+                className="w-full px-4 py-3 bg-transparent border-b-2 border-black  placeholder-black focus:outline-none focus:border-pink-400 transition-colors"
+              />
 
               <input
                 type="email"
@@ -532,14 +533,13 @@ const Home = () => {
                 className="w-full px-4 py-3 bg-transparent border-b-2 border-black placeholder-black focus:outline-none focus:border-cyan-400 transition-colors resize-none"
               ></textarea>
 
-                <button
-                  type="submit"
-                  className="px-8 py-3 text-white bg-gradient-to-r from-cyan-400 to bg-pink-400 cursor-pointer rounded-full font-semibold hover:bg-cyan-500/90 hover:to-pink-500/90 transition-colors shadow-lg"
-                >
-                  Send Message
-                </button>
+              <button
+                type="submit"
+                className="px-8 py-3 text-white bg-gradient-to-r from-cyan-400 to bg-pink-400 cursor-pointer rounded-full font-semibold hover:bg-cyan-500/90 hover:to-pink-500/90 transition-colors shadow-lg"
+              >
+                Send Message
+              </button>
             </form>
-
           </div>
         </div>
       </section>
