@@ -45,7 +45,7 @@ const AboutCard = ({ icon: Icon, title, children, color }) => (
     <h3 className="text-xl font-bold mb-2 bg-gradient-to-r from-cyan-500 to-pink-500 text-transparent bg-clip-text text-center">
       {title}
     </h3>
-    <div className="text-gray-600 text-center text-lg">{children}</div>
+    <div className="text-white text-center text-lg">{children}</div>
   </div>
 );
 

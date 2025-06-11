@@ -25,6 +25,13 @@
 .animate-float {
   animation: float 8s ease-in-out infinite;
 }
+@keyframes float-bounce {
+  0%, 100% { transform: translateY(0) scale(1);}
+  50% { transform: translateY(-30px) scale(1.04);}
+}
+.animate-float-bounce {
+  animation: float-bounce 7s ease-in-out infinite;
+}
 
 @keyframes float-reverse {
   0%,100% { transform: translateY(0); }

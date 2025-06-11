@@ -1,13 +1,12 @@
-import React from "react";
 import logo from '../assets/Weblogo-removebg-preview.png'; 
 
 const Footer = () => (
-  <footer className="w-full text-white mt-20 rounded-md" style={{
+  <footer className="w-full font-playfair text-white mt-20 rounded-md" style={{
           background: 'radial-gradient(ellipse at top left, #2d234a 0%, #18122b 100%)'
         }}>
     <div className="max-w-6xl mx-auto px-4 py-10 flex flex-col md:flex-row justify-between items-center gap-6">
       <div className="flex flex-col items-center md:items-start">
-        <span className="font-bold text-2xl font-dm tracking-wide mb-2"><img src={logo} alt="company logo" className="w-50 h-16"/></span>
+        <span className="font-bold text-2xl font-playfair tracking-wide mb-2"><img src={logo} alt="company logo" className="w-50 h-16"/></span>
         <span className="text-sm opacity-90">Empowering Innovation with AI & Full-Stack Solutions</span>
       </div>
       <div className="flex flex-col items-center gap-2">
