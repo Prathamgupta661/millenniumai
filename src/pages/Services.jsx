@@ -118,7 +118,7 @@ const Services = () => {
       <div className="absolute left-1/2 top-0 -translate-x-1/2 -z-10 w-[600px] h-[340px] pointer-events-none">
         <div className="w-full h-full rounded-full bg-gradient-to-tr from-cyan-400/30 via-pink-400/20 to-purple-400/30 blur-2xl opacity-70 animate-float-bounce"></div>
       </div>
-      <h1 className="text-4xl sm:text-5xl font-extrabold text-center bg-gradient-to-r from-cyan-500 to-pink-500 text-transparent bg-clip-text mb-4 drop-shadow-lg">
+      <h1 className="text-4xl sm:text-5xl font-extrabold text-center py-3 bg-gradient-to-r from-cyan-500 to-pink-500 text-transparent bg-clip-text mb-4 drop-shadow-lg">
         Comprehensive Technology Solutions Under One Roof
       </h1>
       <p className="font-playfair mx-auto text-center text-slate-300 max-w-2xl mb-12 text-lg">
@@ -470,7 +470,7 @@ const Services = () => {
               </div>
             ))}
           </div>
-          <button className="mx-auto mt-16 px-10 py-4 bg-gradient-to-r from-cyan-500 to-pink-500 text-white rounded-full font-semibold shadow-lg hover:scale-105 hover:shadow-pink-400/30 transition flex gap-2 text-lg">
+          <button className="mx-auto mt-16 px-10 py-4 bg-gradient-to-r cursor-pointer from-cyan-500 to-pink-500 text-white rounded-full font-semibold shadow-lg hover:scale-105 hover:shadow-pink-400/30 transition flex gap-2 text-lg">
             <FaRocket className="text-2xl" />
             Get Started
           </button>

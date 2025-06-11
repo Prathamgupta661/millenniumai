@@ -6,8 +6,8 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   // Utility for active link styling
-  const navLinkClass =
-    "cursor-pointer text-white hover:text-cyan-300 text-lg font-playfair font-medium transition";
+   const navLinkClass =
+    "cursor-pointer hover:text-xl hover:text-cyan-500 text-lg font-playfair font-medium transition"; // <-- removed text-white
 
   return (
     <>
@@ -15,7 +15,8 @@ const Navbar = () => {
         className="p-4 max-h-[6rem] w-full shadow-md fixed top-0 left-0 right-0 z-50
         bg-white/10 backdrop-blur-md border-b border-white/20"
         style={{
-          background: "radial-gradient(ellipse at top left, #2d234a99 0%, #18122bcc 100%)",
+          background:
+            "radial-gradient(ellipse at top left, #2d234a99 0%, #18122bcc 100%)",
         }}
       >
         {/* Responsive Wrapper */}
@@ -35,12 +36,16 @@ const Navbar = () => {
           </div>
 
           {/* Centered Nav Links */}
-            <div className="flex justify-center">
+           <div className="flex justify-center">
             <ul className="hidden md:flex gap-8 items-center">
               <NavLink
                 to="/"
                 className={({ isActive }) =>
-                  `${navLinkClass} ${isActive ? "bg-cyan-700 rounded-xl p-1" : ""}`
+                  `${navLinkClass} ${
+                    isActive
+                      ? "text-cyan-500 rounded-xl p-1"
+                      : "text-white"
+                  }`
                 }
               >
                 Home
@@ -48,7 +53,11 @@ const Navbar = () => {
               <NavLink
                 to="/about"
                 className={({ isActive }) =>
-                  `${navLinkClass} ${isActive ? "bg-cyan-700 rounded-xl p-1" : ""}`
+                  `${navLinkClass} ${
+                    isActive
+                      ? "text-cyan-500 rounded-xl p-1"
+                      : "text-white"
+                  }`
                 }
               >
                 About
@@ -56,7 +65,11 @@ const Navbar = () => {
               <NavLink
                 to="/services"
                 className={({ isActive }) =>
-                  `${navLinkClass} ${isActive ? "bg-cyan-700 rounded-xl p-1" : ""}`
+                  `${navLinkClass} ${
+                    isActive
+                      ? "text-cyan-500 rounded-xl p-1"
+                      : "text-white"
+                  }`
                 }
               >
                 Services
@@ -64,7 +77,11 @@ const Navbar = () => {
               <NavLink
                 to="/contact"
                 className={({ isActive }) =>
-                  `${navLinkClass} ${isActive ? "bg-cyan-700 rounded-xl p-1" : ""}`
+                  `${navLinkClass} ${
+                    isActive
+                      ? "text-cyan-500 rounded-xl p-1"
+                      : "text-white"
+                  }`
                 }
               >
                 Contact Us
