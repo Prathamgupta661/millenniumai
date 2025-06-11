@@ -140,7 +140,7 @@ const Home = () => {
           </Link>
         </div>
       </div>
-      {/* Themed Services Section with Hover Effect */}
+      {/* Themed Services Sectiont */}
       <div className="mt-12 mx-auto w-[95%] max-w-7xl relative group">
         {/* Hover Effect Overlay */}
         <div className="absolute inset-0 bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-2xl blur-[8px] opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
