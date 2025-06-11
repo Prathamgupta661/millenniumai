@@ -1,5 +1,7 @@
 import img1 from "../assets/home_img_1.webp";
 import React, { useEffect, useState } from "react";
+import emailjs from "@emailjs/browser";
+
 import { Link } from "react-router-dom";
 import { HiPhone, HiMail, HiLocationMarker } from "react-icons/hi";
 import {
@@ -80,27 +82,70 @@ const HeroProps = () => (
   </div>
 );
 
-const CardBackground = () => (
-  <div className="absolute inset-0 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-    <svg
-      className="absolute right-0 top-0 w-20 h-20 text-cyan-500/10"
-      viewBox="0 0 100 100"
-      fill="none"
-    >
-      <circle cx="75" cy="25" r="20" fill="currentColor" />
-    </svg>
-    <svg
-      className="absolute left-0 bottom-0 w-24 h-24 text-pink-500/10"
-      viewBox="0 0 100 100"
-      fill="none"
-    >
-      <path d="M0 100C0 44.7715 44.7715 0 100 0V100H0Z" fill="currentColor" />
-    </svg>
-  </div>
-);
 
 const Home = () => {
   const [animate, setAnimate] = useState(false);
+
+  const [form, setForm] = useState({
+    first_name: "",
+    last_name: "",
+    email: "",
+    contactno: "",
+    message: "",
+  });
+
+  const [loading, setLoading] = useState(false);
+
+  const handleChange = (e) => {
+    const { target } = e;
+    const { name, value } = target;
+
+    setForm({
+      ...form,
+      [name]: value,
+    });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setLoading(true);
+
+    emailjs
+      .send(
+        import.meta.env.VITE_APP_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_APP_EMAILJS_TEMPLATE_ID,
+        {
+          from_first_name: form.first_name,
+          from_last_name: form.last_name,
+          from_contactno: form.contactno,
+          to_name: "Pratham Gupta",
+          from_email: form.email,
+          to_email: "guptapratham661@gmail.com",
+          message: form.message,
+        },
+        import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY
+      )
+      .then(
+        () => {
+          setLoading(false);
+          alert("Thank you. I will get back to you as soon as possible.");
+
+          setForm({
+            first_name: "",
+            last_name: "",
+            email: "",
+            phone: "",
+            message: "",
+          });
+        },
+        (error) => {
+          setLoading(false);
+          console.error(error);
+
+          alert("Ahh, something went wrong. Please try again.");
+        }
+      );
+  };
 
   useEffect(() => {
     setTimeout(() => setAnimate(true), 100);
@@ -630,77 +675,76 @@ const Home = () => {
       </section>
 
       {/* Contact Section */}
-<section className="mt-16 mx-auto w-[95%] max-w-7xl">
-  <h2 className="text-center text-3xl sm:text-4xl font-bold font-playfair mb-12 bg-gradient-to-r from-cyan-400 to-pink-400 text-transparent bg-clip-text">
-    Get In Touch
-  </h2>
+      <section className="mt-16 mx-auto w-[95%] max-w-7xl">
+        <h2 className="text-center text-3xl sm:text-4xl font-bold font-playfair mb-12 bg-gradient-to-r from-cyan-400 to-pink-400 text-transparent bg-clip-text">
+          Get In Touch
+        </h2>
 
-  <div className="group relative flex flex-col md:flex-row gap-10 bg-gradient-to-br from-[#232046]/90 via-[#18122b]/90 to-[#2d234a]/90 backdrop-blur-md border border-[#2d234a]/40 w-full rounded-xl p-8 shadow-lg transition-all duration-300 hover:shadow-2xl">
-
-    <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/10 to-purple-500/10 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-xl pointer-events-none" />
-    <div className="flex flex-col gap-6 w-full md:w-1/2 relative z-10">
-      <div className="w-full h-[20rem] rounded-xl shadow-xl overflow-hidden border border-[#2d234a]/40">
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3499.8384334011416!2d77.47539417520481!3d28.69447928126543!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cf22d73537953%3A0xd71a5a10c873f830!2sBalaji%20Enclave%20%2CGovind%20Puram%20Ghaziabad-201013!5e0!3m2!1sen!2sin!4v1749466936086!5m2!1sen!2sin"
-          loading="lazy"
-          referrerPolicy="no-referrer-when-downgrade"
-          className="w-full h-full"
-          title="Google Map Location"
-        />
-      </div>
-
-      <div className="group relative bg-gradient-to-br from-[#232046]/90 via-[#18122b]/90 to-[#2d234a]/90 backdrop-blur-md rounded-xl p-8 border border-[#2d234a]/40">
-        <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/10 to-pink-500/10 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-xl" />
-        <div className="relative z-10">
-          <h3 className="font-playfair text-2xl font-bold mb-6 bg-gradient-to-r from-cyan-400 to-pink-400 text-transparent bg-clip-text">
-            Contact Information
-          </h3>
-          <p className="text-gray-300 mb-8">Let's Get Connected</p>
-
-          <div className="space-y-6">
-            <a
-              href="tel:+911234567890"
-              className="flex items-center gap-4 text-gray-300 group/item hover:text-cyan-400 transition-colors"
-            >
-              <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-cyan-500/20 to-pink-500/20 flex items-center justify-center shadow-lg group-hover/item:from-cyan-500/30 group-hover/item:to-pink-500/30 transition-all">
-                <HiPhone className="w-5 h-5" />
-              </div>
-              <div>
-                <p className="text-sm text-gray-400">Phone</p>
-                <p className="font-medium">+91 931 941 0265</p>
-                <p className="font-medium">+91 705 317 1752</p>
-              </div>
-            </a>
-
-            <a
-              href="mailto:info@millenniumai.in"
-              className="flex items-center gap-4 text-gray-300 group/item hover:text-pink-400 transition-colors"
-            >
-              <div className="w-12 h-10 rounded-lg bg-gradient-to-br from-pink-500/20 to-purple-500/20 flex items-center justify-center shadow-lg group-hover/item:from-pink-500/30 group-hover/item:to-purple-500/30 transition-all">
-                <HiMail className="w-5 h-5" />
-              </div>
-              <div className="flex flex-col w-full">
-                <p className="text-sm text-gray-400">Email</p>
-                <p className="font-medium break-all">
-                  info@millenniumai.in
-                </p>
-              </div>
-            </a>
-
-            <div className="flex items-center gap-4 text-gray-300 group/item hover:text-purple-400 transition-colors">
-              <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-purple-500/20 to-cyan-500/20 flex items-center justify-center shadow-lg group-hover/item:from-purple-500/30 group-hover/item:to-cyan-500/30 transition-all">
-                <HiLocationMarker className="w-5 h-5" />
-              </div>
-              <div>
-                <p className="text-sm text-gray-400">Address</p>
-                <p className="font-medium">
-                  UGF-02 Krishna Enclave Govindpuram,
-                </p>
-                <p className="font-medium">Ghaziabad, UP 201002</p>
-              </div>
+        <div className="group relative flex flex-col md:flex-row gap-10 bg-gradient-to-br from-[#232046]/90 via-[#18122b]/90 to-[#2d234a]/90 backdrop-blur-md border border-[#2d234a]/40 w-full rounded-xl p-8 shadow-lg transition-all duration-300 hover:shadow-2xl">
+          <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/10 to-purple-500/10 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-xl pointer-events-none" />
+          <div className="flex flex-col gap-6 w-full md:w-1/2 relative z-10">
+            <div className="w-full h-[20rem] rounded-xl shadow-xl overflow-hidden border border-[#2d234a]/40">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3499.8384334011416!2d77.47539417520481!3d28.69447928126543!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cf22d73537953%3A0xd71a5a10c873f830!2sBalaji%20Enclave%20%2CGovind%20Puram%20Ghaziabad-201013!5e0!3m2!1sen!2sin!4v1749466936086!5m2!1sen!2sin"
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                className="w-full h-full"
+                title="Google Map Location"
+              />
             </div>
 
-            {/* <a
+            <div className="group relative bg-gradient-to-br from-[#232046]/90 via-[#18122b]/90 to-[#2d234a]/90 backdrop-blur-md rounded-xl p-8 border border-[#2d234a]/40">
+              <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/10 to-pink-500/10 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-xl" />
+              <div className="relative z-10">
+                <h3 className="font-playfair text-2xl font-bold mb-6 bg-gradient-to-r from-cyan-400 to-pink-400 text-transparent bg-clip-text">
+                  Contact Information
+                </h3>
+                <p className="text-gray-300 mb-8">Let's Get Connected</p>
+
+                <div className="space-y-6">
+                  <a
+                    href="tel:+911234567890"
+                    className="flex items-center gap-4 text-gray-300 group/item hover:text-cyan-400 transition-colors"
+                  >
+                    <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-cyan-500/20 to-pink-500/20 flex items-center justify-center shadow-lg group-hover/item:from-cyan-500/30 group-hover/item:to-pink-500/30 transition-all">
+                      <HiPhone className="w-5 h-5" />
+                    </div>
+                    <div>
+                      <p className="text-sm text-gray-400">Phone</p>
+                      <p className="font-medium">+91 931 941 0265</p>
+                      <p className="font-medium">+91 705 317 1752</p>
+                    </div>
+                  </a>
+
+                  <a
+                    href="mailto:info@millenniumai.in"
+                    className="flex items-center gap-4 text-gray-300 group/item hover:text-pink-400 transition-colors"
+                  >
+                    <div className="w-12 h-10 rounded-lg bg-gradient-to-br from-pink-500/20 to-purple-500/20 flex items-center justify-center shadow-lg group-hover/item:from-pink-500/30 group-hover/item:to-purple-500/30 transition-all">
+                      <HiMail className="w-5 h-5" />
+                    </div>
+                    <div className="flex flex-col w-full">
+                      <p className="text-sm text-gray-400">Email</p>
+                      <p className="font-medium break-all">
+                        info@millenniumai.in
+                      </p>
+                    </div>
+                  </a>
+
+                  <div className="flex items-center gap-4 text-gray-300 group/item hover:text-purple-400 transition-colors">
+                    <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-purple-500/20 to-cyan-500/20 flex items-center justify-center shadow-lg group-hover/item:from-purple-500/30 group-hover/item:to-cyan-500/30 transition-all">
+                      <HiLocationMarker className="w-5 h-5" />
+                    </div>
+                    <div>
+                      <p className="text-sm text-gray-400">Address</p>
+                      <p className="font-medium">
+                        UGF-02 Krishna Enclave Govindpuram,
+                      </p>
+                      <p className="font-medium">Ghaziabad, UP 201002</p>
+                    </div>
+                  </div>
+
+                  {/* <a
               href="https://wa.me/911234567890"
               target="_blank"
               rel="noopener noreferrer"
@@ -714,60 +758,75 @@ const Home = () => {
                 <p className="font-medium">+91 123 456 7890</p>
               </div>
             </a> */}
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="w-full md:w-1/2 p-8 bg-transparent rounded-xl relative z-10">
+            <h2 className="text-4xl font-bold mb-8 text-white">Contact Us</h2>
+
+            <form className="flex flex-col gap-6" onSubmit={handleSubmit}>
+              <input
+                type="text"
+                placeholder="First Name"
+                name="first_name"
+                value={form.first_name}
+                onChange={handleChange}
+                required
+                className="w-full px-4 py-3 bg-transparent border-b-2 border-white text-white placeholder-white focus:outline-none focus:border-cyan-400 transition-colors"
+              />
+
+              <input
+                type="text"
+                placeholder="Last Name"
+                value={form.last_name}
+                onChange={handleChange}
+                name="last_name"
+                required
+                className="w-full px-4 py-3 bg-transparent border-b-2 border-white text-white placeholder-white focus:outline-none focus:border-pink-400 transition-colors"
+              />
+
+              <input
+                type="email"
+                placeholder="Email"
+                value={form.email}
+                onChange={handleChange}
+                name="email"
+                required
+                className="w-full px-4 py-3 bg-transparent border-b-2 border-white text-white placeholder-white focus:outline-none focus:border-cyan-400 transition-colors"
+              />
+
+              <input
+                type="tel"
+                placeholder="Contact Number"
+                value={form.contactno}
+                onChange={handleChange}
+                name="contactno"
+                required
+                className="w-full px-4 py-3 bg-transparent border-b-2 border-white text-white placeholder-white focus:outline-none focus:border-pink-400 transition-colors"
+              />
+
+              <textarea
+                placeholder="Message"
+                rows="4"
+                required
+                value={form.message}
+                onChange={handleChange}
+                name="message"
+                className="w-full px-4 py-3 bg-transparent border-b-2 border-white text-white placeholder-white focus:outline-none focus:border-cyan-400 transition-colors resize-none"
+              ></textarea>
+
+              <button
+                type="submit"
+                className="px-8 py-3 text-white bg-gradient-to-r from-cyan-400 to-pink-400 cursor-pointer rounded-full font-semibold hover:bg-cyan-500/90 hover:to-pink-500/90 transition-colors shadow-lg"
+              >
+                {loading ? "Sending..." : "Send Message"}
+              </button>
+            </form>
           </div>
         </div>
-      </div>
-    </div>
-
-    <div className="w-full md:w-1/2 p-8 bg-transparent rounded-xl relative z-10">
-      <h2 className="text-4xl font-bold mb-8 text-white">Contact Us</h2>
-
-      <form className="flex flex-col gap-6 ">
-        <input
-          type="text"
-          placeholder="First Name"
-          required
-          className="w-full px-4 py-3 bg-transparent border-b-2 border-white text-white placeholder-white focus:outline-none focus:border-cyan-400 transition-colors"
-        />
-
-        <input
-          type="text"
-          placeholder="Last Name"
-          required
-          className="w-full px-4 py-3 bg-transparent border-b-2 border-white text-white placeholder-white focus:outline-none focus:border-pink-400 transition-colors"
-        />
-
-        <input
-          type="email"
-          placeholder="Email"
-          required
-          className="w-full px-4 py-3 bg-transparent border-b-2 border-white text-white placeholder-white focus:outline-none focus:border-cyan-400 transition-colors"
-        />
-
-        <input
-          type="tel"
-          placeholder="Contact Number"
-          required
-          className="w-full px-4 py-3 bg-transparent border-b-2 border-white text-white placeholder-white focus:outline-none focus:border-pink-400 transition-colors"
-        />
-
-        <textarea
-          placeholder="Message"
-          rows="4"
-          required
-          className="w-full px-4 py-3 bg-transparent border-b-2 border-white text-white placeholder-white focus:outline-none focus:border-cyan-400 transition-colors resize-none"
-        ></textarea>
-
-        <button
-          type="submit"
-          className="px-8 py-3 text-white bg-gradient-to-r from-cyan-400 to-pink-400 cursor-pointer rounded-full font-semibold hover:bg-cyan-500/90 hover:to-pink-500/90 transition-colors shadow-lg"
-        >
-          Send Message
-        </button>
-      </form>
-    </div>
-  </div>
-</section>
+      </section>
     </section>
   );
 };
