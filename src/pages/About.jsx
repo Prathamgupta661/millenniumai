@@ -4,23 +4,22 @@ import { FaUsers, FaRocket, FaBrain } from "react-icons/fa";
 import { FaLightbulb } from "react-icons/fa";
 
 const AboutBanner = ({ title, buttonText, buttonLink, image, icon: Icon }) => (
-  <div className="flex flex-col-reverse  sm:flex-row gap-10 items-center  shadow-2xl  group relative bg-gradient-to-br from-[#232046]/90 via-[#18122b]/90 to-[#2d234a]/90 backdrop-blur-md border border-[#2d234a]/40 rounded-xl p-6 hover:shadow-2xl transition-all duration-300">
-    <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/10 to-purple-500/10 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-xl" />
-
-    <div className="w-full flex flex-col items-center justify-center">
+  <div className="flex flex-col-reverse sm:flex-row gap-10 items-center shadow-2xl group relative bg-gradient-to-br from-[#232046]/90 via-[#18122b]/90 to-[#2d234a]/90 backdrop-blur-md border border-[#2d234a]/40 rounded-xl p-6 hover:shadow-2xl transition-all duration-300">
+    <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/10 to-purple-500/10 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-xl pointer-events-none" />
+    <div className="w-full flex flex-col items-center justify-center z-10">
       <div className="flex flex-col items-center mb-4">
         <Icon className="text-5xl text-cyan-400 mb-2 drop-shadow-lg animate-pulse" />
         <h2 className="text-center w-full text-3xl sm:text-4xl leading-tight font-bold font-playfair mb-4 bg-gradient-to-r from-cyan-400 to-pink-400 text-transparent bg-clip-text">
           {title}
         </h2>
       </div>
-      <Link to={buttonLink}>
-        <button className="cursor-pointer px-6 py-3 bg-gradient-to-r from-cyan-500 to-pink-500 font-playfair rounded-lg text-white text-lg font-semibold shadow hover:scale-105 transition">
+      <Link to={buttonLink} className="z-20">
+        <button className="cursor-pointer px-6 py-3 bg-gradient-to-r from-cyan-500 to-pink-500 font-playfair rounded-lg text-white text-lg font-semibold shadow hover:scale-105 transition relative z-20">
           {buttonText}
         </button>
       </Link>
     </div>
-    <div className="w-full flex items-center justify-center">
+    <div className="w-full flex items-center justify-center z-10">
       <img
         src={image}
         alt="About MillenniumAi"
