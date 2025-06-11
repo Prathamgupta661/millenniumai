@@ -1,40 +1,91 @@
-import { useState } from 'react'
-import { NavLink } from 'react-router-dom';
-import logo from '../assets/Weblogo-removebg-preview.png';
+import { useState } from "react";
+import { NavLink } from "react-router-dom";
+import logo from "../assets/Weblogo-removebg-preview.png";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   // Utility for active link styling
   const navLinkClass =
-    'cursor-pointer text-white hover:text-cyan-300 text-lg font-medium transition';
+    "cursor-pointer text-white hover:text-cyan-300 text-lg font-playfair font-medium transition";
 
   return (
     <>
-      <nav className="p-4 min-h-[4rem] shadow-md flex justify-between  items-center fixed top-0 left-0 right-0 z-50"
+      <nav
+        className="p-4 max-h-[6rem] w-full shadow-md fixed top-0 left-0 right-0 z-50
+        bg-white/10 backdrop-blur-md border-b border-white/20"
         style={{
-          background: 'radial-gradient(ellipse at top left, #2d234a 0%, #18122b 100%)'
+          background: "radial-gradient(ellipse at top left, #2d234a99 0%, #18122bcc 100%)",
         }}
       >
-        <div>
-          <NavLink to="/" className="text-2xl font-bold  font-dm tracking-wide text-white transition">
-            <img src={logo} alt="Company logo" className='w-40 ml-8 h-12 object-contain' />
-          </NavLink>
+        {/* Responsive Wrapper */}
+        <div className="grid grid-cols-3 w-full items-center">
+          {/* Logo - Left */}
+          <div className="flex justify-start pl-4">
+            <NavLink
+              to="/"
+              className="text-2xl font-bold tracking-wide text-white transition"
+            >
+              <img
+                src={logo}
+                alt="Company logo"
+                className="w-40 h-12 object-contain"
+              />
+            </NavLink>
+          </div>
+
+          {/* Centered Nav Links */}
+            <div className="flex justify-center">
+            <ul className="hidden md:flex gap-8 items-center">
+              <NavLink
+                to="/"
+                className={({ isActive }) =>
+                  `${navLinkClass} ${isActive ? "bg-cyan-700 rounded-xl p-1" : ""}`
+                }
+              >
+                Home
+              </NavLink>
+              <NavLink
+                to="/about"
+                className={({ isActive }) =>
+                  `${navLinkClass} ${isActive ? "bg-cyan-700 rounded-xl p-1" : ""}`
+                }
+              >
+                About
+              </NavLink>
+              <NavLink
+                to="/services"
+                className={({ isActive }) =>
+                  `${navLinkClass} ${isActive ? "bg-cyan-700 rounded-xl p-1" : ""}`
+                }
+              >
+                Services
+              </NavLink>
+              <NavLink
+                to="/contact"
+                className={({ isActive }) =>
+                  `${navLinkClass} ${isActive ? "bg-cyan-700 rounded-xl p-1" : ""}`
+                }
+              >
+                Contact Us
+              </NavLink>
+            </ul>
+          </div>
+
+          {/* Blog Button & Hamburger - Right */}
+          <div className="flex justify-end items-center gap-2 pr-4">
+            <button className="text-white hover:text-cyan-300 text-lg font-medium transition cursor-pointer font-playfair mr-5 md:mr-0">
+              Blog
+            </button>
+            <button
+              className="md:hidden flex flex-col justify-center items-center w-10 h-10 rounded hover:bg-cyan-600/20 transition"
+              onClick={() => setIsOpen(!isOpen)}
+              aria-label="Toggle Menu"
+            >
+              <span className="text-3xl text-white">{isOpen ? "✕" : "☰"}</span>
+            </button>
+          </div>
         </div>
-        <ul className="hidden md:flex gap-8 items-center">
-          <NavLink to="/" className={({ isActive }) => `${navLinkClass} ${isActive ? 'bg-cyan-700 rounded-xl p-1' : ''}`}>Home</NavLink>
-          <NavLink to="/about" className={({ isActive }) => `${navLinkClass} ${isActive ? 'bg-cyan-700 rounded-xl p-1' : ''}`}>About</NavLink>
-          <NavLink to="/services" className={({ isActive }) => `${navLinkClass} ${isActive ? 'bg-cyan-700 rounded-xl p-1' : ''}`}>Services</NavLink>
-          <NavLink to="/contact" className={({ isActive }) => `${navLinkClass} ${isActive ? 'bg-cyan-700 rounded-xl p-1' : ''}`}>Contact Us</NavLink>
-        </ul>
-        <button
-          className="md:hidden flex flex-col justify-center items-center w-10 h-10 rounded hover:bg-cyan-600/20 transition"
-          onClick={() => setIsOpen(!isOpen)}
-          aria-label="Toggle Menu"
-        >
-          <span className="text-3xl text-white">{isOpen ? "✕" : "☰"}</span>
-        </button>
-        <button className='mr-10  text-white hover:text-cyan-300 text-lg font-medium transition cursor-pointer'>Blog</button>
       </nav>
       {/* Mobile Menu */}
       {isOpen && (
@@ -43,7 +94,9 @@ const Navbar = () => {
             <NavLink
               to="/"
               className={({ isActive }) =>
-                `text-lg font-semibold text-cyan-300 hover:text-pink-400 transition ${isActive ? 'bg-cyan-700 rounded-xl p-1' : ''}`
+                `text-lg font-semibold text-cyan-300 hover:text-pink-400 transition ${
+                  isActive ? "bg-cyan-700 rounded-xl p-1" : ""
+                }`
               }
               onClick={() => setIsOpen(false)}
             >
@@ -52,7 +105,9 @@ const Navbar = () => {
             <NavLink
               to="/about"
               className={({ isActive }) =>
-                `text-lg font-semibold text-cyan-300 hover:text-pink-400 transition ${isActive ? 'bg-cyan-700 rounded-xl p-1' : ''}`
+                `text-lg font-semibold text-cyan-300 hover:text-pink-400 transition ${
+                  isActive ? "bg-cyan-700 rounded-xl p-1" : ""
+                }`
               }
               onClick={() => setIsOpen(false)}
             >
@@ -61,7 +116,9 @@ const Navbar = () => {
             <NavLink
               to="/services"
               className={({ isActive }) =>
-                `text-lg font-semibold text-cyan-300 hover:text-pink-400 transition ${isActive ? 'bg-cyan-700 rounded-xl p-1' : ''}`
+                `text-lg font-semibold text-cyan-300 hover:text-pink-400 transition ${
+                  isActive ? "bg-cyan-700 rounded-xl p-1" : ""
+                }`
               }
               onClick={() => setIsOpen(false)}
             >
@@ -70,7 +127,9 @@ const Navbar = () => {
             <NavLink
               to="/contact"
               className={({ isActive }) =>
-                `text-lg font-semibold text-cyan-300 hover:text-pink-400 transition ${isActive ? 'bg-cyan-700 rounded-xl p-1' : ''}`
+                `text-lg font-semibold text-cyan-300 hover:text-pink-400 transition ${
+                  isActive ? "bg-cyan-700 rounded-xl p-1" : ""
+                }`
               }
               onClick={() => setIsOpen(false)}
             >
