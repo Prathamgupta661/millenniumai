@@ -667,12 +667,13 @@ const Home = () => {
               </div>
               <div>
                 <p className="text-sm text-gray-400">Phone</p>
-                <p className="font-medium">+91 123 456 7890</p>
+                <p className="font-medium">+91 931 941 0265</p>
+                <p className="font-medium">+91 705 317 1752</p>
               </div>
             </a>
 
             <a
-              href="mailto:info@millenniumai.com"
+              href="mailto:info@millenniumai.in"
               className="flex items-center gap-4 text-gray-300 group/item hover:text-pink-400 transition-colors"
             >
               <div className="w-12 h-10 rounded-lg bg-gradient-to-br from-pink-500/20 to-purple-500/20 flex items-center justify-center shadow-lg group-hover/item:from-pink-500/30 group-hover/item:to-purple-500/30 transition-all">
@@ -681,7 +682,7 @@ const Home = () => {
               <div className="flex flex-col w-full">
                 <p className="text-sm text-gray-400">Email</p>
                 <p className="font-medium break-all">
-                  info@millenniumai.com
+                  info@millenniumai.in
                 </p>
               </div>
             </a>
@@ -693,13 +694,13 @@ const Home = () => {
               <div>
                 <p className="text-sm text-gray-400">Address</p>
                 <p className="font-medium">
-                  Balaji Enclave, Govind Puram
+                  UGF-02 Krishna Enclave Govindpuram,
                 </p>
-                <p className="font-medium">Ghaziabad, UP 201013</p>
+                <p className="font-medium">Ghaziabad, UP 201002</p>
               </div>
             </div>
 
-            <a
+            {/* <a
               href="https://wa.me/911234567890"
               target="_blank"
               rel="noopener noreferrer"
@@ -712,7 +713,7 @@ const Home = () => {
                 <p className="text-sm text-gray-400">WhatsApp</p>
                 <p className="font-medium">+91 123 456 7890</p>
               </div>
-            </a>
+            </a> */}
           </div>
         </div>
       </div>
