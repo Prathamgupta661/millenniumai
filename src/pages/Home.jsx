@@ -238,7 +238,7 @@ const Home = () => {
             <img
               src={img1}
               alt="MillenniumAi Services"
-              className="w-72 h-72 sm:w-80 sm:h-80 object-contain rounded-xl shadow-lg border border-cyan-900/30"
+              className="w-72 h-72 sm:w-100 sm:h-100 object-contain rounded-xl hover:scale-105 transition-transform duration-500"
               loading="lazy"
             />
           </div>
