@@ -200,6 +200,7 @@ const Home = () => {
           </Link>
         </div>
       </div>
+      
       {/* Themed Services Sectiont */}
       <div className="mt-12 mx-auto w-[95%] max-w-8xl relative group">
         {/* Hover Effect Overlay */}
@@ -347,7 +348,7 @@ const Home = () => {
             </div>
           </div>
 
-          {/* App Development Card */}
+          {/*Gaming App Development Card */}
           <div className="group [perspective:1000px]">
             <div className="relative h-full min-h-[370px] w-full transition-transform duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
               {/* Front Side */}
@@ -394,7 +395,7 @@ const Home = () => {
                   </ul>
                 </div>
               </div>
-              {/* Back Side: Gaming App Development */}
+              {/* Back Side: Digital Marketing */}
               <div className="absolute inset-0 bg-gradient-to-br from-[#18122b]/90 via-[#232046]/90 to-[#2d234a]/90 backdrop-blur-md border border-cyan-400/40 rounded-xl p-6 shadow-2xl flex flex-col justify-center items-center text-center [transform:rotateY(180deg)] [backface-visibility:hidden]">
                 <div className="absolute inset-0 bg-gradient-to-br from-[#232046]/90 via-[#18122b]/90 to-[#2d234a]/90 backdrop-blur-md border border-[#2d234a]/40 rounded-xl p-6 shadow-2xl transition-transform duration-700 [backface-visibility:hidden]">
                 <div className="absolute inset-0 bg-gradient-to-r from-pink-500/10 to-purple-500/10 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-xl" />
@@ -442,7 +443,7 @@ const Home = () => {
             </div>
           </div>
 
-          {/* AI Solutions Card (unchanged) */}
+          {/* AI Solutions Card */}
           <div className="group [perspective:1000px]">
             <div className="relative h-full min-h-[370px] w-full transition-transform duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
               {/* Front Side */}

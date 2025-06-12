@@ -114,7 +114,6 @@ const Services = () => {
 
   return (
     <section className="mt-36 px-2 font-playfair max-w-7xl mx-auto relative overflow-hidden">
-      {/* Animated background */}
       <div className="absolute left-1/2 top-0 -translate-x-1/2 -z-10 w-[600px] h-[340px] pointer-events-none">
         <div className="w-full h-full rounded-full bg-gradient-to-tr from-cyan-400/30 via-pink-400/20 to-purple-400/30 blur-2xl opacity-70 animate-float-bounce"></div>
       </div>
@@ -123,9 +122,10 @@ const Services = () => {
       </h1>
       <p className="font-playfair mx-auto text-center text-slate-300 max-w-2xl mb-12 text-lg">
         We offer full-cycle digital product development, combining creative
-        design, robust technology, and smart marketing. Our services include:
+        design, robust technology, and smart marketing. Our services include
       </p>
       <div className="grid gap-10 md:grid-cols-2 xl:grid-cols-3">
+        
         {/* Website Development Card */}
         <div className="group bg-gradient-to-br from-[#232046]/90 via-[#18122b]/90 to-[#2d234a]/90 border border-cyan-700/30 rounded-3xl shadow-2xl px-12 py-6 w-full min-h-[260px] max-w-[480px] mx-auto transition-all duration-300 hover:scale-105 hover:shadow-cyan-400/40 backdrop-blur-md">
           <div className="flex items-center gap-4 mb-4">
