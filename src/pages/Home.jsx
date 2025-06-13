@@ -154,16 +154,16 @@ const Home = () => {
   return (
     <section
       className="w-full overflow-hidden flex flex-col mt-20 relative font-playfair"
-      style={{
-        background:
-          "radial-gradient(ellipse at top left, #2d234a 0%, #18122b 100%)",
-      }}
+      // style={{
+      //   background:
+      //     "radial-gradient(ellipse at top left, #2d234a 0%, #18122b 100%)",
+      // }}
     >
       {/* Hero Section */}
       <div className="relative w-full flex flex-col items-center justify-center min-h-[70vh]">
         <HeroProps />
         <div
-          className={`relative z-10 flex flex-col items-center text-white justify-center mt-24 px-4 transition-all duration-1000 ${
+          className={`relative z-10 flex flex-col items-center text-black justify-center mt-24 px-4 transition-all duration-1000 ${
             animate ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
           }`}
         >
@@ -189,7 +189,7 @@ const Home = () => {
               repeat={Infinity}
             />
           </h1>
-          <p className="mt-6 text-center text-slate-200 text-lg sm:text-2xl max-w-2xl drop-shadow font-playfair">
+          <p className="mt-6 text-center text-slate-500 text-lg sm:text-2xl max-w-2xl drop-shadow font-playfair">
             Image, Video & Geospatial Annotation Services powered by experts and
             smart tech.
           </p>
