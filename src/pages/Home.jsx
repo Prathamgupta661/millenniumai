@@ -386,6 +386,7 @@ const Home = () => {
                         <div className="aspect-video rounded-2xl overflow-hidden">
                           <img
                             src={Ai}
+                            loading="lazy"
                             alt="AI Solutions"
                             className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
                           />
@@ -493,6 +494,7 @@ const Home = () => {
                     </div>
                     <div className="aspect-video rounded-2xl overflow-hidden mb-5 mt-8">
                       <img
+                      loading="lazy"
                         src={web}
                         alt="Web Development"
                         className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
@@ -571,6 +573,7 @@ const Home = () => {
                     </div>
                     <div className="aspect-video rounded-2xl overflow-hidden mb-6">
                       <img
+                      loading="lazy"
                         src={App}
                         alt="App Development"
                         className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
@@ -649,6 +652,7 @@ const Home = () => {
                     </div>
                     <div className="aspect-video rounded-2xl overflow-hidden mb-6 mt-6">
                       <img
+                      loading="lazy"
                         src={Ai}
                         alt="AI Solutions"
                         className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
@@ -850,6 +854,7 @@ const Home = () => {
                   <div className="relative aspect-video rounded-2xl overflow-hidden group">
                     <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 via-purple-500/20 to-pink-500/20 group-hover:opacity-75 transition-opacity duration-300"></div>
                     <img
+                    loading="lazy"
                       src={expert}
                       alt="Our Team"
                       className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"

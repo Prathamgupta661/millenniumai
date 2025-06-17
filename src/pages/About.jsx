@@ -94,6 +94,7 @@ const AboutBanner = ({ title, buttonText, buttonLink, image, icon: Icon }) => (
                 <div className="relative aspect-[4/3] rounded-2xl overflow-hidden">
                   <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 via-purple-500/20 to-pink-500/20"></div>
                   <img
+                  loading="lazy"
                     src={image}
                     alt="About MillenniumAi"
                     className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-500"
@@ -246,7 +247,7 @@ const About = () => {
                   {/* Image */}
                   <div className="relative aspect-video rounded-2xl overflow-hidden group">
                     <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 via-purple-500/20 to-pink-500/20 group-hover:opacity-75 transition-opacity duration-300"></div>
-                    <img src={expert} alt="Our Team" className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500" />
+                    <img src={expert} alt="Our Team" loading="lazy" className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500" />
                     <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                       <div className="text-center">
                         <div className="text-2xl font-bold text-white mb-2">Our Expert Team</div>
