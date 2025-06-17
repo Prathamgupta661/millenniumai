@@ -2,7 +2,6 @@ import img1 from "../assets/home_img_1.webp";
 import React, { useEffect, useState } from "react";
 import emailjs from "@emailjs/browser";
 import { TypeAnimation } from "react-type-animation";
-
 import { Link } from "react-router-dom";
 import { HiPhone, HiMail, HiLocationMarker } from "react-icons/hi";
 import {
@@ -12,8 +11,6 @@ import {
   FaHandshake,
   FaUserShield,
   FaWhatsapp,
-} from "react-icons/fa";
-import {
   FaHeartbeat,
   FaShoppingCart,
   FaUniversity,
@@ -27,65 +24,8 @@ import {
 import { HiSparkles } from "react-icons/hi2";
 import ServiceCard from "../components/ServiceCard";
 
-// Modern geometric & organic SVG props for hero background
-const HeroProps = () => (
-  <div className="absolute inset-0 w-full h-full z-0 pointer-events-none overflow-hidden">
-    {/* Soft blue circle */}
-    <svg
-      className="absolute left-[-60px] top-[-60px] w-72 h-72 opacity-30 blur-2xl animate-float"
-      viewBox="0 0 288 288"
-      fill="none"
-    >
-      <circle cx="144" cy="144" r="144" fill="#00eaff" fillOpacity="0.18" />
-    </svg>
-    {/* Pink organic blob */}
-    <svg
-      className="absolute right-[-80px] top-[100px] w-80 h-80 opacity-25 blur-xl animate-float-reverse"
-      viewBox="0 0 320 320"
-      fill="none"
-    >
-      <path
-        d="M160 0C220 20 320 60 300 160C280 260 180 320 100 300C20 280 0 180 40 100C80 20 100 -20 160 0Z"
-        fill="#ff5ecf"
-        fillOpacity="0.18"
-      />
-    </svg>
-    {/* Abstract polygon */}
-    <svg
-      className="absolute left-1/2 top-[50%] -translate-x-1/2 w-100 h-50 opacity-30 animate-spin-slow"
-      viewBox="0 0 256 128"
-      fill="none"
-    >
-      <polygon
-        points="128,10 250,120 30,100 220,40 40,30"
-        fill="#fff"
-        fillOpacity="0.08"
-      />
-    </svg>
-    {/* Dotted grid */}
-    <svg
-      className="absolute right-8 bottom-8 w-32 h-32 opacity-20 animate-float"
-      viewBox="0 0 100 100"
-      fill="none"
-    >
-      <g>
-        {Array.from({ length: 100 }).map((_, i) => (
-          <circle
-            key={i}
-            cx={10 * (i % 10)}
-            cy={10 * Math.floor(i / 10)}
-            r="1.5"
-            fill="#fff"
-          />
-        ))}
-      </g>
-    </svg>
-  </div>
-);
-
 const Home = () => {
   const [animate, setAnimate] = useState(false);
-
   const [form, setForm] = useState({
     first_name: "",
     last_name: "",
@@ -93,13 +33,11 @@ const Home = () => {
     contactno: "",
     message: "",
   });
-
   const [loading, setLoading] = useState(false);
 
   const handleChange = (e) => {
     const { target } = e;
     const { name, value } = target;
-
     setForm({
       ...form,
       [name]: value,
@@ -129,7 +67,6 @@ const Home = () => {
         () => {
           setLoading(false);
           alert("Thank you. I will get back to you as soon as possible.");
-
           setForm({
             first_name: "",
             last_name: "",
@@ -141,7 +78,6 @@ const Home = () => {
         (error) => {
           setLoading(false);
           console.error(error);
-
           alert("Ahh, something went wrong. Please try again.");
         }
       );
@@ -152,760 +88,763 @@ const Home = () => {
   }, []);
 
   return (
-    <section
-      className="w-full overflow-hidden flex flex-col mt-20 relative font-playfair"
-      // style={{
-      //   background:
-      //     "radial-gradient(ellipse at top left, #2d234a 0%, #18122b 100%)",
-      // }}
-    >
+    <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <div className="relative w-full flex flex-col items-center justify-center min-h-[70vh]">
-        <HeroProps />
-        <div
-          className={`relative z-10 flex flex-col items-center text-black justify-center mt-24 px-4 transition-all duration-1000 ${
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+        {/* Background Elements */}
+        <div className="absolute inset-0 bg-[#0A0A0A]"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-blue-500/10 via-purple-500/10 to-transparent"></div>
+        
+        {/* Animated Grid Pattern */}
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff05_1px,transparent_1px),linear-gradient(to_bottom,#ffffff05_1px,transparent_1px)] bg-[size:4rem_4rem]"></div>
+        
+        {/* Glowing Orbs */}
+        <div className="absolute top-1/4 -left-20 w-72 h-72 bg-blue-500/30 rounded-full filter blur-[100px] animate-pulse"></div>
+        <div className="absolute bottom-1/4 -right-20 w-72 h-72 bg-purple-500/30 rounded-full filter blur-[100px] animate-pulse delay-1000"></div>
+
+        <div className="max-w-[1920px] w-full mx-auto px-6 relative z-10">
+          <div className={`max-w-6xl mx-auto transition-all duration-1000 ${
             animate ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-          }`}
-        >
-          <h1 className="text-center w-full max-w-4xl mx-auto text-4xl sm:text-7xl font-bold font-playfair leading-tight drop-shadow-lg">
-            Accelerate Your{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-pink-400">
-              AI
+          }`}>
+            {/* Main Content */}
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              {/* Left Column - Text Content */}
+              <div className="text-left">
+                <div className="inline-block px-4 py-2 bg-white/5 backdrop-blur-sm rounded-full mb-8 border border-white/10">
+                  <span className="text-white/80 text-sm font-medium">Welcome to MillenniumAi</span>
+                </div>
+                
+                <h1 className="text-6xl md:text-7xl font-bold text-white mb-8 leading-tight">
+                  Transform Your{" "}
+                  <span className="relative inline-block">
+                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400">
+                      Business
+                    </span>
+                    <span className="absolute -bottom-2 left-0 w-full h-1 bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 rounded-full"></span>
             </span>{" "}
-            with
+                  with AI
+                </h1>
+
+                <div className="h-24 flex items-center mb-8">
             <TypeAnimation
               sequence={[
-                " Precision Annotation",
+                      "Precision Annotation",
                 2000,
-                " Precision Full-Stack Development",
+                      "Full-Stack Development",
                 3000,
-                " Precision AI Solutions",
+                      "AI Solutions",
                 4000,
-                " Precision Smart Tech",
+                      "Smart Tech",
                 5000,
               ]}
               wrapper="span"
               speed={20}
               repeat={Infinity}
-            />
-          </h1>
-          <p className="mt-6 text-center text-slate-500 text-lg sm:text-2xl max-w-2xl drop-shadow font-playfair">
-            Image, Video & Geospatial Annotation Services powered by experts and
-            smart tech.
-          </p>
-          <Link to="/contact" className="mt-8">
-            <button className="cursor-pointer px-8 py-3 bg-gradient-to-r from-cyan-500 to-pink-500 font-playfair rounded-lg text-white text-lg font-semibold shadow-lg hover:scale-105 transition">
-              Get Started
-            </button>
-          </Link>
-        </div>
+                    className="text-3xl md:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400"
+                  />
       </div>
       
-      {/* Themed Services Sectiont */}
-      <div className="mt-12 mx-auto w-[95%] max-w-8xl relative group">
-        {/* Hover Effect Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-2xl blur-[8px] opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <p className="text-xl text-gray-300 mb-12 max-w-xl leading-relaxed">
+                  Image, Video & Geospatial Annotation Services powered by experts and smart tech.
+                </p>
 
-        {/* Main Content Container */}
-        <section className="relative flex flex-col md:flex-row shadow-xl rounded-2xl overflow-hidden bg-gradient-to-br from-[#232046]/90 via-[#18122b]/90 to-[#2d234a]/90 backdrop-blur-md border border-[#2d234a]/40">
-          {/* Text Content */}
-          <div className="w-full md:w-1/2 p-8 flex flex-col justify-center text-white">
-            <h2 className="font-playfair text-3xl font-bold mb-4 bg-gradient-to-r from-cyan-400 to-pink-400 text-transparent bg-clip-text drop-shadow">
-              Empowering Innovation with AI & Full-Stack Development
-            </h2>
-            <p className="mb-4 text-slate-200 text-base sm:text-lg">
-              MillenniumAi is one of the fastest-growing technology partners,
-              trusted by startups and enterprises alike. From intelligent data
-              annotation for AI models to cutting-edge website, mobile, and
-              gaming app development — we offer a complete suite of digital
-              services that transform ideas into reality.
-            </p>
-            <p className="mb-6 text-slate-200 text-base sm:text-lg">
-              Our dual strength in artificial intelligence and software
-              development enables us to deliver smart, scalable, and secure
-              solutions. With a proven track record across industries, we are
-              the preferred partner for organizations looking to accelerate
-              digital transformation with speed and precision.
-            </p>
-            <Link to="/services" className="w-fit">
-              <button className="px-6 py-2 bg-gradient-to-r from-cyan-500 to-pink-500 text-white rounded-md font-semibold shadow hover:scale-105 transition">
-                Let's Build the Future Together →
+                <div className="flex flex-col sm:flex-row gap-6">
+                  <Link to="/contact">
+                    <button className="group relative px-8 py-4 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-white rounded-xl font-semibold text-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 overflow-hidden">
+                      <span className="relative z-10">Get Started</span>
+                      <div className="absolute inset-0 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    </button>
+                  </Link>
+                  <Link to="/services">
+                    <button className="group relative px-8 py-4 bg-white/5 backdrop-blur-sm text-white rounded-xl font-semibold text-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 border border-white/10">
+                      <span className="relative z-10">Explore Services</span>
+                      <div className="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl"></div>
               </button>
             </Link>
           </div>
-          {/* Visual/Illustration */}
-          <div className="w-full md:w-1/2 flex items-center justify-center bg-gradient-to-br from-[#232046]/70 to-[#18122b]/80 py-10">
+
+                {/* Stats */}
+                <div className="grid grid-cols-3 gap-8 mt-16">
+                  <div className="text-center">
+                    <div className="text-3xl font-bold text-white mb-2">99%</div>
+                    <div className="text-sm text-gray-400">Accuracy Rate</div>
+                  </div>
+                  <div className="text-center">
+                    <div className="text-3xl font-bold text-white mb-2">500+</div>
+                    <div className="text-sm text-gray-400">Projects Completed</div>
+                  </div>
+                  <div className="text-center">
+                    <div className="text-3xl font-bold text-white mb-2">24/7</div>
+                    <div className="text-sm text-gray-400">Support</div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Right Column - 3D Card */}
+              <div className="relative hidden lg:block">
+                <div className="relative w-full aspect-square">
+                  <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 via-purple-500/20 to-pink-500/20 rounded-3xl transform rotate-6 transition-transform duration-500 group-hover:rotate-12"></div>
+                  <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 via-purple-500/10 to-pink-500/10 rounded-3xl transform -rotate-6 transition-transform duration-500 group-hover:-rotate-12"></div>
+                  <div className="relative bg-white/5 backdrop-blur-sm rounded-3xl p-8 border border-white/10 shadow-2xl">
+                    <div className="aspect-square rounded-2xl overflow-hidden">
             <img
               src={img1}
-              alt="MillenniumAi Services"
-              className="w-72 h-72 sm:w-100 sm:h-100 object-contain rounded-xl hover:scale-105 transition-transform duration-500"
-              loading="lazy"
+                        alt="AI Technology"
+                        className="w-full h-full object-cover transform hover:scale-110 transition-transform duration-500"
             />
           </div>
-        </section>
+                  </div>
+                </div>
+              </div>
       </div>
 
-      {/* Services Section */}
-      <section className="my-20 flex flex-col justify-center items-center">
-        <h2 className="text-center text-3xl sm:text-4xl font-bold font-playfair mb-12 bg-gradient-to-r from-cyan-400 to-pink-400 text-transparent bg-clip-text">
-          Our Services
-        </h2>
+            {/* Scroll Indicator */}
+            <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
+              <svg className="w-8 h-8 text-white/30" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                      </svg>
+                    </div>
+                  </div>
+        </div>
+      </section>
 
-        <div className="w-[95%] max-w-8xl grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 px-4">
-          {/* Web Development Card */}
-          <div className="group [perspective:1000px]">
-            <div className="relative h-full min-h-[370px] w-full transition-transform duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
-              {/* Front Side */}
-              <div className="absolute inset-0 bg-gradient-to-br from-[#232046]/90 via-[#18122b]/90 to-[#2d234a]/90 backdrop-blur-md border border-[#2d234a]/40 rounded-xl p-6 shadow-2xl transition-transform duration-700 [backface-visibility:hidden]">
-                <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/10 to-pink-500/10 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-xl" />
-                <div className="relative z-10">
-                  <div className="flex items-center gap-4 mb-4">
-                    <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-cyan-500 to-cyan-600 flex items-center justify-center shadow-lg">
-                      <svg
-                        className="w-6 h-6 text-white"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                        />
-                      </svg>
-                    </div>
-                    <h3 className="text-xl font-bold font-playfair text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-pink-400">
-                      Web Development
-                    </h3>
-                  </div>
-                  <p className="text-gray-300 group-hover:text-gray-200 transition-colors">
-                    We craft stunning, responsive websites that deliver
-                    measurable results. Our custom platforms are:
-                  </p>
-                  <ul className="mt-4 space-y-2 text-gray-300">
-                    <li className="flex cursor-pointer items-center gap-2">
-                      <span className="w-1.5 h-1.5 rounded-full bg-cyan-400"></span>
-                      <span>Scalable Architecture</span>
-                    </li>
-                    <li className="flex cursor-pointer items-center gap-2">
-                      <span className="w-1.5 h-1.5 rounded-full bg-pink-400"></span>
-                      <span>Performance Optimized</span>
-                    </li>
-                    <li className="flex cursor-pointer items-center gap-2">
-                      <span className="w-1.5 h-1.5 rounded-full bg-cyan-400"></span>
-                      <span>Security Enhanced</span>
-                    </li>
-                  </ul>
-                </div>
+      {/* Services Overview */}
+      <section className="relative py-32 overflow-hidden">
+        {/* Section Separator */}
+        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
+        
+        {/* Background Elements */}
+        <div className="absolute inset-0 bg-[#0A0A0A]"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-blue-500/5 via-purple-500/5 to-transparent"></div>
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff05_1px,transparent_1px),linear-gradient(to_bottom,#ffffff05_1px,transparent_1px)] bg-[size:4rem_4rem]"></div>
+        
+        <div className="max-w-[1920px] w-full mx-auto px-6 relative z-10">
+          <div className="max-w-7xl mx-auto">
+            {/* Section Header */}
+            <div className="text-center mb-20">
+              <div className="inline-block px-4 py-2 bg-white/5 backdrop-blur-sm rounded-full mb-8 border border-white/10">
+                <span className="text-white/80 text-sm font-medium">Our Services</span>
               </div>
-              {/* Back Side: App Development */}
-              <div className="absolute inset-0 bg-gradient-to-br from-[#18122b]/90 via-[#232046]/90 to-[#2d234a]/90 backdrop-blur-md border border-cyan-400/40 rounded-xl p-6 shadow-2xl flex flex-col justify-center items-center text-center [transform:rotateY(180deg)] [backface-visibility:hidden]">
-                <div className="absolute inset-0 bg-gradient-to-br from-[#232046]/90 via-[#18122b]/90 to-[#2d234a]/90 backdrop-blur-md border border-[#2d234a]/40 rounded-xl p-6 shadow-2xl transition-transform duration-700 [backface-visibility:hidden]">
-                <div className="absolute inset-0 bg-gradient-to-r from-pink-500/10 to-purple-500/10 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-xl" />
-                <div className="relative z-10">
-                  <div className="flex items-center gap-4 mb-4">
-                    <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-pink-500 to-purple-600 flex items-center justify-center shadow-lg">
-                      <svg
-                        className="w-6 h-6 text-white"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"
-                        />
-                      </svg>
+              <h2 className="text-5xl font-bold mb-8 text-white leading-tight">
+                Empowering Innovation with{" "}
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400">
+                  AI & Full-Stack Development
+                </span>
+              </h2>
+              <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+                MillenniumAi is one of the fastest-growing technology partners, trusted by startups and enterprises alike.
+              </p>
+                </div>
+
+            {/* Timeline Style Services */}
+            <div className="relative">
+              {/* Center Line */}
+              <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-px bg-gradient-to-b from-blue-500/20 via-purple-500/20 to-pink-500/20"></div>
+
+              {/* Service Items */}
+              <div className="space-y-32">
+                {/* Web Development */}
+                <div className="relative">
+                  <div className="grid md:grid-cols-2 gap-12 items-center">
+                    <div className="md:text-right">
+                      <div className="inline-block px-6 py-3 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-2xl mb-6">
+                        <h3 className="text-3xl font-bold text-white">Web Development</h3>
+              </div>
+                      <p className="text-lg text-gray-300 mb-6">Crafting stunning, responsive websites that deliver measurable results.</p>
+                      <div className="flex flex-wrap justify-end gap-4">
+                        <span className="px-4 py-2 bg-blue-500/10 rounded-full text-blue-400 text-sm">React</span>
+                        <span className="px-4 py-2 bg-purple-500/10 rounded-full text-purple-400 text-sm">Node.js</span>
+                        <span className="px-4 py-2 bg-pink-500/10 rounded-full text-pink-400 text-sm">Next.js</span>
                     </div>
-                    <h3 className="text-xl font-bold font-playfair text-transparent bg-clip-text bg-gradient-to-r from-pink-400 to-purple-400">
-                      App Development
-                    </h3>
                   </div>
-                  <p className="text-gray-300 group-hover:text-gray-200 transition-colors">
-                    Native and cross-platform mobile applications that provide
-                    exceptional user experiences. Features include:
-                  </p>
-                  <ul className="mt-4 space-y-2 text-gray-300">
-                    <li className="flex cursor-pointer items-center gap-2">
-                      <span className="w-1.5 h-1.5 rounded-full bg-pink-400"></span>
-                      <span>Native Performance</span>
-                    </li>
-                    <li className="flex cursor-pointer items-center gap-2">
-                      <span className="w-1.5 h-1.5 rounded-full bg-purple-400"></span>
-                      <span>Offline Capability</span>
-                    </li>
-                    <li className="flex cursor-pointer items-center gap-2">
-                      <span className="w-1.5 h-1.5 rounded-full bg-pink-400"></span>
-                      <span>Push Notifications</span>
-                    </li>
-                  </ul>
+                    <div className="relative group">
+                      <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-3xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
+                      <div className="relative bg-white/5 backdrop-blur-sm rounded-3xl p-8 border border-white/10">
+                        <div className="aspect-video rounded-2xl overflow-hidden">
+                          <img src={img1} alt="Web Development" className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500" />
                 </div>
               </div>
               </div>
             </div>
           </div>
 
-          {/*Gaming App Development Card */}
-          <div className="group [perspective:1000px]">
-            <div className="relative h-full min-h-[370px] w-full transition-transform duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
-              {/* Front Side */}
-              <div className="absolute inset-0 bg-gradient-to-br from-[#232046]/90 via-[#18122b]/90 to-[#2d234a]/90 backdrop-blur-md border border-[#2d234a]/40 rounded-xl p-6 shadow-2xl transition-transform duration-700 [backface-visibility:hidden]">
-                <div className="absolute inset-0 bg-gradient-to-r from-pink-500/10 to-purple-500/10 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-xl" />
-                <div className="relative z-10">
-                  <div className="flex items-center gap-4 mb-4">
-                    <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-pink-500 to-purple-600 flex items-center justify-center shadow-lg">
-                      <svg
-                        className="w-6 h-6 text-white"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"
-                        />
-                      </svg>
+                {/* App Development */}
+                <div className="relative">
+                  <div className="grid md:grid-cols-2 gap-12 items-center">
+                    <div className="order-2 md:order-1">
+                      <div className="relative group">
+                        <div className="absolute inset-0 bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-3xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
+                        <div className="relative bg-white/5 backdrop-blur-sm rounded-3xl p-8 border border-white/10">
+                          <div className="aspect-video rounded-2xl overflow-hidden">
+                            <img src={img1} alt="App Development" className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500" />
                     </div>
-                    <h3 className="text-xl font-bold font-playfair text-transparent bg-clip-text bg-gradient-to-r from-pink-400 to-purple-400">
-                      Game App Development
-                    </h3>
                   </div>
-                  <p className="text-gray-300 group-hover:text-gray-200 transition-colors">
-                    Native and cross-platform mobile applications that provide
-                    exceptional user experiences. Features include:
-                  </p>
-                  <ul className="mt-4 space-y-2 text-gray-300">
-                    <li className="flex cursor-pointer items-center gap-2">
-                      <span className="w-1.5 h-1.5 rounded-full bg-pink-400"></span>
-                      <span>2d 3d Game Designs</span>
-                    </li>
-                    <li className="flex cursor-pointer items-center gap-2">
-                      <span className="w-1.5 h-1.5 rounded-full bg-purple-400"></span>
-                      <span>Offline Capability</span>
-                    </li>
-                    <li className="flex cursor-pointer items-center gap-2">
-                      <span className="w-1.5 h-1.5 rounded-full bg-pink-400"></span>
-                      <span>Push Notifications</span>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-              {/* Back Side: Digital Marketing */}
-              <div className="absolute inset-0 bg-gradient-to-br from-[#18122b]/90 via-[#232046]/90 to-[#2d234a]/90 backdrop-blur-md border border-cyan-400/40 rounded-xl p-6 shadow-2xl flex flex-col justify-center items-center text-center [transform:rotateY(180deg)] [backface-visibility:hidden]">
-                <div className="absolute inset-0 bg-gradient-to-br from-[#232046]/90 via-[#18122b]/90 to-[#2d234a]/90 backdrop-blur-md border border-[#2d234a]/40 rounded-xl p-6 shadow-2xl transition-transform duration-700 [backface-visibility:hidden]">
-                <div className="absolute inset-0 bg-gradient-to-r from-pink-500/10 to-purple-500/10 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-xl" />
-                <div className="relative z-10">
-                  <div className="flex items-center gap-4 mb-4">
-                    <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-pink-500 to-purple-600 flex items-center justify-center shadow-lg">
-                      <svg
-                        className="w-6 h-6 text-white"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"
-                        />
-                      </svg>
+                      </div>
                     </div>
-                    <h3 className="text-xl font-bold font-playfair text-transparent bg-clip-text bg-gradient-to-r from-pink-400 to-purple-400">
-                      Digital Marketing
-                    </h3>
+                    <div className="order-1 md:order-2">
+                      <div className="inline-block px-6 py-3 bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-2xl mb-6">
+                        <h3 className="text-3xl font-bold text-white">App Development</h3>
+                      </div>
+                      <p className="text-lg text-gray-300 mb-6">Native and cross-platform mobile applications that provide exceptional user experiences.</p>
+                      <div className="flex flex-wrap gap-4">
+                        <span className="px-4 py-2 bg-purple-500/10 rounded-full text-purple-400 text-sm">React Native</span>
+                        <span className="px-4 py-2 bg-pink-500/10 rounded-full text-pink-400 text-sm">Flutter</span>
+                        <span className="px-4 py-2 bg-blue-500/10 rounded-full text-blue-400 text-sm">iOS/Android</span>
+                      </div>
+                    </div>
                   </div>
-                  <p className="text-gray-300 group-hover:text-gray-200 transition-colors">
-                    Our digital marketing team crafts data-driven strategies to boost your online presence, generate leads, and increase conversions. From SEO to paid ads, we cover it all.
-                  </p>
-                  <ul className="mt-4 space-y-2 text-gray-300">
-                    <li className="flex cursor-pointer items-center gap-2">
-                      <span className="w-1.5 h-1.5 rounded-full bg-pink-400"></span>
-                      <span>SEO & Content Marketing</span>
-                    </li>
-                    <li className="flex cursor-pointer items-center gap-2">
-                      <span className="w-1.5 h-1.5 rounded-full bg-purple-400"></span>
-                      <span>Social Media Management</span>
-                    </li>
-                    <li className="flex cursor-pointer items-center gap-2">
-                      <span className="w-1.5 h-1.5 rounded-full bg-pink-400"></span>
-                      <span>PPC & Paid Campaigns</span>
-                    </li>
-                  </ul>
                 </div>
-              </div>
+
+                {/* AI Solutions */}
+                <div className="relative">
+                  <div className="grid md:grid-cols-2 gap-12 items-center">
+                    <div className="md:text-right">
+                      <div className="inline-block px-6 py-3 bg-gradient-to-r from-blue-500/20 to-pink-500/20 rounded-2xl mb-6">
+                        <h3 className="text-3xl font-bold text-white">AI Solutions</h3>
+                      </div>
+                      <p className="text-lg text-gray-300 mb-6">Cutting-edge AI services that power next-generation applications.</p>
+                      <div className="flex flex-wrap justify-end gap-4">
+                        <span className="px-4 py-2 bg-blue-500/10 rounded-full text-blue-400 text-sm">Machine Learning</span>
+                        <span className="px-4 py-2 bg-pink-500/10 rounded-full text-pink-400 text-sm">Deep Learning</span>
+                        <span className="px-4 py-2 bg-purple-500/10 rounded-full text-purple-400 text-sm">NLP</span>
+                      </div>
+                    </div>
+                    <div className="relative group">
+                      <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-pink-500/20 rounded-3xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
+                      <div className="relative bg-white/5 backdrop-blur-sm rounded-3xl p-8 border border-white/10">
+                        <div className="aspect-video rounded-2xl overflow-hidden">
+                          <img src={img1} alt="AI Solutions" className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
 
-          {/* AI Solutions Card */}
-          <div className="group [perspective:1000px]">
-            <div className="relative h-full min-h-[370px] w-full transition-transform duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
-              {/* Front Side */}
-              <div className="absolute inset-0 bg-gradient-to-br from-[#232046]/90 via-[#18122b]/90 to-[#2d234a]/90 backdrop-blur-md border border-[#2d234a]/40 rounded-xl p-6 shadow-2xl transition-transform duration-700 [backface-visibility:hidden]">
-                <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/10 to-purple-500/10 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-xl" />
-                <div className="relative z-10">
-                  <div className="flex items-center gap-4 mb-4">
-                    <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-cyan-500 to-purple-600 flex items-center justify-center shadow-lg">
-                      <svg
-                        className="w-6 h-6 text-white"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"
-                        />
+            {/* Call to Action */}
+            <div className="mt-32 text-center">
+              <Link to="/services">
+                <button className="group relative px-8 py-4 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-white rounded-xl font-semibold text-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 overflow-hidden">
+                  <span className="relative z-10">Explore Our Services →</span>
+                  <div className="absolute inset-0 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                </button>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Core Services */}
+      <section className="relative py-32 overflow-hidden">
+        {/* Section Separator */}
+        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
+        
+        {/* Background Elements */}
+        <div className="absolute inset-0 bg-[#0A0A0A]"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-blue-500/5 via-purple-500/5 to-transparent"></div>
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff05_1px,transparent_1px),linear-gradient(to_bottom,#ffffff05_1px,transparent_1px)] bg-[size:4rem_4rem]"></div>
+        
+        <div className="max-w-[1920px] w-full mx-auto px-6 relative z-10">
+          <div className="max-w-7xl mx-auto">
+            {/* Section Header */}
+            <div className="text-center mb-20">
+              <div className="inline-block px-4 py-2 bg-white/5 backdrop-blur-sm rounded-full mb-8 border border-white/10">
+                <span className="text-white/80 text-sm font-medium">What We Offer</span>
+              </div>
+              <h2 className="text-5xl font-bold mb-8 text-white leading-tight">
+                Our Core{" "}
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400">
+                  Services
+                </span>
+              </h2>
+              <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+                Comprehensive solutions tailored to meet your business needs with cutting-edge technology.
+              </p>
+                </div>
+
+            {/* Services Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {/* Web Development Card */}
+              <div className="group relative h-[700px]">
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-3xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
+                <div className="relative bg-white/5 backdrop-blur-sm rounded-3xl p-8 border border-white/10 overflow-hidden h-full flex flex-col">
+                  <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-blue-500/10 to-purple-500/10 rounded-full blur-2xl transform translate-x-16 -translate-y-16"></div>
+                  <div className="relative flex-1 flex flex-col">
+                    <div className="w-16 h-16 bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-2xl flex items-center justify-center mb-6 transform group-hover:scale-110 transition-all duration-300">
+                      <svg className="w-10 h-10 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                       </svg>
                     </div>
-                    <h3 className="text-xl font-bold font-playfair text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-400">
-                      AI Solutions
-                    </h3>
+                    <h3 className="text-3xl font-bold mb-4 text-white">Web Development</h3>
+                    <p className="text-lg text-gray-300 mb-6 leading-relaxed">We craft stunning, responsive websites that deliver measurable results.</p>
+                    <div className="space-y-3 mb-6">
+                      <div className="flex items-center gap-4">
+                        <div className="w-2 h-2 bg-blue-400 rounded-full"></div>
+                        <span className="text-lg text-gray-300">Scalable Architecture</span>
+                      </div>
+                      <div className="flex items-center gap-4">
+                        <div className="w-2 h-2 bg-purple-400 rounded-full"></div>
+                        <span className="text-lg text-gray-300">Performance Optimized</span>
+                      </div>
+                      <div className="flex items-center gap-4">
+                        <div className="w-2 h-2 bg-blue-400 rounded-full"></div>
+                        <span className="text-lg text-gray-300">Security Enhanced</span>
+                      </div>
+                    </div>
+                    <div className="aspect-video rounded-2xl overflow-hidden mb-6">
+                      <img src={img1} alt="Web Development" className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500" />
+                    </div>
+                    <Link to="/services" className="inline-flex items-center text-blue-400 hover:text-blue-300 transition-colors duration-300 mt-auto">
+                      <span className="text-lg font-medium">Learn More</span>
+                      <svg className="w-5 h-5 ml-2 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                      </svg>
+                    </Link>
                   </div>
-                  <p className="text-gray-300 group-hover:text-gray-200 transition-colors font-playfair">
-                    Cutting-edge AI services that power next-generation
-                    applications. Our offerings include:
-                  </p>
-                  <ul className="mt-4 space-y-2 text-gray-300">
-                    <li className="flex cursor-pointer items-center gap-2">
-                      <span className="w-1.5 h-1.5 rounded-full bg-cyan-400"></span>
-                      <span>Data Annotation</span>
-                    </li>
-                    <li className="flex cursor-pointer items-center gap-2">
-                      <span className="w-1.5 h-1.5 rounded-full bg-purple-400"></span>
-                      <span>Model Training</span>
-                    </li>
-                    <li className="flex cursor-pointer items-center gap-2">
-                      <span className="w-1.5 h-1.5 rounded-full bg-cyan-400"></span>
-                      <span>AI Integration</span>
-                    </li>
-                  </ul>
                 </div>
               </div>
-              {/* Back Side */}
-              <div className="absolute inset-0 bg-gradient-to-br from-[#18122b]/90 via-[#232046]/90 to-[#2d234a]/90 backdrop-blur-md border border-purple-400/40 rounded-xl p-6 shadow-2xl flex flex-col justify-center items-center text-center [transform:rotateY(180deg)] [backface-visibility:hidden]">
-                <h4 className="text-2xl font-bold text-purple-400 mb-2">
-                  AI Expertise
-                </h4>
-                <ul className="text-purple-300 my-2 text-left list-disc list-inside">
-                  <li>NLP</li>
-                  <li>Data Processing</li>
-                  <li>Generative AI</li>
-                  <li>Content Moderation</li>
-                  <li>Document Processing</li>
-                  <li>Automatic Speech Recognition</li>
-                </ul>
+
+              {/* App Development Card */}
+              <div className="group relative h-[700px]">
+                <div className="absolute inset-0 bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-3xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
+                <div className="relative bg-white/5 backdrop-blur-sm rounded-3xl p-8 border border-white/10 overflow-hidden h-full flex flex-col">
+                  <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-purple-500/10 to-pink-500/10 rounded-full blur-2xl transform translate-x-16 -translate-y-16"></div>
+                  <div className="relative flex-1 flex flex-col">
+                    <div className="w-16 h-16 bg-gradient-to-br from-purple-500/20 to-pink-500/20 rounded-2xl flex items-center justify-center mb-6 transform group-hover:scale-110 transition-all duration-300">
+                      <svg className="w-10 h-10 text-purple-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                      </svg>
+                    </div>
+                    <h3 className="text-3xl font-bold mb-4 text-white">App Development</h3>
+                    <p className="text-lg text-gray-300 mb-6 leading-relaxed">Native and cross-platform mobile applications that provide exceptional user experiences.</p>
+                    <div className="space-y-3 mb-6">
+                      <div className="flex items-center gap-4">
+                        <div className="w-2 h-2 bg-purple-400 rounded-full"></div>
+                        <span className="text-lg text-gray-300">Native Performance</span>
+                      </div>
+                      <div className="flex items-center gap-4">
+                        <div className="w-2 h-2 bg-pink-400 rounded-full"></div>
+                        <span className="text-lg text-gray-300">Offline Capability</span>
+                      </div>
+                      <div className="flex items-center gap-4">
+                        <div className="w-2 h-2 bg-purple-400 rounded-full"></div>
+                        <span className="text-lg text-gray-300">Push Notifications</span>
+                      </div>
+                    </div>
+                    <div className="aspect-video rounded-2xl overflow-hidden mb-6">
+                      <img src={img1} alt="App Development" className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500" />
+                    </div>
+                    <Link to="/services" className="inline-flex items-center text-purple-400 hover:text-purple-300 transition-colors duration-300 mt-auto">
+                      <span className="text-lg font-medium">Learn More</span>
+                      <svg className="w-5 h-5 ml-2 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                      </svg>
+                    </Link>
+                  </div>
+                </div>
+              </div>
+
+              {/* AI Solutions Card */}
+              <div className="group relative h-[700px]">
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-pink-500/20 rounded-3xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
+                <div className="relative bg-white/5 backdrop-blur-sm rounded-3xl p-8 border border-white/10 overflow-hidden h-full flex flex-col">
+                  <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-blue-500/10 to-pink-500/10 rounded-full blur-2xl transform translate-x-16 -translate-y-16"></div>
+                  <div className="relative flex-1 flex flex-col">
+                    <div className="w-16 h-16 bg-gradient-to-br from-blue-500/20 to-pink-500/20 rounded-2xl flex items-center justify-center mb-6 transform group-hover:scale-110 transition-all duration-300">
+                      <svg className="w-10 h-10 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                      </svg>
+                    </div>
+                    <h3 className="text-3xl font-bold mb-4 text-white">AI Solutions</h3>
+                    <p className="text-lg text-gray-300 mb-6 leading-relaxed">Cutting-edge AI services that power next-generation applications.</p>
+                    <div className="space-y-3 mb-6">
+                      <div className="flex items-center gap-4">
+                        <div className="w-2 h-2 bg-blue-400 rounded-full"></div>
+                        <span className="text-lg text-gray-300">Data Annotation</span>
+                      </div>
+                      <div className="flex items-center gap-4">
+                        <div className="w-2 h-2 bg-pink-400 rounded-full"></div>
+                        <span className="text-lg text-gray-300">Model Training</span>
+                      </div>
+                      <div className="flex items-center gap-4">
+                        <div className="w-2 h-2 bg-blue-400 rounded-full"></div>
+                        <span className="text-lg text-gray-300">AI Integration</span>
+                      </div>
+                    </div>
+                    <div className="aspect-video rounded-2xl overflow-hidden mb-6">
+                      <img src={img1} alt="AI Solutions" className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500" />
+                    </div>
+                    <Link to="/services" className="inline-flex items-center text-blue-400 hover:text-blue-300 transition-colors duration-300 mt-auto">
+                      <span className="text-lg font-medium">Learn More</span>
+                      <svg className="w-5 h-5 ml-2 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                      </svg>
+                    </Link>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Why Choose MillenniumAi Section */}
-      <section className="my-20 mx-auto w-[95%] max-w-8xl">
-        <h2 className="text-center text-3xl sm:text-4xl font-bold font-playfair mb-8 bg-gradient-to-r from-cyan-400 to-pink-400 text-transparent bg-clip-text">
-          Why Choose MillenniumAi?
-        </h2>
-        <div className="w-[95%] max-w-8xl grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 px-4 mx-auto">
-          <ServiceCard
-            icon={<FaCheckCircle className="w-6 h-6 text-white" />}
-            title="Unmatched Quality Control"
-            description="With rigorous multi-level quality checks and experienced QA teams, we guarantee 99–100% data accuracy and bug-free software deployments."
-            features={[
-              { text: "99–100% Data Accuracy", dotColor: "bg-cyan-400" },
-              { text: "Experienced QA Teams", dotColor: "bg-pink-400" },
-              { text: "Bug-Free Deployments", dotColor: "bg-cyan-400" },
-            ]}
-          />
-          <ServiceCard
-            icon={<FaBolt className="w-6 h-6 text-white" />}
-            title="Fast Turnaround Time"
-            description="Whether it’s a large-volume data labeling project or a full-fledged mobile application, we deliver fast — with the capability to scale our team within 24–48 hours."
-            features={[
-              { text: "Rapid Delivery", dotColor: "bg-pink-400" },
-              { text: "Scalable Teams", dotColor: "bg-purple-400" },
-              { text: "24–48h Scaling", dotColor: "bg-pink-400" },
-            ]}
-            iconBgFrom="from-pink-500"
-            iconBgTo="to-purple-600"
-            titleGradient="from-pink-400 to-purple-400"
-          />
-          <ServiceCard
-            icon={<FaCogs className="w-6 h-6 text-white" />}
-            title="Complete Customization"
-            description="No two businesses are the same. We tailor our services to align perfectly with your vision, industry standards, and future goals."
-            features={[
-              { text: "Tailored Solutions", dotColor: "bg-cyan-400" },
-              { text: "Industry Standards", dotColor: "bg-purple-400" },
-              { text: "Future-Ready", dotColor: "bg-cyan-400" },
-            ]}
-            iconBgFrom="from-cyan-500"
-            iconBgTo="to-purple-600"
-            titleGradient="from-cyan-400 to-purple-400"
-          />
-
-          <div className="flex flex-col sm:flex-row gap-6 sm:gap-8 lg:gap-10 col-span-1 sm:col-span-2 lg:col-span-3">
-            <ServiceCard
-              icon={<FaHandshake className="w-6 h-6 text-white" />}
-              title="Cost-Effective Delivery"
-              description="We proudly offer some of the lowest project costs globally without sacrificing quality or timelines — making us the ideal partner for scale-ups and enterprise needs."
-              features={[
-                { text: "Lowest Project Costs", dotColor: "bg-cyan-400" },
-                { text: "No Quality Sacrifice", dotColor: "bg-pink-400" },
-                { text: "Ideal for Scale-Ups", dotColor: "bg-cyan-400" },
-              ]}
-              iconBgFrom="from-pink-500"
-              iconBgTo="to-cyan-600"
-              titleGradient="from-pink-400 to-cyan-400"
-            />
-            <ServiceCard
-              icon={<FaUserShield className="w-6 h-6 text-white" />}
-              title="Client-Centric Approach"
-              description="We believe in building long-term relationships. Our support doesn’t end with delivery — we provide ongoing guidance, technical support, and process optimization."
-              features={[
-                { text: "Long-Term Relationships", dotColor: "bg-cyan-400" },
-                { text: "Ongoing Support", dotColor: "bg-pink-400" },
-                { text: "Process Optimization", dotColor: "bg-cyan-400" },
-              ]}
-              iconBgFrom="from-cyan-500"
-              iconBgTo="to-pink-600"
-              titleGradient="from-cyan-400 to-pink-400"
-            />
-          </div>
-        </div>
-      </section>
-
-      {/* About MillenniumAi */}
-      <section className="w-[95%] max-w-8xl mx-auto my-20">
-        <div className="group relative bg-gradient-to-br from-[#232046]/90 via-[#18122b]/90 to-[#2d234a]/90 backdrop-blur-md border border-[#2d234a]/40 rounded-xl p-6 hover:shadow-2xl transition-all duration-300">
-          <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/10 to-purple-500/10 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-xl" />
-          <div className="relative z-10">
-            <h2 className="text-3xl sm:text-4xl font-bold font-playfair text-center bg-gradient-to-r from-cyan-400 to-pink-400 text-transparent bg-clip-text mt-4 mb-6 drop-shadow py-3">
-              Shaping the Future with Intelligence, Innovation, and Integrity
+      {/* Why Choose Us */}
+      <section className="relative py-32 overflow-hidden">
+        {/* Section Separator */}
+        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
+        
+        {/* Background Elements */}
+        <div className="absolute inset-0 bg-[#0A0A0A]"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-blue-500/5 via-purple-500/5 to-transparent"></div>
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff05_1px,transparent_1px),linear-gradient(to_bottom,#ffffff05_1px,transparent_1px)] bg-[size:4rem_4rem]"></div>
+        
+        <div className="max-w-[1920px] w-full mx-auto px-6 relative z-10">
+          <div className="max-w-7xl mx-auto">
+            {/* Section Header */}
+            <div className="text-center mb-20">
+              <div className="inline-block px-4 py-2 bg-white/5 backdrop-blur-sm rounded-full mb-8 border border-white/10">
+                <span className="text-white/80 text-sm font-medium">Why Choose Us</span>
+              </div>
+              <h2 className="text-5xl font-bold mb-8 text-white leading-tight">
+                Why Choose{" "}
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400">
+                  MillenniumAi
+                </span>
             </h2>
-            <p className="text-lg mt-15 text-white text-center max-w-3xl mx-auto font-playfair">
-              At <span className="font-bold text-cyan-700">MILLENNIUMAI</span>,
-              we are more than just a technology service provider — we are a
-              strategic partner in your digital evolution. Founded in 2025 and
-              headquartered in Ghaziabad, India, MILLENNIUMAI was established
-              with a clear vision: to deliver world-class technology and
-              data-driven services that are both cost-effective and
-              quality-assured.
-            </p>
-
-            <p className="text-lg mt-15 mb-10 text-white text-center max-w-3xl mx-auto font-playfair">
-              In an era defined by artificial intelligence, automation, and
-              rapid digital transformation, our goal is simple — to help
-              businesses harness the power of data and software innovation to
-              achieve operational excellence, scale faster, and grow smarter.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Who We Are & Expertise */}
-      <section className="w-[95%] max-w-8xl mx-auto my-20">
-        <div className="relative group flex flex-col md:flex-row gap-10 rounded-2xl shadow-2xl border border-cyan-700/30 bg-gradient-to-br from-[#18122b]/95 via-[#232046]/90 to-[#2d234a]/95 backdrop-blur-xl p-8 md:p-16 overflow-hidden transition-all duration-500 hover:scale-[1.015] hover:shadow-cyan-500/20">
-          {/* Glow border on hover */}
-          <div className="pointer-events-none absolute inset-0 rounded-2xl border-2 border-transparent group-hover:border-cyan-400/40 group-hover:shadow-[0_0_40px_10px_rgba(34,211,238,0.15)] transition-all duration-500"></div>
-          {/* Left: Who We Are */}
-          <div className="md:w-1/2 flex flex-col gap-4">
-            <h3 className="text-2xl font-bold bg-gradient-to-r from-cyan-400 to-pink-400 text-transparent bg-clip-text mb-2 drop-shadow">
-              Who We Are
-            </h3>
-            <p className="text-slate-200">
-              We are a dynamic team of 50–80 professionals — a unique blend of
-              developers, data scientists, project managers, and domain experts.
-              Each team member is committed to excellence, working
-              collaboratively to deliver custom solutions for businesses ranging
-              from early-stage startups to large enterprises.
-            </p>
-            <p className="text-slate-200">
-              From data annotation for AI/ML models to enterprise-grade web and
-              app development, we offer end-to-end digital solutions designed to
-              fit seamlessly into our clients’ workflows and goals.
-            </p>
-            <div>
-              <h4 className="font-semibold mb-2 text-cyan-400">
-                Our deep domain expertise covers:
-              </h4>
-              <ul className="list-disc list-inside text-slate-200 grid grid-cols-1 sm:grid-cols-2 gap-x-9 gap-y-1">
-                <li className="transition-colors duration-300 hover:text-cyan-400">
-                  Natural Language Processing
-                </li>
-                <li className="transition-colors duration-300 hover:text-pink-400">
-                  Computer Vision
-                </li>
-                <li className="transition-colors duration-300 hover:text-cyan-400">
-                  Medical Data Annotation
-                </li>
-                <li className="transition-colors duration-300 hover:text-pink-400">
-                  E-commerce Product Tagging
-                </li>
-                <li className="transition-colors duration-300 hover:text-cyan-400">
-                  Geospatial and 3D Annotation
-                </li>
-                <li className="transition-colors duration-300 hover:text-pink-400">
-                  Mobile & Web App Development
-                </li>
-                <li className="transition-colors duration-300 hover:text-cyan-400">
-                  Game and Software Development
-                </li>
-                <li className="transition-colors duration-300 hover:text-pink-400">
-                  Custom APIs & SaaS Products
-                </li>
-              </ul>
+              <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+                We combine cutting-edge technology with exceptional service to deliver outstanding results.
+              </p>
             </div>
-            <p className="text-slate-300 mt-4 italic">
-              Every project we undertake is approached with precision, agility,
-              and a relentless commitment to delivering on time — without
-              compromising on quality.
-            </p>
+
+            {/* Main Content */}
+            <div className="grid lg:grid-cols-2 gap-16 items-center">
+              {/* Left Column - Features */}
+              <div className="space-y-8">
+                {/* Quality Control Feature */}
+                <div className="group relative">
+                  <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
+                  <div className="relative bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10">
+                    <div className="flex items-start gap-6">
+                      <div className="w-12 h-12 bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-xl flex items-center justify-center transform group-hover:scale-110 transition-all duration-300">
+                        <FaCheckCircle className="w-6 h-6 text-blue-400" />
+          </div>
+                      <div>
+                        <h3 className="text-2xl font-bold mb-3 text-white">Unmatched Quality Control</h3>
+                        <p className="text-gray-300 mb-4">With rigorous multi-level quality checks and experienced QA teams, we guarantee 99–100% data accuracy.</p>
+                        <div className="flex flex-wrap gap-3">
+                          <span className="px-4 py-2 bg-blue-500/10 rounded-full text-blue-400 text-sm">99–100% Accuracy</span>
+                          <span className="px-4 py-2 bg-purple-500/10 rounded-full text-purple-400 text-sm">Expert QA Teams</span>
+                          <span className="px-4 py-2 bg-pink-500/10 rounded-full text-pink-400 text-sm">Bug-Free Code</span>
+        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Fast Turnaround Feature */}
+                <div className="group relative">
+                  <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 to-pink-500/10 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
+                  <div className="relative bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10">
+                    <div className="flex items-start gap-6">
+                      <div className="w-12 h-12 bg-gradient-to-br from-purple-500/20 to-pink-500/20 rounded-xl flex items-center justify-center transform group-hover:scale-110 transition-all duration-300">
+                        <FaBolt className="w-6 h-6 text-purple-400" />
+                      </div>
+            <div>
+                        <h3 className="text-2xl font-bold mb-3 text-white">Fast Turnaround Time</h3>
+                        <p className="text-gray-300 mb-4">Whether it's a large-volume data labeling project or a full-fledged mobile application, we deliver fast.</p>
+                        <div className="flex flex-wrap gap-3">
+                          <span className="px-4 py-2 bg-purple-500/10 rounded-full text-purple-400 text-sm">Rapid Delivery</span>
+                          <span className="px-4 py-2 bg-pink-500/10 rounded-full text-pink-400 text-sm">Scalable Teams</span>
+                          <span className="px-4 py-2 bg-blue-500/10 rounded-full text-blue-400 text-sm">24/7 Support</span>
+            </div>
+                      </div>
+                    </div>
+                  </div>
           </div>
 
-          {/* Right: What Sets Us Apart */}
-          <div className="md:w-1/2 flex flex-col gap-6">
-            <h3 className="text-2xl font-bold bg-gradient-to-r from-cyan-400 to-pink-400 text-transparent bg-clip-text mb-2 drop-shadow">
-              What Sets Us Apart
-            </h3>
-            <ul className="space-y-4 text-slate-200">
-              <li className="flex cursor-pointer items-start gap-2 hover:text-cyan-400 transition-colors duration-300">
-                <span>✅</span>
-                <span>
-                  <span className="font-semibold">
-                    Unmatched Quality Control:
-                  </span>{" "}
-                  With rigorous multi-level quality checks and experienced QA
-                  teams, we guarantee 99–100% data accuracy and bug-free
-                  software deployments.
-                </span>
-              </li>
-              <li className="flex cursor-pointer items-start gap-2 hover:text-pink-400 transition-colors duration-300">
-                <span>✅</span>
-                <span>
-                  <span className="font-semibold">
-                    Cost-Effective Delivery:
-                  </span>{" "}
-                  We proudly offer some of the lowest project costs globally
-                  without sacrificing quality or timelines — making us the ideal
-                  partner for scale-ups and enterprise needs.
-                </span>
-              </li>
-              <li className="flex cursor-pointer items-start gap-2 hover:text-cyan-400 transition-colors duration-300">
-                <span>✅</span>
-                <span>
-                  <span className="font-semibold">Fast Turnaround Time:</span>{" "}
-                  Whether it’s a large-volume data labeling project or a
-                  full-fledged mobile application, we deliver fast — with the
-                  capability to scale our team within 24–48 hours.
-                </span>
-              </li>
-              <li className="flex cursor-pointer items-start gap-2 hover:text-pink-400 transition-colors duration-300">
-                <span>✅</span>
-                <span>
-                  <span className="font-semibold">Complete Customization:</span>{" "}
-                  No two businesses are the same. We tailor our services to
-                  align perfectly with your vision, industry standards, and
-                  future goals.
-                </span>
-              </li>
-              <li className="flex cursor-pointer items-start gap-2 hover:text-cyan-400 transition-colors duration-300">
-                <span>✅</span>
-                <span>
-                  <span className="font-semibold">
-                    Client-Centric Approach:
-                  </span>{" "}
-                  We believe in building long-term relationships. Our support
-                  doesn’t end with delivery — we provide ongoing guidance,
-                  technical support, and process optimization.
-                </span>
-              </li>
-            </ul>
+                {/* Customization Feature */}
+                <div className="group relative">
+                  <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-pink-500/10 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
+                  <div className="relative bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10">
+                    <div className="flex items-start gap-6">
+                      <div className="w-12 h-12 bg-gradient-to-br from-blue-500/20 to-pink-500/20 rounded-xl flex items-center justify-center transform group-hover:scale-110 transition-all duration-300">
+                        <FaCogs className="w-6 h-6 text-blue-400" />
+                      </div>
+                      <div>
+                        <h3 className="text-2xl font-bold mb-3 text-white">Complete Customization</h3>
+                        <p className="text-gray-300 mb-4">No two businesses are the same. We tailor our services to align perfectly with your vision.</p>
+                        <div className="flex flex-wrap gap-3">
+                          <span className="px-4 py-2 bg-blue-500/10 rounded-full text-blue-400 text-sm">Tailored Solutions</span>
+                          <span className="px-4 py-2 bg-pink-500/10 rounded-full text-pink-400 text-sm">Industry Standards</span>
+                          <span className="px-4 py-2 bg-purple-500/10 rounded-full text-purple-400 text-sm">Future-Ready</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Right Column - Stats & Image */}
+              <div className="relative">
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 via-purple-500/20 to-pink-500/20 rounded-3xl blur-2xl"></div>
+                <div className="relative bg-white/5 backdrop-blur-sm rounded-3xl p-8 border border-white/10">
+                  {/* Stats Grid */}
+                  <div className="grid grid-cols-2 gap-6 mb-8">
+                    <div className="bg-white/5 rounded-2xl p-6 text-center">
+                      <div className="text-4xl font-bold text-white mb-2">500+</div>
+                      <div className="text-gray-400">Projects Completed</div>
+                    </div>
+                    <div className="bg-white/5 rounded-2xl p-6 text-center">
+                      <div className="text-4xl font-bold text-white mb-2">99%</div>
+                      <div className="text-gray-400">Client Satisfaction</div>
+                    </div>
+                    <div className="bg-white/5 rounded-2xl p-6 text-center">
+                      <div className="text-4xl font-bold text-white mb-2">24/7</div>
+                      <div className="text-gray-400">Support Available</div>
+                    </div>
+                    <div className="bg-white/5 rounded-2xl p-6 text-center">
+                      <div className="text-4xl font-bold text-white mb-2">50+</div>
+                      <div className="text-gray-400">Team Members</div>
+                    </div>
+                  </div>
+
+                  {/* Image */}
+                  <div className="relative aspect-video rounded-2xl overflow-hidden group">
+                    <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 via-purple-500/20 to-pink-500/20 group-hover:opacity-75 transition-opacity duration-300"></div>
+                    <img src={img1} alt="Our Team" className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500" />
+                    <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      <div className="text-center">
+                        <div className="text-2xl font-bold text-white mb-2">Our Expert Team</div>
+                        <div className="text-gray-200">Dedicated to Excellence</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
       {/* Industries We Serve */}
-      <section className="w-[95%] max-w-8xl mx-auto my-16">
-        <div className="relative rounded-2xl shadow-2xl border border-cyan-700/30 bg-gradient-to-br from-[#18122b]/95 via-[#232046]/90 to-[#2d234a]/95 backdrop-blur-xl p-8 md:p-16 overflow-hidden group transition-all duration-500 hover:scale-[1.015] hover:shadow-cyan-500/20">
-          <div className="pointer-events-none absolute inset-0 rounded-2xl border-2 border-transparent group-hover:border-pink-400/40 group-hover:shadow-[0_0_40px_10px_rgba(236,72,153,0.15)] transition-all duration-500"></div>
-          <h3 className="text-2xl font-bold bg-gradient-to-r from-cyan-400 to-pink-400 text-transparent bg-clip-text mb-16 text-center drop-shadow">
-            Industries We Serve
-          </h3>
-          <ul className="list-none grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 text-slate-200 font-medium text-lg justify-items-center">
-            <li className="flex cursor-pointer flex-col items-center gap-2 transition-colors duration-300 hover:text-cyan-400 hover:scale-105">
-              <FaHeartbeat className="text-3xl mb-1" />
-              Healthcare & Life Sciences
-            </li>
-            <li className="flex cursor-pointer flex-col items-center gap-2 transition-colors duration-300 hover:text-pink-400 hover:scale-105">
-              <FaShoppingCart className="text-3xl mb-1" />
-              Retail & E-Commerce
-            </li>
-            <li className="flex cursor-pointer flex-col items-center gap-2 transition-colors duration-300 hover:text-cyan-400 hover:scale-105">
-              <FaUniversity className="text-3xl mb-1" />
-              Finance & Banking
-            </li>
-            <li className="flex cursor-pointer flex-col items-center gap-2 transition-colors duration-300 hover:text-pink-400 hover:scale-105">
-              <FaTruck className="text-3xl mb-1" />
-              Logistics & Transportation
-            </li>
-            <li className="flex cursor-pointer flex-col items-center gap-2 transition-colors duration-300 hover:text-cyan-400 hover:scale-105">
-              <FaCar className="text-3xl mb-1" />
-              Automotive AI
-            </li>
-            <li className="flex cursor-pointer flex-col items-center gap-2 transition-colors duration-300 hover:text-pink-400 hover:scale-105">
-              <FaFilm className="text-3xl mb-1" />
-              Media & Entertainment
-            </li>
-            <li className="flex cursor-pointer flex-col items-center gap-2 transition-colors duration-300 hover:text-cyan-400 hover:scale-105">
-              <FaGraduationCap className="text-3xl mb-1" />
-              EdTech & eLearning
-            </li>
-            <li className="flex cursor-pointer flex-col items-center gap-2 transition-colors duration-300 hover:text-pink-400 hover:scale-105">
-              <FaSatelliteDish className="text-3xl mb-1" />
-              Agriculture & Satellite Imaging
-            </li>
-          </ul>
-          <p className="text-slate-400 mt-8 text-center italic">
-            Our versatile experience allows us to adapt quickly to new
-            industries and deliver relevant, impactful solutions.
+      <section className="relative py-32 overflow-hidden">
+        {/* Section Separator */}
+        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
+        
+        {/* Background Elements */}
+        <div className="absolute inset-0 bg-[#0A0A0A]"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-blue-500/5 via-purple-500/5 to-transparent"></div>
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff05_1px,transparent_1px),linear-gradient(to_bottom,#ffffff05_1px,transparent_1px)] bg-[size:4rem_4rem]"></div>
+        
+        <div className="max-w-[1920px] w-full mx-auto px-6 relative z-10">
+          <div className="max-w-7xl mx-auto">
+            {/* Section Header */}
+            <div className="text-center mb-20">
+              <div className="inline-block px-4 py-2 bg-white/5 backdrop-blur-sm rounded-full mb-8 border border-white/10">
+                <span className="text-white/80 text-sm font-medium">Our Expertise</span>
+              </div>
+              <h2 className="text-5xl font-bold mb-8 text-white leading-tight">
+                Industries We{" "}
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400">
+                  Serve
+                </span>
+              </h2>
+              <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+                Empowering diverse sectors with cutting-edge AI and technology solutions.
           </p>
         </div>
-      </section>
 
-      {/* Call to Action Section */}
-      <section className="w-[95%] max-w-5xl mx-auto my-12">
-        <div className=" group relative bg-gradient-to-br from-[#232046]/90 via-[#18122b]/90 to-[#2d234a]/90 backdrop-blur-md border border-[#2d234a]/40 rounded-xl p-6 hover:shadow-2xl transition-all duration-300">
-          <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/10 to-purple-500/10 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-xl" />
-          <div className="relative z-10 text-center flex flex-col items-center gap-5">
-            <HiSparkles className="text-5xl text-cyan-400 mb-2 animate-bounce text-center " />
-            <h3 className="text-3xl font-bold bg-gradient-to-r from-cyan-400 to-pink-400 text-transparent bg-clip-text mb-2 text-center">
-              Let’s Build the Future Together
+            {/* Industries Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+              {[
+                { 
+                  icon: <FaHeartbeat className="w-8 h-8" />, 
+                  text: "Healthcare & Life Sciences",
+                  gradient: "from-blue-500/20 to-purple-500/20",
+                  iconColor: "text-blue-400",
+                  description: "AI-powered diagnostics and patient care solutions"
+                },
+                { 
+                  icon: <FaShoppingCart className="w-8 h-8" />, 
+                  text: "Retail & E-Commerce",
+                  gradient: "from-purple-500/20 to-pink-500/20",
+                  iconColor: "text-purple-400",
+                  description: "Smart retail analytics and personalized shopping"
+                },
+                { 
+                  icon: <FaUniversity className="w-8 h-8" />, 
+                  text: "Finance & Banking",
+                  gradient: "from-blue-500/20 to-pink-500/20",
+                  iconColor: "text-blue-400",
+                  description: "Secure financial transactions and fraud detection"
+                },
+                { 
+                  icon: <FaTruck className="w-8 h-8" />, 
+                  text: "Logistics & Transportation",
+                  gradient: "from-purple-500/20 to-blue-500/20",
+                  iconColor: "text-purple-400",
+                  description: "Optimized supply chain and route planning"
+                },
+                { 
+                  icon: <FaCar className="w-8 h-8" />, 
+                  text: "Automotive AI",
+                  gradient: "from-blue-500/20 to-purple-500/20",
+                  iconColor: "text-blue-400",
+                  description: "Autonomous vehicles and smart mobility"
+                },
+                { 
+                  icon: <FaFilm className="w-8 h-8" />, 
+                  text: "Media & Entertainment",
+                  gradient: "from-purple-500/20 to-pink-500/20",
+                  iconColor: "text-purple-400",
+                  description: "Content analysis and recommendation systems"
+                },
+                { 
+                  icon: <FaGraduationCap className="w-8 h-8" />, 
+                  text: "EdTech & eLearning",
+                  gradient: "from-blue-500/20 to-pink-500/20",
+                  iconColor: "text-blue-400",
+                  description: "Personalized learning and educational analytics"
+                },
+                { 
+                  icon: <FaSatelliteDish className="w-8 h-8" />, 
+                  text: "Agriculture & Satellite Imaging",
+                  gradient: "from-purple-500/20 to-blue-500/20",
+                  iconColor: "text-purple-400",
+                  description: "Precision farming and crop monitoring"
+                },
+              ].map((item, index) => (
+                <div key={index} className="group relative h-[280px] perspective-1000">
+                  <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-3xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
+                  <div className="relative bg-white/5 backdrop-blur-sm rounded-3xl p-8 border border-white/10 overflow-hidden h-full flex flex-col transform transition-all duration-500 group-hover:rotate-y-6 group-hover:rotate-x-6 group-hover:scale-105 hover:shadow-2xl group-hover:animate-wiggle">
+                    <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-blue-500/10 to-purple-500/10 rounded-full blur-2xl transform translate-x-16 -translate-y-16"></div>
+                    <div className="relative flex-1 flex flex-col">
+                      <div className={`w-16 h-16 bg-gradient-to-br ${item.gradient} rounded-2xl flex items-center justify-center mb-6 transform group-hover:scale-110 transition-all duration-300`}>
+                        <div className={item.iconColor}>{item.icon}</div>
+                      </div>
+                      <h3 className="text-xl font-bold mb-3 text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-blue-400 group-hover:to-purple-400 transition-all duration-300">
+                        {item.text}
             </h3>
-            <p className="text-white max-w-2xl text-center mb-2 text-lg">
-              At <span className="font-bold text-cyan-700">MILLENNIUMAI</span>,
-              we don’t just deliver projects — we create value, build
-              partnerships, and drive transformation. Whether you’re building an
-              AI product that requires precise annotated datasets or need a
-              robust digital solution to elevate your business — we are here to
-              support you every step of the way.
-            </p>
-            <p className="text-white max-w-2xl text-center text-lg">
-              <span className="font-semibold">
-                Partner with us to unlock your next stage of growth.
-              </span>
-            </p>
-            <Link to="/contact">
-              <button className="mt-4 px-8 py-3 cursor-pointer bg-gradient-to-r from-cyan-500 to-pink-500 text-white rounded-full font-semibold shadow-lg hover:scale-105 transition flex items-center gap-2 mb-5">
-                <FaRocket className="text-xl" />
-                Get Started
-              </button>
-            </Link>
+                      <p className="text-gray-400 text-sm mb-4 flex-1">{item.description}</p>
+                      <div className="flex items-center text-blue-400 opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 transition-all duration-300 mt-auto">
+                        <span className="text-sm font-medium">Learn More</span>
+                        <svg className="w-4 h-4 ml-2 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
       {/* Contact Section */}
-      <section className="mt-16 mx-auto w-[95%] max-w-8xl">
-        <h2 className="text-center text-3xl sm:text-4xl font-bold font-playfair mb-12 bg-gradient-to-r from-cyan-400 to-pink-400 text-transparent bg-clip-text">
-          Get In Touch
-        </h2>
-
-        <div className="group relative flex flex-col md:flex-row gap-10 bg-gradient-to-br from-[#232046]/90 via-[#18122b]/90 to-[#2d234a]/90 backdrop-blur-md border border-[#2d234a]/40 w-full rounded-xl p-8 shadow-lg transition-all duration-300 hover:shadow-2xl">
-          <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/10 to-purple-500/10 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-xl pointer-events-none" />
-          <div className="flex flex-col gap-6 w-full md:w-1/2 relative z-10">
-            <div className="w-full h-[20rem] rounded-xl shadow-xl overflow-hidden border border-[#2d234a]/40">
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3499.8384334011416!2d77.47539417520481!3d28.69447928126543!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cf22d73537953%3A0xd71a5a10c873f830!2sBalaji%20Enclave%20%2CGovind%20Puram%20Ghaziabad-201013!5e0!3m2!1sen!2sin!4v1749466936086!5m2!1sen!2sin"
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                className="w-full h-full"
-                title="Google Map Location"
-              />
+      <section className="relative py-32 overflow-hidden">
+        {/* Section Separator */}
+        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
+        
+        {/* Background Elements */}
+        <div className="absolute inset-0 bg-[#0A0A0A]"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-blue-500/5 via-purple-500/5 to-transparent"></div>
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff05_1px,transparent_1px),linear-gradient(to_bottom,#ffffff05_1px,transparent_1px)] bg-[size:4rem_4rem]"></div>
+        
+        <div className="max-w-[1920px] w-full mx-auto px-6 relative z-10">
+          <div className="max-w-7xl mx-auto">
+            {/* Section Header */}
+            <div className="text-center mb-20">
+              <div className="inline-block px-4 py-2 bg-white/5 backdrop-blur-sm rounded-full mb-8 border border-white/10">
+                <span className="text-white/80 text-sm font-medium">Get In Touch</span>
+              </div>
+              <h2 className="text-5xl font-bold mb-8 text-white leading-tight">
+                Let's Build Something{" "}
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400">
+                  Amazing
+                </span>
+              </h2>
+              <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+                Ready to transform your ideas into reality? Reach out to us and let's create something extraordinary together.
+              </p>
             </div>
 
-            <div className="group relative bg-gradient-to-br from-[#232046]/90 via-[#18122b]/90 to-[#2d234a]/90 backdrop-blur-md rounded-xl p-8 border border-[#2d234a]/40">
-              <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/10 to-pink-500/10 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-xl" />
-              <div className="relative z-10">
-                <h3 className="font-playfair text-2xl font-bold mb-6 bg-gradient-to-r from-cyan-400 to-pink-400 text-transparent bg-clip-text">
-                  Contact Information
-                </h3>
-                <p className="text-gray-300 mb-8">Let's Get Connected</p>
-
-                <div className="space-y-6">
-                  <a
-                    href="tel:+911234567890"
-                    className="flex items-center gap-4 text-gray-300 group/item hover:text-cyan-400 transition-colors"
-                  >
-                    <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-cyan-500/20 to-pink-500/20 flex items-center justify-center shadow-lg group-hover/item:from-cyan-500/30 group-hover/item:to-pink-500/30 transition-all">
-                      <HiPhone className="w-5 h-5" />
+            <div className="grid lg:grid-cols-2 gap-16">
+              {/* Contact Information */}
+              <div className="space-y-8">
+                <div className="group relative">
+                  <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-3xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
+                  <div className="relative bg-white/5 backdrop-blur-sm rounded-3xl p-8 border border-white/10">
+                    <h3 className="text-3xl font-bold mb-8 text-white">Contact Information</h3>
+                    <div className="space-y-8">
+                      <a href="tel:+919319410265" className="flex items-center gap-6 text-gray-300 hover:text-blue-400 transition-all duration-300 group">
+                        <div className="w-16 h-16 bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-all duration-300">
+                          <HiPhone className="w-8 h-8 text-blue-400" />
                     </div>
                     <div>
-                      <p className="text-sm text-gray-400">Phone</p>
-                      <p className="font-medium">+91 931 941 0265</p>
-                      <p className="font-medium">+91 705 317 1752</p>
+                          <p className="text-sm text-gray-400 mb-1">Phone</p>
+                          <p className="text-xl font-medium text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-blue-400 group-hover:to-purple-400 transition-all duration-300">+91 931 941 0265</p>
+                          <p className="text-xl font-medium text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-blue-400 group-hover:to-purple-400 transition-all duration-300">+91 705 317 1752</p>
                     </div>
                   </a>
 
-                  <a
-                    href="mailto:info@millenniumai.in"
-                    className="flex items-center gap-4 text-gray-300 group/item hover:text-pink-400 transition-colors"
-                  >
-                    <div className="w-12 h-10 rounded-lg bg-gradient-to-br from-pink-500/20 to-purple-500/20 flex items-center justify-center shadow-lg group-hover/item:from-pink-500/30 group-hover/item:to-purple-500/30 transition-all">
-                      <HiMail className="w-5 h-5" />
+                      <a href="mailto:info@millenniumai.in" className="flex items-center gap-6 text-gray-300 hover:text-purple-400 transition-all duration-300 group">
+                        <div className="w-16 h-16 bg-gradient-to-br from-purple-500/20 to-pink-500/20 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-all duration-300">
+                          <HiMail className="w-8 h-8 text-purple-400" />
                     </div>
-                    <div className="flex flex-col w-full">
-                      <p className="text-sm text-gray-400">Email</p>
-                      <p className="font-medium break-all">
-                        info@millenniumai.in
-                      </p>
+                        <div>
+                          <p className="text-sm text-gray-400 mb-1">Email</p>
+                          <p className="text-xl font-medium text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-purple-400 group-hover:to-pink-400 transition-all duration-300">info@millenniumai.in</p>
                     </div>
                   </a>
 
-                  <div className="flex items-center gap-4 text-gray-300 group/item hover:text-purple-400 transition-colors">
-                    <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-purple-500/20 to-cyan-500/20 flex items-center justify-center shadow-lg group-hover/item:from-purple-500/30 group-hover/item:to-cyan-500/30 transition-all">
-                      <HiLocationMarker className="w-5 h-5" />
+                      <div className="flex items-center gap-6 text-gray-300 group">
+                        <div className="w-16 h-16 bg-gradient-to-br from-blue-500/20 to-pink-500/20 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-all duration-300">
+                          <HiLocationMarker className="w-8 h-8 text-blue-400" />
                     </div>
                     <div>
-                      <p className="text-sm text-gray-400">Address</p>
-                      <p className="font-medium">
-                        UGF-02 Krishna Enclave Govindpuram,
-                      </p>
-                      <p className="font-medium">Ghaziabad, UP 201002</p>
+                          <p className="text-sm text-gray-400 mb-1">Address</p>
+                          <p className="text-xl font-medium text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-blue-400 group-hover:to-pink-400 transition-all duration-300">UGF-02 Krishna Enclave Govindpuram,</p>
+                          <p className="text-xl font-medium text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-blue-400 group-hover:to-pink-400 transition-all duration-300">Ghaziabad, UP 201002</p>
                     </div>
                   </div>
+              </div>
+              </div>
+                </div>
 
-                  {/* <a
-              href="https://wa.me/911234567890"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-4 text-gray-300 group/item hover:text-green-400 transition-colors"
-            >
-              <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-green-500/20 to-emerald-500/20 flex items-center justify-center shadow-lg group-hover/item:from-green-500/30 group-hover/item:to-emerald-500/30 transition-all">
-                <FaWhatsapp className="w-5 h-5" />
-              </div>
-              <div>
-                <p className="text-sm text-gray-400">WhatsApp</p>
-                <p className="font-medium">+91 123 456 7890</p>
-              </div>
-            </a> */}
+                {/* Social Media Links */}
+                <div className="group relative">
+                  <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 to-pink-500/10 rounded-3xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
+                  <div className="relative bg-white/5 backdrop-blur-sm rounded-3xl p-8 border border-white/10">
+                    <h3 className="text-2xl font-bold mb-6 text-white">Connect With Us</h3>
+                    <div className="flex gap-4">
+                      <a href="#" className="w-12 h-12 bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-xl flex items-center justify-center group-hover:scale-110 transition-all duration-300">
+                        <FaWhatsapp className="w-6 h-6 text-blue-400" />
+                      </a>
+                      <a href="#" className="w-12 h-12 bg-gradient-to-br from-purple-500/20 to-pink-500/20 rounded-xl flex items-center justify-center group-hover:scale-110 transition-all duration-300">
+                        <svg className="w-6 h-6 text-purple-400" fill="currentColor" viewBox="0 0 24 24">
+                          <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/>
+                        </svg>
+                      </a>
+                      <a href="#" className="w-12 h-12 bg-gradient-to-br from-blue-500/20 to-pink-500/20 rounded-xl flex items-center justify-center group-hover:scale-110 transition-all duration-300">
+                        <svg className="w-6 h-6 text-blue-400" fill="currentColor" viewBox="0 0 24 24">
+                          <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                        </svg>
+                      </a>
                 </div>
               </div>
             </div>
           </div>
 
-          <div className="w-full md:w-1/2 p-8 bg-transparent rounded-xl relative z-10">
-            <h2 className="text-4xl font-bold mb-8 text-white">Contact Us</h2>
-
-            <form className="flex flex-col gap-6" onSubmit={handleSubmit}>
+              {/* Contact Form */}
+              <div className="group relative">
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-3xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
+                <div className="relative bg-white/5 backdrop-blur-sm rounded-3xl p-8 border border-white/10">
+                  <h3 className="text-3xl font-bold mb-8 text-white">Send us a Message</h3>
+                  <form onSubmit={handleSubmit} className="space-y-6">
+                    <div className="grid md:grid-cols-2 gap-6">
+                      <div className="group relative">
               <input
                 type="text"
                 placeholder="First Name"
@@ -913,60 +852,74 @@ const Home = () => {
                 value={form.first_name}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-3 bg-transparent border-b-2 border-white text-white placeholder-white focus:outline-none focus:border-cyan-400 transition-colors"
+                          className="w-full px-6 py-4 bg-white/5 border border-white/10 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-lg text-white placeholder-gray-400 transition-all duration-300"
               />
-
+                        <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10"></div>
+                      </div>
+                      <div className="group relative">
               <input
                 type="text"
                 placeholder="Last Name"
+                          name="last_name"
                 value={form.last_name}
                 onChange={handleChange}
-                name="last_name"
                 required
-                className="w-full px-4 py-3 bg-transparent border-b-2 border-white text-white placeholder-white focus:outline-none focus:border-pink-400 transition-colors"
+                          className="w-full px-6 py-4 bg-white/5 border border-white/10 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent text-lg text-white placeholder-gray-400 transition-all duration-300"
               />
-
+                        <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 to-pink-500/10 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10"></div>
+                      </div>
+                    </div>
+                    <div className="group relative">
               <input
                 type="email"
                 placeholder="Email"
+                        name="email"
                 value={form.email}
                 onChange={handleChange}
-                name="email"
                 required
-                className="w-full px-4 py-3 bg-transparent border-b-2 border-white text-white placeholder-white focus:outline-none focus:border-cyan-400 transition-colors"
+                        className="w-full px-6 py-4 bg-white/5 border border-white/10 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-lg text-white placeholder-gray-400 transition-all duration-300"
               />
-
+                      <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10"></div>
+                    </div>
+                    <div className="group relative">
               <input
                 type="tel"
                 placeholder="Contact Number"
+                        name="contactno"
                 value={form.contactno}
                 onChange={handleChange}
-                name="contactno"
                 required
-                className="w-full px-4 py-3 bg-transparent border-b-2 border-white text-white placeholder-white focus:outline-none focus:border-pink-400 transition-colors"
+                        className="w-full px-6 py-4 bg-white/5 border border-white/10 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent text-lg text-white placeholder-gray-400 transition-all duration-300"
               />
-
+                      <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 to-pink-500/10 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10"></div>
+                    </div>
+                    <div className="group relative">
               <textarea
                 placeholder="Message"
-                rows="4"
-                required
+                        name="message"
                 value={form.message}
                 onChange={handleChange}
-                name="message"
-                className="w-full px-4 py-3 bg-transparent border-b-2 border-white text-white placeholder-white focus:outline-none focus:border-cyan-400 transition-colors resize-none"
+                        required
+                        rows="4"
+                        className="w-full px-6 py-4 bg-white/5 border border-white/10 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-none text-lg text-white placeholder-gray-400 transition-all duration-300"
               ></textarea>
-
+                      <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10"></div>
+                    </div>
               <button
                 type="submit"
-                className="px-8 py-3 text-white bg-gradient-to-r from-cyan-400 to-pink-400 cursor-pointer rounded-full font-semibold hover:bg-cyan-500/90 hover:to-pink-500/90 transition-colors shadow-lg"
+                      className="w-full px-8 py-5 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-white rounded-xl font-semibold text-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 relative overflow-hidden group"
               >
-                {loading ? "Sending..." : "Send Message"}
+                      <span className="relative z-10">{loading ? "Sending..." : "Send Message"}</span>
+                      <div className="absolute inset-0 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </button>
             </form>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
-    </section>
+    </div>
   );
 };
 
