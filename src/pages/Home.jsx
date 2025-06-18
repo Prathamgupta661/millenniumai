@@ -857,7 +857,7 @@ const Home = () => {
                   <div className="grid grid-cols-2 gap-6 mb-8">
                     <div className="bg-white/5 rounded-2xl p-6 text-center">
                       <div className="text-4xl font-bold text-white mb-2">
-                        500+
+                        25+
                       </div>
                       <div className="text-gray-400">Projects Completed</div>
                     </div>
@@ -875,7 +875,7 @@ const Home = () => {
                     </div>
                     <div className="bg-white/5 rounded-2xl p-6 text-center">
                       <div className="text-4xl font-bold text-white mb-2">
-                        50+
+                        25+
                       </div>
                       <div className="text-gray-400">Team Members</div>
                     </div>
