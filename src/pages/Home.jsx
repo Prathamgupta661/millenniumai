@@ -1,5 +1,4 @@
-import img1 from "../assets/home_img_1.webp";
-import img2 from "../assets/homeimg1.jpg";
+import img2 from "../assets/homeimg2.jpg";
 import React, { useEffect, useState } from "react";
 import App from "../assets/App.jpg";
 import Ai from "../assets/AiSol.jpg";
@@ -1098,11 +1097,9 @@ const Home = () => {
                         <div>
                           <p className="text-sm text-gray-400 mb-1">Phone</p>
                           <p className="text-xl font-medium text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-blue-400 group-hover:to-purple-400 transition-all duration-300">
-                            +91 931 941 0265
+                            +91 837 798 8481
                           </p>
-                          <p className="text-xl font-medium text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-blue-400 group-hover:to-purple-400 transition-all duration-300">
-                            +91 705 317 1752
-                          </p>
+                          
                         </div>
                       </a>
 
@@ -1117,6 +1114,9 @@ const Home = () => {
                           <p className="text-sm text-gray-400 mb-1">Email</p>
                           <p className="text-xl font-medium text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-purple-400 group-hover:to-pink-400 transition-all duration-300">
                             info@millenniumai.in
+                          </p>
+                          <p className="text-xl font-medium text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-purple-400 group-hover:to-pink-400 transition-all duration-300">
+                            Sales@millenniumai.in
                           </p>
                         </div>
                       </a>
