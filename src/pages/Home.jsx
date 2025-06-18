@@ -1,9 +1,11 @@
 import img2 from "../assets/homeimg2.jpg";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import App from "../assets/App.jpg";
 import Ai from "../assets/AiSol.jpg";
 import web from "../assets/web.svg";
 import expert from "../assets/expert.avif";
+import homeimg1 from "../assets/homeimg1.jpg";
+import about from "../assets/about.webp";
 import emailjs from "@emailjs/browser";
 import { TypeAnimation } from "react-type-animation";
 import { Link } from "react-router-dom";
@@ -30,6 +32,12 @@ import ServiceCard from "../components/ServiceCard";
 
 const Home = () => {
   const [animate, setAnimate] = useState(false);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [isDragging, setIsDragging] = useState(false);
+  const [dragStartX, setDragStartX] = useState(0);
+  const [dragOffset, setDragOffset] = useState(0);
+  const carouselRef = useRef(null);
+  
   const [form, setForm] = useState({
     first_name: "",
     last_name: "",
@@ -38,6 +46,46 @@ const Home = () => {
     message: "",
   });
   const [loading, setLoading] = useState(false);
+
+  // Image carousel data
+  const carouselImages = [
+    {
+      src: img2,
+      alt: "AI Technology",
+      title: "AI Solutions",
+      description: "Cutting-edge artificial intelligence"
+    },
+    {
+      src: web,
+      alt: "Web Development",
+      title: "Web Development",
+      description: "Modern web applications"
+    },
+    {
+      src: App,
+      alt: "App Development",
+      title: "Mobile Apps",
+      description: "Cross-platform development"
+    },
+    {
+      src: Ai,
+      alt: "AI Solutions",
+      title: "Machine Learning",
+      description: "Advanced AI algorithms"
+    },
+    {
+      src: homeimg1,
+      alt: "Innovation",
+      title: "Innovation Hub",
+      description: "Next-gen technology"
+    },
+    {
+      src: about,
+      alt: "About Us",
+      title: "Our Team",
+      description: "Expert developers"
+    }
+  ];
 
   const handleChange = (e) => {
     const { target } = e;
@@ -86,6 +134,94 @@ const Home = () => {
         }
       );
   };
+
+  // Drag handlers
+  const handleMouseDown = (e) => {
+    setIsDragging(true);
+    setDragStartX(e.clientX);
+    setDragOffset(0);
+  };
+
+  const handleMouseMove = (e) => {
+    if (!isDragging) return;
+    
+    const currentX = e.clientX;
+    const diff = currentX - dragStartX;
+    setDragOffset(diff);
+  };
+
+  const handleMouseUp = () => {
+    if (!isDragging) return;
+    
+    setIsDragging(false);
+    
+    // Determine direction and change image
+    if (Math.abs(dragOffset) > 50) {
+      if (dragOffset > 0) {
+        // Swipe right - previous image
+        setCurrentImageIndex(prev => 
+          prev === 0 ? carouselImages.length - 1 : prev - 1
+        );
+      } else {
+        // Swipe left - next image
+        setCurrentImageIndex(prev => 
+          prev === carouselImages.length - 1 ? 0 : prev + 1
+        );
+      }
+    }
+    
+    setDragOffset(0);
+  };
+
+  const handleTouchStart = (e) => {
+    setIsDragging(true);
+    setDragStartX(e.touches[0].clientX);
+    setDragOffset(0);
+  };
+
+  const handleTouchMove = (e) => {
+    if (!isDragging) return;
+    
+    const currentX = e.touches[0].clientX;
+    const diff = currentX - dragStartX;
+    setDragOffset(diff);
+  };
+
+  const handleTouchEnd = () => {
+    if (!isDragging) return;
+    
+    setIsDragging(false);
+    
+    // Determine direction and change image
+    if (Math.abs(dragOffset) > 50) {
+      if (dragOffset > 0) {
+        // Swipe right - previous image
+        setCurrentImageIndex(prev => 
+          prev === 0 ? carouselImages.length - 1 : prev - 1
+        );
+      } else {
+        // Swipe left - next image
+        setCurrentImageIndex(prev => 
+          prev === carouselImages.length - 1 ? 0 : prev + 1
+        );
+      }
+    }
+    
+    setDragOffset(0);
+  };
+
+  // Auto-advance carousel
+  useEffect(() => {
+    const interval = setInterval(() => {
+      if (!isDragging) {
+        setCurrentImageIndex(prev => 
+          prev === carouselImages.length - 1 ? 0 : prev + 1
+        );
+      }
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, [isDragging, carouselImages.length]);
 
   useEffect(() => {
     setTimeout(() => setAnimate(true), 100);
@@ -203,18 +339,211 @@ const Home = () => {
                 </div>
               </div>
 
-              {/* Right Column - 3D Card */}
+              {/* Right Column - Drag & Drop Image Carousel */}
               <div className="relative hidden lg:block">
                 <div className="relative w-full aspect-square">
-                  <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 via-purple-500/20 to-pink-500/20 rounded-3xl transform rotate-6 transition-transform duration-500 group-hover:rotate-12"></div>
-                  <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 via-purple-500/10 to-pink-500/10 rounded-3xl transform -rotate-6 transition-transform duration-500 group-hover:-rotate-12"></div>
+                  {/* Dynamic Background Stacks */}
+                  <div className="absolute inset-0 transition-all duration-1000 ease-out">
+                    {/* Stack 1 - Changes with image */}
+                    <div 
+                      className={`absolute inset-0 rounded-3xl transform transition-all duration-1000 ease-out ${
+                        currentImageIndex === 0 
+                          ? 'bg-gradient-to-br from-blue-500/30 via-purple-500/20 to-pink-500/30 rotate-6 scale-105' 
+                          : currentImageIndex === 1
+                          ? 'bg-gradient-to-br from-purple-500/30 via-pink-500/20 to-blue-500/30 -rotate-6 scale-110'
+                          : currentImageIndex === 2
+                          ? 'bg-gradient-to-br from-pink-500/30 via-blue-500/20 to-purple-500/30 rotate-12 scale-95'
+                          : currentImageIndex === 3
+                          ? 'bg-gradient-to-br from-green-500/30 via-blue-500/20 to-purple-500/30 -rotate-12 scale-105'
+                          : currentImageIndex === 4
+                          ? 'bg-gradient-to-br from-orange-500/30 via-pink-500/20 to-blue-500/30 rotate-8 scale-110'
+                          : 'bg-gradient-to-br from-indigo-500/30 via-purple-500/20 to-pink-500/30 -rotate-8 scale-95'
+                      }`}
+                    ></div>
+                    
+                    {/* Stack 2 - Complementary animation */}
+                    <div 
+                      className={`absolute inset-0 rounded-3xl transform transition-all duration-1000 ease-out delay-200 ${
+                        currentImageIndex === 0 
+                          ? 'bg-gradient-to-br from-purple-500/20 via-pink-500/10 to-blue-500/20 -rotate-8 scale-95' 
+                          : currentImageIndex === 1
+                          ? 'bg-gradient-to-br from-pink-500/20 via-blue-500/10 to-purple-500/20 rotate-8 scale-105'
+                          : currentImageIndex === 2
+                          ? 'bg-gradient-to-br from-blue-500/20 via-purple-500/10 to-pink-500/20 -rotate-12 scale-110'
+                          : currentImageIndex === 3
+                          ? 'bg-gradient-to-br from-purple-500/20 via-green-500/10 to-blue-500/20 rotate-6 scale-95'
+                          : currentImageIndex === 4
+                          ? 'bg-gradient-to-br from-blue-500/20 via-orange-500/10 to-pink-500/20 -rotate-10 scale-105'
+                          : 'bg-gradient-to-br from-pink-500/20 via-indigo-500/10 to-purple-500/20 rotate-10 scale-110'
+                      }`}
+                    ></div>
+                    
+                    {/* Stack 3 - Additional layer */}
+                    <div 
+                      className={`absolute inset-0 rounded-3xl transform transition-all duration-1000 ease-out delay-400 ${
+                        currentImageIndex === 0 
+                          ? 'bg-gradient-to-br from-pink-500/15 via-blue-500/10 to-purple-500/15 rotate-12 scale-110' 
+                          : currentImageIndex === 1
+                          ? 'bg-gradient-to-br from-blue-500/15 via-purple-500/10 to-pink-500/15 -rotate-6 scale-95'
+                          : currentImageIndex === 2
+                          ? 'bg-gradient-to-br from-purple-500/15 via-pink-500/10 to-blue-500/15 rotate-8 scale-105'
+                          : currentImageIndex === 3
+                          ? 'bg-gradient-to-br from-green-500/15 via-purple-500/10 to-blue-500/15 -rotate-8 scale-110'
+                          : currentImageIndex === 4
+                          ? 'bg-gradient-to-br from-orange-500/15 via-blue-500/10 to-pink-500/15 rotate-10 scale-95'
+                          : 'bg-gradient-to-br from-indigo-500/15 via-pink-500/10 to-purple-500/15 -rotate-10 scale-105'
+                      }`}
+                    ></div>
+                  </div>
+
+                  {/* Animated Particles */}
+                  <div className="absolute inset-0 overflow-hidden rounded-3xl">
+                    {[...Array(8)].map((_, i) => (
+                      <div
+                        key={i}
+                        className={`absolute w-2 h-2 bg-white/20 rounded-full animate-pulse transition-all duration-1000 ${
+                          currentImageIndex === 0 
+                            ? 'animate-float-blue' 
+                            : currentImageIndex === 1
+                            ? 'animate-float-purple'
+                            : currentImageIndex === 2
+                            ? 'animate-float-pink'
+                            : currentImageIndex === 3
+                            ? 'animate-float-green'
+                            : currentImageIndex === 4
+                            ? 'animate-float-orange'
+                            : 'animate-float-indigo'
+                        }`}
+                        style={{
+                          left: `${20 + (i * 10)}%`,
+                          top: `${15 + (i * 8)}%`,
+                          animationDelay: `${i * 0.2}s`,
+                          animationDuration: `${3 + (i * 0.5)}s`
+                        }}
+                      ></div>
+                    ))}
+                  </div>
+
+                  {/* Glowing Orbs that change with image */}
+                  <div className="absolute inset-0 overflow-hidden rounded-3xl">
+                    <div 
+                      className={`absolute w-32 h-32 rounded-full filter blur-2xl transition-all duration-1000 ease-out ${
+                        currentImageIndex === 0 
+                          ? 'bg-blue-500/40 top-1/4 -left-16 animate-pulse' 
+                          : currentImageIndex === 1
+                          ? 'bg-purple-500/40 top-1/3 -right-16 animate-pulse delay-300'
+                          : currentImageIndex === 2
+                          ? 'bg-pink-500/40 bottom-1/4 -left-16 animate-pulse delay-600'
+                          : currentImageIndex === 3
+                          ? 'bg-green-500/40 top-1/2 -right-20 animate-pulse delay-900'
+                          : currentImageIndex === 4
+                          ? 'bg-orange-500/40 bottom-1/3 -left-20 animate-pulse delay-1200'
+                          : 'bg-indigo-500/40 top-1/4 -right-20 animate-pulse delay-1500'
+                      }`}
+                    ></div>
+                    <div 
+                      className={`absolute w-24 h-24 rounded-full filter blur-xl transition-all duration-1000 ease-out delay-500 ${
+                        currentImageIndex === 0 
+                          ? 'bg-purple-500/30 bottom-1/4 -right-12 animate-pulse delay-500' 
+                          : currentImageIndex === 1
+                          ? 'bg-pink-500/30 top-1/4 -left-12 animate-pulse delay-800'
+                          : currentImageIndex === 2
+                          ? 'bg-blue-500/30 top-1/3 -right-12 animate-pulse delay-1100'
+                          : currentImageIndex === 3
+                          ? 'bg-purple-500/30 bottom-1/3 -left-12 animate-pulse delay-1400'
+                          : currentImageIndex === 4
+                          ? 'bg-green-500/30 top-1/2 -right-12 animate-pulse delay-1700'
+                          : 'bg-orange-500/30 bottom-1/4 -left-12 animate-pulse delay-2000'
+                      }`}
+                    ></div>
+                  </div>
+
                   <div className="relative bg-white/5 backdrop-blur-sm rounded-3xl p-8 border border-white/10 shadow-2xl">
-                    <div className="aspect-square rounded-2xl overflow-hidden">
-                      <img
-                        src={img2}
-                        alt="AI Technology"
-                        className="w-full h-full object-cover transform hover:scale-110 transition-transform duration-500"
-                      />
+                    {/* Drag & Drop Carousel */}
+                    <div 
+                      ref={carouselRef}
+                      className="aspect-square rounded-2xl overflow-hidden relative cursor-grab active:cursor-grabbing"
+                      onMouseDown={handleMouseDown}
+                      onMouseMove={handleMouseMove}
+                      onMouseUp={handleMouseUp}
+                      onMouseLeave={handleMouseUp}
+                      onTouchStart={handleTouchStart}
+                      onTouchMove={handleTouchMove}
+                      onTouchEnd={handleTouchEnd}
+                    >
+                      {/* Main Image */}
+                      <div 
+                        className="w-full h-full transition-transform duration-300 ease-out"
+                        style={{
+                          transform: `translateX(${dragOffset}px)`,
+                        }}
+                      >
+                        <img
+                          src={carouselImages[currentImageIndex].src}
+                          alt={carouselImages[currentImageIndex].alt}
+                          className="w-full h-full object-cover"
+                        />
+                        
+                        {/* Image Overlay with Info */}
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent flex items-end">
+                          <div className="p-6 w-full">
+                            <h3 className="text-2xl font-bold text-white mb-2">
+                              {carouselImages[currentImageIndex].title}
+                            </h3>
+                            <p className="text-gray-200 text-sm">
+                              {carouselImages[currentImageIndex].description}
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* Navigation Dots */}
+                      <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
+                        {carouselImages.map((_, index) => (
+                          <button
+                            key={index}
+                            onClick={() => setCurrentImageIndex(index)}
+                            className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                              index === currentImageIndex
+                                ? 'bg-white scale-125'
+                                : 'bg-white/40 hover:bg-white/60'
+                            }`}
+                          />
+                        ))}
+                      </div>
+
+                      {/* Drag Instructions */}
+                      <div className="absolute top-4 right-4 bg-black/50 backdrop-blur-sm rounded-lg px-3 py-2">
+                        <div className="flex items-center space-x-2 text-white text-sm">
+                          <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
+                          </svg>
+                          <span>Drag to change</span>
+                        </div>
+                      </div>
+
+                      {/* Previous/Next Buttons */}
+                      <button
+                        onClick={() => setCurrentImageIndex(prev => 
+                          prev === 0 ? carouselImages.length - 1 : prev - 1
+                        )}
+                        className="absolute left-4 top-1/2 transform -translate-y-1/2 w-10 h-10 bg-black/50 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-black/70 transition-all duration-300"
+                      >
+                        <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                        </svg>
+                      </button>
+                      
+                      <button
+                        onClick={() => setCurrentImageIndex(prev => 
+                          prev === carouselImages.length - 1 ? 0 : prev + 1
+                        )}
+                        className="absolute right-4 top-1/2 transform -translate-y-1/2 w-10 h-10 bg-black/50 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-black/70 transition-all duration-300"
+                      >
+                        <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                        </svg>
+                      </button>
                     </div>
                   </div>
                 </div>
