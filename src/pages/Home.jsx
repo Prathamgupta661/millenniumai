@@ -1,9 +1,10 @@
 import img1 from "../assets/home_img_1.webp";
+import img2 from "../assets/homeimg1.jpg";
 import React, { useEffect, useState } from "react";
 import App from "../assets/App.jpg";
-import Ai from '../assets/AiSol.jpg';
-import web from '../assets/web.jpg';
-import expert from '../assets/expert.avif';
+import Ai from "../assets/AiSol.jpg";
+import web from "../assets/web.svg";
+import expert from "../assets/expert.avif";
 import emailjs from "@emailjs/browser";
 import { TypeAnimation } from "react-type-animation";
 import { Link } from "react-router-dom";
@@ -70,7 +71,7 @@ const Home = () => {
       .then(
         () => {
           setLoading(false);
-          alert("Thank you. I will get back to you as soon as possible.");
+          alert("Thank you. We will get back to you as soon as possible.");
           setForm({
             first_name: "",
             last_name: "",
@@ -137,16 +138,16 @@ const Home = () => {
                   <TypeAnimation
                     sequence={[
                       "Precision Annotation",
-                      4000,
+                      2000,
                       "Full-Stack Development",
-                      4000,
+                      2000,
                       "AI Solutions",
-                      4000,
+                      2000,
                       "Smart Tech",
-                      4000,
+                      2000,
                     ]}
                     wrapper="span"
-                    speed={20}
+                    speed={30}
                     repeat={Infinity}
                     className="text-3xl md:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400"
                   />
@@ -173,7 +174,7 @@ const Home = () => {
                 </div>
 
                 {/* Stats */}
-                <div className="grid grid-cols-3 gap-8 mt-16">
+                <div className="grid md:grid-cols-4  grid-cols-2 gap-8 mt-16">
                   <div className="text-center">
                     <div className="text-3xl font-bold text-white mb-2">
                       99%
@@ -182,7 +183,13 @@ const Home = () => {
                   </div>
                   <div className="text-center">
                     <div className="text-3xl font-bold text-white mb-2">
-                      500+
+                      5+
+                    </div>
+                    <div className="text-sm text-gray-400">OnGoing Projects</div>
+                  </div>
+                  <div className="text-center">
+                    <div className="text-3xl font-bold text-white mb-2">
+                      25+
                     </div>
                     <div className="text-sm text-gray-400">
                       Projects Completed
@@ -205,7 +212,7 @@ const Home = () => {
                   <div className="relative bg-white/5 backdrop-blur-sm rounded-3xl p-8 border border-white/10 shadow-2xl">
                     <div className="aspect-square rounded-2xl overflow-hidden">
                       <img
-                        src={img1}
+                        src={img2}
                         alt="AI Technology"
                         className="w-full h-full object-cover transform hover:scale-110 transition-transform duration-500"
                       />
@@ -287,14 +294,21 @@ const Home = () => {
                         measurable results.
                       </p>
                       <div className="flex flex-wrap justify-end gap-4">
-                        <span className="px-4 py-2 bg-blue-500/10 rounded-full text-blue-400 text-sm">
-                          React
+                        <span className="px-4 cursor-pointer py-2 bg-blue-500/10 rounded-full text-blue-400 text-sm">
+                          Mordern Web Apps
                         </span>
-                        <span className="px-4 py-2 bg-purple-500/10 rounded-full text-purple-400 text-sm">
-                          Node.js
+                        <span className="px-4 cursor-pointer py-2 bg-purple-500/10 rounded-full text-purple-400 text-sm">
+                          Business and Corporate Websites
                         </span>
-                        <span className="px-4 py-2 bg-pink-500/10 rounded-full text-pink-400 text-sm">
-                          Next.js
+                
+                        <span className="px-4 cursor-pointer py-2 bg-blue-500/10 rounded-full text-blue-400 text-sm">
+                          Ecommerce
+                        </span>
+                        <span className="px-4 cursor-pointer py-2 bg-purple-500/10 rounded-full text-purple-400 text-sm">
+                          CMS
+                        </span>
+                        <span className="px-4 cursor-pointer py-2 bg-pink-500/10 rounded-full text-pink-400 text-sm">
+                          Landing Pages
                         </span>
                       </div>
                     </div>
@@ -341,14 +355,23 @@ const Home = () => {
                         provide exceptional user experiences.
                       </p>
                       <div className="flex flex-wrap gap-4">
-                        <span className="px-4 py-2 bg-purple-500/10 rounded-full text-purple-400 text-sm">
+                        <span className="px-4 cursor-pointer py-2 bg-purple-500/10 rounded-full text-purple-400 text-sm">
                           React Native
                         </span>
-                        <span className="px-4 py-2 bg-pink-500/10 rounded-full text-pink-400 text-sm">
+                        <span className="px-4 cursor-pointer py-2 bg-pink-500/10 rounded-full text-pink-400 text-sm">
                           Flutter
                         </span>
-                        <span className="px-4 py-2 bg-blue-500/10 rounded-full text-blue-400 text-sm">
+                        <span className="px-4 cursor-pointer py-2 bg-blue-500/10 rounded-full text-blue-400 text-sm">
                           iOS/Android
+                        </span>
+                        <span className="px-4 cursor-pointer py-2 bg-purple-500/10 rounded-full text-purple-400 text-sm">
+                          Real Time Features
+                        </span>
+                        <span className="px-4 cursor-pointer py-2 bg-pink-500/10 rounded-full text-pink-400 text-sm">
+                          Cross Platform
+                        </span>
+                        <span className="px-4 cursor-pointer py-2 bg-blue-500/10 rounded-full text-blue-400 text-sm">
+                          Offline Capability
                         </span>
                       </div>
                     </div>
@@ -365,18 +388,26 @@ const Home = () => {
                         </h3>
                       </div>
                       <p className="text-lg text-gray-300 mb-6">
-                        Cutting-edge AI services that power next-generation
-                        applications.
+                        Cutting-edge AI services that power next-generation applications and Unlock the potential of artificial intelligence.  
                       </p>
                       <div className="flex flex-wrap justify-end gap-4">
-                        <span className="px-4 py-2 bg-blue-500/10 rounded-full text-blue-400 text-sm">
-                          Machine Learning
-                        </span>
-                        <span className="px-4 py-2 bg-pink-500/10 rounded-full text-pink-400 text-sm">
-                          Deep Learning
-                        </span>
-                        <span className="px-4 py-2 bg-purple-500/10 rounded-full text-purple-400 text-sm">
+                        <span className="px-4 cursor-pointer py-2 bg-blue-500/10 rounded-full text-blue-400 text-sm">
                           NLP
+                        </span>
+                        <span className="px-4 cursor-pointer py-2 bg-pink-500/10 rounded-full text-pink-400 text-sm">
+                          Genrative AI
+                        </span>
+                        <span className="px-4 cursor-pointer py-2 bg-purple-500/10 rounded-full text-purple-400 text-sm">
+                          Data Processing
+                        </span>
+                        <span className="px-4 cursor-pointer py-2 bg-blue-500/10 rounded-full text-blue-400 text-sm">
+                          Computer Vision
+                        </span>
+                        <span className="px-4 cursor-pointer py-2 bg-pink-500/10 rounded-full text-pink-400 text-sm">
+                          Content Moderation
+                        </span>
+                        <span className="px-4 cursor-pointer py-2 bg-purple-500/10 rounded-full text-purple-400 text-sm">
+                          Document Processing
                         </span>
                       </div>
                     </div>
@@ -494,7 +525,7 @@ const Home = () => {
                     </div>
                     <div className="aspect-video rounded-2xl overflow-hidden mb-5 mt-8">
                       <img
-                      loading="lazy"
+                        loading="lazy"
                         src={web}
                         alt="Web Development"
                         className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
@@ -573,7 +604,7 @@ const Home = () => {
                     </div>
                     <div className="aspect-video rounded-2xl overflow-hidden mb-6">
                       <img
-                      loading="lazy"
+                        loading="lazy"
                         src={App}
                         alt="App Development"
                         className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
@@ -652,7 +683,7 @@ const Home = () => {
                     </div>
                     <div className="aspect-video rounded-2xl overflow-hidden mb-6 mt-6">
                       <img
-                      loading="lazy"
+                        loading="lazy"
                         src={Ai}
                         alt="AI Solutions"
                         className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
@@ -738,13 +769,13 @@ const Home = () => {
                           accuracy.
                         </p>
                         <div className="flex flex-wrap gap-3">
-                          <span className="px-4 py-2 bg-blue-500/10 rounded-full text-blue-400 text-sm">
+                          <span className="px-4 cursor-pointer py-2 bg-blue-500/10 rounded-full text-blue-400 text-sm">
                             99–100% Accuracy
                           </span>
-                          <span className="px-4 py-2 bg-purple-500/10 rounded-full text-purple-400 text-sm">
+                          <span className="px-4 cursor-pointer py-2 bg-purple-500/10 rounded-full text-purple-400 text-sm">
                             Expert QA Teams
                           </span>
-                          <span className="px-4 py-2 bg-pink-500/10 rounded-full text-pink-400 text-sm">
+                          <span className="px-4 cursor-pointer py-2 bg-pink-500/10 rounded-full text-pink-400 text-sm">
                             Bug-Free Code
                           </span>
                         </div>
@@ -770,13 +801,13 @@ const Home = () => {
                           full-fledged mobile application, we deliver fast.
                         </p>
                         <div className="flex flex-wrap gap-3">
-                          <span className="px-4 py-2 bg-purple-500/10 rounded-full text-purple-400 text-sm">
+                          <span className="px-4 cursor-pointer py-2 bg-purple-500/10 rounded-full text-purple-400 text-sm">
                             Rapid Delivery
                           </span>
-                          <span className="px-4 py-2 bg-pink-500/10 rounded-full text-pink-400 text-sm">
+                          <span className="px-4 cursor-pointer py-2 bg-pink-500/10 rounded-full text-pink-400 text-sm">
                             Scalable Teams
                           </span>
-                          <span className="px-4 py-2 bg-blue-500/10 rounded-full text-blue-400 text-sm">
+                          <span className="px-4 cursor-pointer py-2 bg-blue-500/10 rounded-full text-blue-400 text-sm">
                             24/7 Support
                           </span>
                         </div>
@@ -802,13 +833,13 @@ const Home = () => {
                           to align perfectly with your vision.
                         </p>
                         <div className="flex flex-wrap gap-3">
-                          <span className="px-4 py-2 bg-blue-500/10 rounded-full text-blue-400 text-sm">
+                          <span className="px-4 cursor-pointer py-2 bg-blue-500/10 rounded-full text-blue-400 text-sm">
                             Tailored Solutions
                           </span>
-                          <span className="px-4 py-2 bg-pink-500/10 rounded-full text-pink-400 text-sm">
+                          <span className="px-4 cursor-pointer py-2 bg-pink-500/10 rounded-full text-pink-400 text-sm">
                             Industry Standards
                           </span>
-                          <span className="px-4 py-2 bg-purple-500/10 rounded-full text-purple-400 text-sm">
+                          <span className="px-4 cursor-pointer py-2 bg-purple-500/10 rounded-full text-purple-400 text-sm">
                             Future-Ready
                           </span>
                         </div>
@@ -854,7 +885,7 @@ const Home = () => {
                   <div className="relative aspect-video rounded-2xl overflow-hidden group">
                     <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 via-purple-500/20 to-pink-500/20 group-hover:opacity-75 transition-opacity duration-300"></div>
                     <img
-                    loading="lazy"
+                      loading="lazy"
                       src={expert}
                       alt="Our Team"
                       className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"

@@ -173,7 +173,7 @@ const Services = () => {
               {/* Stats Grid */}
               <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
                 {[
-                  { number: "500+", label: "Projects" },
+                  { number: "25+", label: "Projects" },
                   { number: "99%", label: "Satisfaction" },
                   { number: "24/7", label: "Support" },
                   { number: "50+", label: "Experts" }
@@ -497,7 +497,7 @@ const Services = () => {
                       99%
                     </div>
                     <div className="text-2xl text-white mb-2">Client Satisfaction</div>
-                    <div className="text-gray-400">Across 500+ Projects</div>
+                    <div className="text-gray-400">Across 25+ Projects</div>
                   </div>
                 </div>
               </div>
@@ -587,10 +587,10 @@ const Services = () => {
               <div className="mt-20">
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
                   {[
-                    { number: "500+", label: "Projects Completed", color: "blue" },
+                    { number: "25+", label: "Projects Completed", color: "blue" },
                     { number: "99%", label: "Client Satisfaction", color: "purple" },
                     { number: "24/7", label: "Support Available", color: "pink" },
-                    { number: "50+", label: "Team Members", color: "blue" }
+                    { number: "25+", label: "Team Members", color: "blue" }
                   ].map((stat, index) => (
                     <div key={index} className="group relative">
                       <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 via-purple-500/10 to-pink-500/10 rounded-3xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>

@@ -54,7 +54,7 @@ const AboutBanner = ({ title, buttonText, buttonLink, image, icon: Icon }) => (
               {/* Stats Grid */}
               <div className="grid grid-cols-2 gap-6 mb-12">
                 {[
-                  { number: "500+", label: "Projects" },
+                  { number: "25+", label: "Projects" },
                   { number: "99%", label: "Satisfaction" },
                   { number: "24/7", label: "Support" },
                   { number: "50+", label: "Experts" }
@@ -120,7 +120,7 @@ const AboutBanner = ({ title, buttonText, buttonLink, image, icon: Icon }) => (
                       <FaRocket className="w-5 h-5 text-purple-400" />
                     </div>
                     <div>
-                      <div className="text-white font-semibold">500+ Projects</div>
+                      <div className="text-white font-semibold">25+ Projects</div>
                       <div className="text-gray-400 text-sm">Successfully Delivered</div>
                     </div>
                   </div>
@@ -187,7 +187,7 @@ const About = () => {
                 </span>
               </h2>
               <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-                At <span className="font-bold text-cyan-400">MILLENNIUMAI</span>, we are more than just a technology service provider — we are a strategic partner in your digital evolution.
+                At <span className="font-bold text-cyan-400">MillenniumAi</span>, we are more than just a technology service provider — we are a strategic partner in your digital evolution.
               </p>
             </div>
 
@@ -227,7 +227,7 @@ const About = () => {
                   {/* Stats Grid */}
                   <div className="grid grid-cols-2 gap-6 mb-8">
                     <div className="bg-white/5 rounded-2xl p-6 text-center">
-                      <div className="text-4xl font-bold text-white mb-2">500+</div>
+                      <div className="text-4xl font-bold text-white mb-2">25+</div>
                       <div className="text-gray-400">Projects Completed</div>
                     </div>
                     <div className="bg-white/5 rounded-2xl p-6 text-center">
@@ -239,7 +239,7 @@ const About = () => {
                       <div className="text-gray-400">Support Available</div>
                     </div>
                     <div className="bg-white/5 rounded-2xl p-6 text-center">
-                      <div className="text-4xl font-bold text-white mb-2">50+</div>
+                      <div className="text-4xl font-bold text-white mb-2">25+</div>
                       <div className="text-gray-400">Team Members</div>
                     </div>
                   </div>
@@ -367,7 +367,7 @@ const About = () => {
                 Together
               </h2>
               <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-12 leading-relaxed">
-                At <span className="font-bold text-cyan-400">MILLENNIUMAI</span>, we don't just deliver projects — we create value, build partnerships, and drive transformation.
+                At <span className="font-bold text-cyan-400">MillenniumAi</span>, we don't just deliver projects — we create value, build partnerships, and drive transformation.
               </p>
               <Link to="/contact">
                 <button className="group relative px-8 py-4 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-white rounded-xl font-semibold text-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 overflow-hidden">
