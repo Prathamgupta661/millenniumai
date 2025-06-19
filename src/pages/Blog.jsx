@@ -71,7 +71,7 @@ const Blog = () => {
       category: "Innovation",
       readTime: "7 min read",
       image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&h=400&fit=crop",
-      tags: ["Development Philosophy", "Agile", "Quality", "Scalable"],
+      tags: ["Development Philosophy", "Agile Methodologies", "Quality", "Scalable"],
       views: 756
     },
     {
@@ -82,7 +82,7 @@ const Blog = () => {
       date: "Dec 8, 2024",
       category: "Web Development",
       readTime: "9 min read",
-      image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=800&h=400&fit=crop",
+      image: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800&h=400&fit=crop",
       tags: ["AI/ML", "MERN Stack", "Mobile Apps", "Backend", "UI/UX"],
       views: 1103
     },
@@ -94,8 +94,8 @@ const Blog = () => {
       date: "Dec 5, 2024",
       category: "Web Development",
       readTime: "5 min read",
-      image: "https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=800&h=400&fit=crop",
-      tags: ["Case Study", "MERN Stack", "Security", "Cost Savings"],
+      image: "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?w=800&h=400&fit=crop",
+      tags: ["Case Study", "MERN Stack", "Security & Compliance", "Cost Savings"],
       views: 634
     },
     {
