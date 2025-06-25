@@ -5,54 +5,54 @@ import { FaUsers, FaRocket, FaBrain, FaLightbulb, FaCheckCircle, FaBolt, FaCogs,
 import { HiSparkles } from "react-icons/hi2";
 
 const AboutBanner = ({ title, buttonText, buttonLink, image, icon: Icon }) => (
-  <div className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#0A0A0A] pt-32">
+  <div className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#0A0A0A] pt-24 sm:pt-28 lg:pt-32">
     {/* Modern Background Pattern */}
     <div className="absolute inset-0">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-blue-500/5 via-purple-500/5 to-transparent"></div>
-      <div className="absolute inset-0 bg-[linear-gradient(45deg,#ffffff05_25%,transparent_25%,transparent_75%,#ffffff05_75%,#ffffff05)] bg-[length:60px_60px] bg-[position:0_0,30px_30px]"></div>
+      <div className="absolute inset-0 bg-[linear-gradient(45deg,#ffffff05_25%,transparent_25%,transparent_75%,#ffffff05_75%,#ffffff05)] bg-[length:30px_30px] sm:bg-[length:45px_45px] lg:bg-[length:60px_60px] bg-[position:0_0,15px_15px] sm:bg-[position:0_0,22.5px_22.5px] lg:bg-[position:0_0,30px_30px]"></div>
     </div>
 
     {/* Animated Gradient Orbs */}
-    <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-blue-500/10 rounded-full filter blur-[120px] animate-float"></div>
-    <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-purple-500/10 rounded-full filter blur-[120px] animate-float-delayed"></div>
+    <div className="absolute top-0 left-0 w-[300px] h-[300px] sm:w-[400px] sm:h-[400px] lg:w-[500px] lg:h-[500px] bg-blue-500/10 rounded-full filter blur-[80px] sm:blur-[100px] lg:blur-[120px] animate-float"></div>
+    <div className="absolute bottom-0 right-0 w-[300px] h-[300px] sm:w-[400px] sm:h-[400px] lg:w-[500px] lg:h-[500px] bg-purple-500/10 rounded-full filter blur-[80px] sm:blur-[100px] lg:blur-[120px] animate-float-delayed"></div>
 
-    <div className="max-w-[1920px] w-full mx-auto px-6 relative z-10">
+    <div className="max-w-[1920px] w-full mx-auto px-4 sm:px-6 relative z-10">
       <div className="max-w-7xl mx-auto">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-center">
           {/* Left Column - Content */}
           <div className="relative">
             {/* Decorative Elements */}
-            <div className="absolute -top-20 -left-20 w-40 h-40 bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-full blur-3xl"></div>
-            <div className="absolute -bottom-20 -right-20 w-40 h-40 bg-gradient-to-br from-purple-500/20 to-pink-500/20 rounded-full blur-3xl"></div>
+            <div className="absolute -top-10 sm:-top-20 -left-10 sm:-left-20 w-20 h-20 sm:w-40 sm:h-40 bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-full blur-2xl sm:blur-3xl"></div>
+            <div className="absolute -bottom-10 sm:-bottom-20 -right-10 sm:-right-20 w-20 h-20 sm:w-40 sm:h-40 bg-gradient-to-br from-purple-500/20 to-pink-500/20 rounded-full blur-2xl sm:blur-3xl"></div>
 
             <div className="relative">
               {/* Icon Badge */}
-              <div className="inline-flex items-center gap-3 px-4 py-2 bg-white/5 backdrop-blur-sm rounded-full border border-white/10 mb-8">
-                <div className="w-8 h-8 bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-full flex items-center justify-center">
-                  <Icon className="w-4 h-4 text-blue-400" />
+              <div className="inline-flex items-center gap-2 sm:gap-3 px-3 sm:px-4 py-1.5 sm:py-2 bg-white/5 backdrop-blur-sm rounded-full border border-white/10 mb-6 sm:mb-8">
+                <div className="w-6 h-6 sm:w-8 sm:h-8 bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-full flex items-center justify-center">
+                  <Icon className="w-3 h-3 sm:w-4 sm:h-4 text-blue-400" />
                 </div>
-                <span className="text-white/80 text-sm font-medium">About MillenniumAi</span>
+                <span className="text-white/80 text-xs sm:text-sm font-medium">About MillenniumAi</span>
               </div>
 
               {/* Main Title */}
-              <h1 className="text-6xl md:text-7xl font-bold text-white mb-8 leading-tight">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-6 sm:mb-8 leading-tight">
                 Where{" "}
                 <span className="relative inline-block">
                   <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400">
                     Innovation
                   </span>
-                  <span className="absolute -bottom-2 left-0 w-full h-1 bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 rounded-full"></span>
+                  <span className="absolute -bottom-1 sm:-bottom-2 left-0 w-full h-0.5 sm:h-1 bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 rounded-full"></span>
                 </span>{" "}
                 Meets Excellence
               </h1>
 
               {/* Description */}
-              <p className="text-xl text-gray-300 mb-12 max-w-xl leading-relaxed">
+              <p className="text-base sm:text-lg lg:text-xl text-gray-300 mb-8 sm:mb-12 max-w-xl leading-relaxed">
                 Empowering businesses with cutting-edge AI solutions and full-stack development expertise.
               </p>
 
               {/* Stats Grid */}
-              <div className="grid grid-cols-2 gap-6 mb-12">
+              <div className="grid grid-cols-2 gap-4 sm:gap-6 mb-8 sm:mb-12">
                 {[
                   { number: "25+", label: "Projects" },
                   { number: "99%", label: "Satisfaction" },
@@ -60,13 +60,13 @@ const AboutBanner = ({ title, buttonText, buttonLink, image, icon: Icon }) => (
                   { number: "50+", label: "Experts" }
                 ].map((stat, index) => (
                   <div key={index} className="group">
-                    <div className="relative bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10 overflow-hidden">
+                    <div className="relative bg-white/5 backdrop-blur-sm rounded-xl sm:rounded-2xl p-4 sm:p-6 border border-white/10 overflow-hidden">
                       <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-purple-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                       <div className="relative">
-                        <div className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400">
+                        <div className="text-2xl sm:text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400">
                           {stat.number}
                         </div>
-                        <div className="text-gray-400 text-sm mt-1">{stat.label}</div>
+                        <div className="text-gray-400 text-xs sm:text-sm mt-1">{stat.label}</div>
                       </div>
                     </div>
                   </div>
@@ -75,7 +75,7 @@ const AboutBanner = ({ title, buttonText, buttonLink, image, icon: Icon }) => (
 
               {/* CTA Button */}
               <Link to={buttonLink}>
-                <button className="group relative px-8 py-4 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-white rounded-xl font-semibold text-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 overflow-hidden">
+                <button className="group relative px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-white rounded-xl font-semibold text-base sm:text-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 overflow-hidden w-full sm:w-auto">
                   <span className="relative z-10">{buttonText}</span>
                   <div className="absolute inset-0 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </button>
@@ -136,15 +136,15 @@ const AboutBanner = ({ title, buttonText, buttonLink, image, icon: Icon }) => (
 
 const AboutCard = ({ icon: Icon, title, children, color }) => (
   <div className="group relative">
-    <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-3xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
-    <div className="relative bg-white/5 backdrop-blur-sm rounded-3xl p-8 border border-white/10">
-      <div className="flex items-start gap-6">
-        <div className={`w-16 h-16 bg-gradient-to-br from-${color}-500/20 to-purple-500/20 rounded-2xl flex items-center justify-center transform group-hover:scale-110 transition-all duration-300`}>
-          <Icon className={`w-8 h-8 text-${color}-400`} />
+    <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-2xl sm:rounded-3xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
+    <div className="relative bg-white/5 backdrop-blur-sm rounded-2xl sm:rounded-3xl p-6 sm:p-8 border border-white/10">
+      <div className="flex items-start gap-4 sm:gap-6">
+        <div className={`w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-${color}-500/20 to-purple-500/20 rounded-xl sm:rounded-2xl flex items-center justify-center transform group-hover:scale-110 transition-all duration-300`}>
+          <Icon className={`w-6 h-6 sm:w-8 sm:h-8 text-${color}-400`} />
         </div>
         <div>
-          <h3 className="text-2xl font-bold mb-3 text-white">{title}</h3>
-          <p className="text-gray-300">{children}</p>
+          <h3 className="text-xl sm:text-2xl font-bold mb-2 sm:mb-3 text-white">{title}</h3>
+          <p className="text-gray-300 text-sm sm:text-base">{children}</p>
         </div>
       </div>
     </div>
@@ -164,37 +164,37 @@ const About = () => {
       />
 
       {/* About Content */}
-      <section className="relative py-32 overflow-hidden">
+      <section className="relative py-16 sm:py-24 lg:py-32 overflow-hidden">
         {/* Section Separator */}
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
         
         {/* Background Elements */}
         <div className="absolute inset-0 bg-[#0A0A0A]"></div>
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-blue-500/5 via-purple-500/5 to-transparent"></div>
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff05_1px,transparent_1px),linear-gradient(to_bottom,#ffffff05_1px,transparent_1px)] bg-[size:4rem_4rem]"></div>
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff05_1px,transparent_1px),linear-gradient(to_bottom,#ffffff05_1px,transparent_1px)] bg-[size:2rem_2rem] sm:bg-[size:3rem_3rem] lg:bg-[size:4rem_4rem]"></div>
         
-        <div className="max-w-[1920px] w-full mx-auto px-6 relative z-10">
+        <div className="max-w-[1920px] w-full mx-auto px-4 sm:px-6 relative z-10">
           <div className="max-w-7xl mx-auto">
             {/* Section Header */}
-            <div className="text-center mb-20">
-              <div className="inline-block px-4 py-2 bg-white/5 backdrop-blur-sm rounded-full mb-8 border border-white/10">
-                <span className="text-white/80 text-sm font-medium">Our Story</span>
+            <div className="text-center mb-12 sm:mb-16 lg:mb-20">
+              <div className="inline-block px-3 sm:px-4 py-1.5 sm:py-2 bg-white/5 backdrop-blur-sm rounded-full mb-6 sm:mb-8 border border-white/10">
+                <span className="text-white/80 text-xs sm:text-sm font-medium">Our Story</span>
               </div>
-              <h2 className="text-5xl font-bold mb-8 text-white leading-tight">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 sm:mb-8 text-white leading-tight">
                 Shaping the Future with{" "}
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400">
                   Intelligence & Innovation
                 </span>
               </h2>
-              <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+              <p className="text-base sm:text-lg lg:text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed px-4">
                 At <span className="font-bold text-cyan-400">MillenniumAi</span>, we are more than just a technology service provider — we are a strategic partner in your digital evolution.
               </p>
             </div>
 
             {/* Main Content */}
-            <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-center">
               {/* Left Column - Features */}
-              <div className="space-y-8">
+              <div className="space-y-6 sm:space-y-8">
                 <AboutCard
                   icon={FaUsers}
                   title="Who We Are"
@@ -227,20 +227,20 @@ const About = () => {
                   {/* Stats Grid */}
                   <div className="grid grid-cols-2 gap-6 mb-8">
                     <div className="bg-white/5 rounded-2xl p-6 text-center">
-                      <div className="text-4xl font-bold text-white mb-2">25+</div>
-                      <div className="text-gray-400">Projects Completed</div>
+                      <div className="text-2xl sm:text-4xl font-bold text-white mb-2">25+</div>
+                      <div className="text-gray-400 text-sm sm:text-base sm:text-left">Projects Completed</div>
                     </div>
                     <div className="bg-white/5 rounded-2xl p-6 text-center">
-                      <div className="text-4xl font-bold text-white mb-2">99%</div>
-                      <div className="text-gray-400">Client Satisfaction</div>
+                      <div className="text-2xl sm:text-4xl font-bold text-white mb-2">99%</div>
+                      <div className="text-gray-400 text-sm sm:text-base sm:text-left">Client Satisfaction</div>
                     </div>
                     <div className="bg-white/5 rounded-2xl p-6 text-center">
-                      <div className="text-4xl font-bold text-white mb-2">24/7</div>
-                      <div className="text-gray-400">Support Available</div>
+                      <div className="text-2xl sm:text-4xl font-bold text-white mb-2">24/7</div>
+                      <div className="text-gray-400 text-sm sm:text-base sm:text-left">Support Available</div>
                     </div>
                     <div className="bg-white/5 rounded-2xl p-6 text-center">
-                      <div className="text-4xl font-bold text-white mb-2">25+</div>
-                      <div className="text-gray-400">Team Members</div>
+                      <div className="text-2xl sm:text-4xl font-bold text-white mb-2">25+</div>
+                      <div className="text-gray-400 text-sm sm:text-base sm:text-left">Team Members</div>
                     </div>
                   </div>
 

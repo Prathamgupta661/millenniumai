@@ -64,59 +64,59 @@ const Contact = () => {
   return (
     <div className="min-h-screen bg-[#0A0A0A]">
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-32">
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-24 sm:pt-28 lg:pt-32">
         {/* Background Elements */}
         <div className="absolute inset-0 bg-[#0A0A0A]"></div>
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-blue-500/10 via-purple-500/10 to-transparent"></div>
 
         {/* Animated Grid Pattern */}
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff05_1px,transparent_1px),linear-gradient(to_bottom,#ffffff05_1px,transparent_1px)] bg-[size:4rem_4rem]"></div>
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff05_1px,transparent_1px),linear-gradient(to_bottom,#ffffff05_1px,transparent_1px)] bg-[size:2rem_2rem] sm:bg-[size:3rem_3rem] lg:bg-[size:4rem_4rem]"></div>
 
         {/* Glowing Orbs */}
-        <div className="absolute top-1/4 -left-20 w-72 h-72 bg-blue-500/30 rounded-full filter blur-[100px] animate-pulse"></div>
-        <div className="absolute bottom-1/4 -right-20 w-72 h-72 bg-purple-500/30 rounded-full filter blur-[100px] animate-pulse delay-1000"></div>
+        <div className="absolute top-1/4 -left-10 sm:-left-20 w-48 h-48 sm:w-72 sm:h-72 bg-blue-500/30 rounded-full filter blur-[60px] sm:blur-[100px] animate-pulse"></div>
+        <div className="absolute bottom-1/4 -right-10 sm:-right-20 w-48 h-48 sm:w-72 sm:h-72 bg-purple-500/30 rounded-full filter blur-[60px] sm:blur-[100px] animate-pulse delay-1000"></div>
 
-        <div className="max-w-[1920px] w-full mx-auto px-6 relative z-10">
+        <div className="max-w-[1920px] w-full mx-auto px-4 sm:px-6 relative z-10">
           <div className="max-w-7xl mx-auto">
             {/* Section Header */}
-            <div className="text-center mb-20">
-              <div className="inline-block px-4 py-2 bg-white/5 backdrop-blur-sm rounded-full mb-8 border border-white/10">
-                <span className="text-white/80 text-sm font-medium">
+            <div className="text-center mb-12 sm:mb-16 lg:mb-20">
+              <div className="inline-block px-3 sm:px-4 py-1.5 sm:py-2 bg-white/5 backdrop-blur-sm rounded-full mb-6 sm:mb-8 border border-white/10">
+                <span className="text-white/80 text-xs sm:text-sm font-medium">
                   Get In Touch
                 </span>
               </div>
-              <h2 className="text-5xl font-bold mb-8 text-white leading-tight">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 sm:mb-8 text-white leading-tight">
                 Let's Build Something{" "}
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400">
                   Amazing
                 </span>
               </h2>
-              <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+              <p className="text-base sm:text-lg lg:text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed px-4">
                 Ready to transform your ideas into reality? Reach out to us and
                 let's create something extraordinary together.
               </p>
             </div>
 
-            <div className="grid lg:grid-cols-2 gap-16 mb-10 items-start">
+            <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 mb-8 sm:mb-10 items-start">
               {/* Contact Information */}
-              <div className="space-y-8">
+              <div className="space-y-6 sm:space-y-8">
                 <div className="group relative">
-                  <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-3xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
-                  <div className="relative bg-white/5 backdrop-blur-sm rounded-3xl p-8 border border-white/10">
-                    <h3 className="text-3xl font-bold mb-8 text-white">
+                  <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-2xl sm:rounded-3xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
+                  <div className="relative bg-white/5 backdrop-blur-sm rounded-2xl sm:rounded-3xl p-6 sm:p-8 border border-white/10">
+                    <h3 className="text-2xl sm:text-3xl font-bold mb-6 sm:mb-8 text-white">
                       Contact Information
                     </h3>
-                    <div className="space-y-8">
+                    <div className="space-y-6 sm:space-y-8">
                       <a
                         href="tel:+919319410265"
-                        className="flex items-center gap-6 text-gray-300 hover:text-blue-400 transition-all duration-300 group"
+                        className="flex items-center gap-4 sm:gap-6 text-gray-300 hover:text-blue-400 transition-all duration-300 group"
                       >
-                        <div className="w-16 h-16 bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-all duration-300">
-                          <HiPhone className="w-8 h-8 text-blue-400" />
+                        <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-xl sm:rounded-2xl flex items-center justify-center group-hover:scale-110 transition-all duration-300">
+                          <HiPhone className="w-6 h-6 sm:w-8 sm:h-8 text-blue-400" />
                         </div>
                         <div>
-                          <p className="text-sm text-gray-400 mb-1">Phone</p>
-                          <p className="text-xl font-medium text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-blue-400 group-hover:to-purple-400 transition-all duration-300">
+                          <p className="text-xs sm:text-sm text-gray-400 mb-1">Phone</p>
+                          <p className="text-lg sm:text-xl font-medium text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-blue-400 group-hover:to-purple-400 transition-all duration-300">
                             +91 837 798 8481
                           </p>
                         </div>
@@ -124,32 +124,32 @@ const Contact = () => {
 
                       <a
                         href="mailto:info@millenniumai.in"
-                        className="flex items-center gap-6 text-gray-300 hover:text-purple-400 transition-all duration-300 group"
+                        className="flex items-center gap-4 sm:gap-6 text-gray-300 hover:text-purple-400 transition-all duration-300 group"
                       >
-                        <div className="w-16 h-16 bg-gradient-to-br from-purple-500/20 to-pink-500/20 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-all duration-300">
-                          <HiMail className="w-8 h-8 text-purple-400" />
+                        <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-purple-500/20 to-pink-500/20 rounded-xl sm:rounded-2xl flex items-center justify-center group-hover:scale-110 transition-all duration-300">
+                          <HiMail className="w-6 h-6 sm:w-8 sm:h-8 text-purple-400" />
                         </div>
                         <div>
-                          <p className="text-sm text-gray-400 mb-1">Email</p>
-                          <p className="text-xl font-medium text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-purple-400 group-hover:to-pink-400 transition-all duration-300">
+                          <p className="text-xs sm:text-sm text-gray-400 mb-1">Email</p>
+                          <p className="text-lg sm:text-xl font-medium text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-purple-400 group-hover:to-pink-400 transition-all duration-300">
                             info@millenniumai.in
                           </p>
-                          <p className="text-xl font-medium text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-purple-400 group-hover:to-pink-400 transition-all duration-300">
+                          <p className="text-lg sm:text-xl font-medium text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-purple-400 group-hover:to-pink-400 transition-all duration-300">
                             Sales@millenniumai.in
                           </p>
                         </div>
                       </a>
 
-                      <div className="flex items-center gap-6 text-gray-300 group">
-                        <div className="w-16 h-16 bg-gradient-to-br from-blue-500/20 to-pink-500/20 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-all duration-300">
-                          <HiLocationMarker className="w-8 h-8 text-blue-400" />
+                      <div className="flex items-center gap-4 sm:gap-6 text-gray-300 group">
+                        <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-blue-500/20 to-pink-500/20 rounded-xl sm:rounded-2xl flex items-center justify-center group-hover:scale-110 transition-all duration-300">
+                          <HiLocationMarker className="w-6 h-6 sm:w-8 sm:h-8 text-blue-400" />
                         </div>
                         <div>
-                          <p className="text-sm text-gray-400 mb-1">Address</p>
-                          <p className="text-xl font-medium text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-blue-400 group-hover:to-pink-400 transition-all duration-300">
+                          <p className="text-xs sm:text-sm text-gray-400 mb-1">Address</p>
+                          <p className="text-lg sm:text-xl font-medium text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-blue-400 group-hover:to-pink-400 transition-all duration-300">
                             UGF-02 Krishna Enclave Govindpuram,
                           </p>
-                          <p className="text-xl font-medium text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-blue-400 group-hover:to-pink-400 transition-all duration-300">
+                          <p className="text-lg sm:text-xl font-medium text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-blue-400 group-hover:to-pink-400 transition-all duration-300">
                             Ghaziabad, UP 201002
                           </p>
                         </div>
@@ -160,24 +160,24 @@ const Contact = () => {
 
                 {/* Social Media Links */}
                 <div className="group relative">
-                  <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 to-pink-500/10 rounded-3xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
-                  <div className="relative bg-white/5 backdrop-blur-sm rounded-3xl p-8 border border-white/10">
-                    <h3 className="text-2xl font-bold mb-6 text-white">
+                  <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 to-pink-500/10 rounded-2xl sm:rounded-3xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
+                  <div className="relative bg-white/5 backdrop-blur-sm rounded-2xl sm:rounded-3xl p-6 sm:p-8 border border-white/10">
+                    <h3 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6 text-white">
                       Connect With Us
                     </h3>
-                    <div className="flex gap-4">
+                    <div className="flex gap-3 sm:gap-4">
                       <a
                         href="#"
-                        className="w-12 h-12 bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-xl flex items-center justify-center group-hover:scale-110 transition-all duration-300"
+                        className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-lg sm:rounded-xl flex items-center justify-center group-hover:scale-110 transition-all duration-300"
                       >
-                        <FaWhatsapp className="w-6 h-6 text-blue-400" />
+                        <FaWhatsapp className="w-5 h-5 sm:w-6 sm:h-6 text-blue-400" />
                       </a>
                       <a
                         href="#"
-                        className="w-12 h-12 bg-gradient-to-br from-purple-500/20 to-pink-500/20 rounded-xl flex items-center justify-center group-hover:scale-110 transition-all duration-300"
+                        className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-purple-500/20 to-pink-500/20 rounded-lg sm:rounded-xl flex items-center justify-center group-hover:scale-110 transition-all duration-300"
                       >
                         <svg
-                          className="w-6 h-6 text-purple-400"
+                          className="w-5 h-5 sm:w-6 sm:h-6 text-purple-400"
                           fill="currentColor"
                           viewBox="0 0 24 24"
                         >
@@ -186,10 +186,10 @@ const Contact = () => {
                       </a>
                       <a
                         href="#"
-                        className="w-12 h-12 bg-gradient-to-br from-blue-500/20 to-pink-500/20 rounded-xl flex items-center justify-center group-hover:scale-110 transition-all duration-300"
+                        className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-blue-500/20 to-pink-500/20 rounded-lg sm:rounded-xl flex items-center justify-center group-hover:scale-110 transition-all duration-300"
                       >
                         <svg
-                          className="w-6 h-6 text-blue-400"
+                          className="w-5 h-5 sm:w-6 sm:h-6 text-blue-400"
                           fill="currentColor"
                           viewBox="0 0 24 24"
                         >
@@ -204,15 +204,15 @@ const Contact = () => {
               {/* Contact Form - New Design */}
               <div className="relative">
                 {/* Decorative Elements */}
-                <div className="absolute -top-10 -left-10 w-40 h-40 bg-blue-500/20 rounded-full filter blur-3xl"></div>
-                <div className="absolute -bottom-10 -right-10 w-40 h-40 bg-purple-500/20 rounded-full filter blur-3xl"></div>
+                <div className="absolute -top-10 -left-10 w-20 h-20 sm:w-40 sm:h-40 bg-blue-500/20 rounded-full filter blur-2xl sm:blur-3xl"></div>
+                <div className="absolute -bottom-10 -right-10 w-20 h-20 sm:w-40 sm:h-40 bg-purple-500/20 rounded-full filter blur-2xl sm:blur-3xl"></div>
 
-                <div className="relative bg-white/5 backdrop-blur-sm rounded-3xl p-8 border border-white/10 overflow-hidden">
+                <div className="relative bg-white/5 backdrop-blur-sm rounded-2xl sm:rounded-3xl p-6 sm:p-8 border border-white/10 overflow-hidden">
                   {/* Form Header */}
-                  <div className="flex mb-5">
-                    <div className="w-15 h-15 mx-8 mb-2 bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-2xl flex items-center justify-center transform hover:scale-110 transition-all duration-300">
+                  <div className="flex flex-col sm:flex-row items-center sm:items-start mb-4 sm:mb-5">
+                    <div className="w-12 h-12 sm:w-15 sm:h-15 mx-4 sm:mx-8 mb-2 sm:mb-0 bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-xl sm:rounded-2xl flex items-center justify-center transform hover:scale-110 transition-all duration-300">
                       <svg
-                        className="w-10 h-10 text-blue-400"
+                        className="w-6 h-6 sm:w-10 sm:h-10 text-blue-400"
                         fill="none"
                         viewBox="0 0 24 24"
                         stroke="currentColor"
@@ -225,11 +225,11 @@ const Contact = () => {
                         />
                       </svg>
                     </div>
-                    <div className="flex flex-col">
-                      <h3 className="text-3xl font-bold text-white mb-2">
+                    <div className="flex flex-col text-center sm:text-left">
+                      <h3 className="text-2xl sm:text-3xl font-bold text-white mb-1 sm:mb-2">
                         Send us a Message
                       </h3>
-                      <p className="text-gray-400">
+                      <p className="text-gray-400 text-sm sm:text-base">
                         We'll get back to you within 24 hours
                       </p>
                     </div>
@@ -237,9 +237,9 @@ const Contact = () => {
 
                   {/* Form Content */}
                   <form onSubmit={handleSubmit} className="space-y-4">
-                    <div className="grid md:grid-cols-2 gap-6">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
                       <div className="group">
-                        <label className="block text-sm font-medium text-gray-400 mb-2">
+                        <label className="block text-xs sm:text-sm font-medium text-gray-400 mb-2">
                           First Name
                         </label>
                         <div className="relative">
@@ -249,14 +249,14 @@ const Contact = () => {
                             value={form.first_name}
                             onChange={handleChange}
                             required
-                            className="w-full px-6 py-2 bg-white/5 border border-white/10 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-lg text-white placeholder-gray-400 transition-all duration-300"
+                            className="w-full px-4 sm:px-6 py-2 bg-white/5 border border-white/10 rounded-lg sm:rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-base sm:text-lg text-white placeholder-gray-400 transition-all duration-300"
                             placeholder="John"
                           />
-                          <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10"></div>
+                          <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-lg sm:rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10"></div>
                         </div>
                       </div>
                       <div className="group">
-                        <label className="block text-sm font-medium text-gray-400 mb-2">
+                        <label className="block text-xs sm:text-sm font-medium text-gray-400 mb-2">
                           Last Name
                         </label>
                         <div className="relative">
@@ -266,16 +266,16 @@ const Contact = () => {
                             value={form.last_name}
                             onChange={handleChange}
                             required
-                            className="w-full px-6 py-2 bg-white/5 border border-white/10 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent text-lg text-white placeholder-gray-400 transition-all duration-300"
+                            className="w-full px-4 sm:px-6 py-2 bg-white/5 border border-white/10 rounded-lg sm:rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent text-base sm:text-lg text-white placeholder-gray-400 transition-all duration-300"
                             placeholder="Doe"
                           />
-                          <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 to-pink-500/10 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10"></div>
+                          <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 to-pink-500/10 rounded-lg sm:rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10"></div>
                         </div>
                       </div>
                     </div>
 
                     <div className="group">
-                      <label className="block text-sm font-medium text-gray-400 mb-2">
+                      <label className="block text-xs sm:text-sm font-medium text-gray-400 mb-2">
                         Email Address
                       </label>
                       <div className="relative">
@@ -285,15 +285,15 @@ const Contact = () => {
                           value={form.email}
                           onChange={handleChange}
                           required
-                          className="w-full px-6 py-2 bg-white/5 border border-white/10 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-lg text-white placeholder-gray-400 transition-all duration-300"
+                          className="w-full px-4 sm:px-6 py-2 bg-white/5 border border-white/10 rounded-lg sm:rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-base sm:text-lg text-white placeholder-gray-400 transition-all duration-300"
                           placeholder="john@example.com"
                         />
-                        <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10"></div>
+                        <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-lg sm:rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10"></div>
                       </div>
                     </div>
 
                     <div className="group">
-                      <label className="block text-sm font-medium text-gray-400 mb-2">
+                      <label className="block text-xs sm:text-sm font-medium text-gray-400 mb-2">
                         Phone Number
                       </label>
                       <div className="relative">
@@ -303,15 +303,15 @@ const Contact = () => {
                           value={form.contactno}
                           onChange={handleChange}
                           required
-                          className="w-full px-6 py-2 bg-white/5 border border-white/10 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent text-lg text-white placeholder-gray-400 transition-all duration-300"
+                          className="w-full px-4 sm:px-6 py-2 bg-white/5 border border-white/10 rounded-lg sm:rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent text-base sm:text-lg text-white placeholder-gray-400 transition-all duration-300"
                           placeholder="+91 123 456 7890"
                         />
-                        <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 to-pink-500/10 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10"></div>
+                        <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 to-pink-500/10 rounded-lg sm:rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10"></div>
                       </div>
                     </div>
 
                     <div className="group">
-                      <label className="block text-sm font-medium text-gray-400 mb-2">
+                      <label className="block text-xs sm:text-sm font-medium text-gray-400 mb-2">
                         Your Message
                       </label>
                       <div className="relative">
@@ -321,22 +321,22 @@ const Contact = () => {
                           onChange={handleChange}
                           required
                           rows="3"
-                          className="w-full px-6 py-2 bg-white/5 border border-white/10 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-none text-lg text-white placeholder-gray-400 transition-all duration-300"
+                          className="w-full px-4 sm:px-6 py-2 bg-white/5 border border-white/10 rounded-lg sm:rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-none text-base sm:text-lg text-white placeholder-gray-400 transition-all duration-300"
                           placeholder="Tell us about your project..."
                         ></textarea>
-                        <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10"></div>
+                        <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-lg sm:rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10"></div>
                       </div>
                     </div>
 
                     <button
                       type="submit"
-                      className="w-full px-5 py-3 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-white rounded-xl font-semibold text-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 relative overflow-hidden group"
+                      className="w-full px-4 sm:px-5 py-3 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-white rounded-lg sm:rounded-xl font-semibold text-base sm:text-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 relative overflow-hidden group"
                     >
                       <span className="relative z-10 flex items-center justify-center gap-2">
                         {loading ? (
                           <>
                             <svg
-                              className="animate-spin h-5 w-5 text-white"
+                              className="animate-spin h-4 w-4 sm:h-5 sm:w-5 text-white"
                               xmlns="http://www.w3.org/2000/svg"
                               fill="none"
                               viewBox="0 0 24 24"
@@ -361,7 +361,7 @@ const Contact = () => {
                           <>
                             Send Message
                             <svg
-                              className="w-5 h-5 transform group-hover:translate-x-1 transition-transform duration-300"
+                              className="w-4 h-4 sm:w-5 sm:h-5 transform group-hover:translate-x-1 transition-transform duration-300"
                               fill="none"
                               viewBox="0 0 24 24"
                               stroke="currentColor"
