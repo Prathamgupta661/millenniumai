@@ -20,6 +20,11 @@ import {
 } from "react-icons/fa";
 import { HiSparkles } from "react-icons/hi2";
 
+const slugify = str =>
+  (str ? str.toLowerCase() : "")
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/(^-|-$)/g, '');
+
 const Blog = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("All");
@@ -76,7 +81,7 @@ const Blog = () => {
     },
     {
       id: 4,
-      title: "Core Development Services: From AI/ML to Full-Stack Web Solutions",
+      title: "Core Development",
       excerpt: "Comprehensive overview of MillenniumAI's core services including AI/ML development, MERN stack web development, mobile apps, backend engineering, and UI/UX design.",
       author: "AI Research Team",
       date: "Dec 8, 2024",
@@ -351,7 +356,7 @@ const Blog = () => {
 
                       {/* Actions */}
                       <div className="flex items-center justify-between">
-                        <Link to={`/blog/${post.id}`}>
+                        <Link to={`/${post.id}/${post.title}`}>
                           <button className="flex items-center gap-1.5 sm:gap-2 cursor-pointer text-blue-400 hover:text-blue-300 transition-colors duration-300 text-sm sm:text-base">
                             <span className="font-medium">Read More</span>
                             <FaArrowRight className="w-3 h-3 sm:w-4 sm:h-4" />

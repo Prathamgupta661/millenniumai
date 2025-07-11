@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link,NavLink } from "react-router-dom";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Autoplay } from 'swiper/modules';
 import 'swiper/css';
@@ -24,6 +24,14 @@ import {
   FaBolt,
   FaCogs,
 } from "react-icons/fa";
+
+// Function to convert service title to URL-friendly slug
+const createSlug = (title) => {
+  return title
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/(^-|-$)/g, '');
+};
 
 const aiMlDropdowns = [
   {
@@ -388,10 +396,10 @@ const Services = () => {
 
                         {/* Learn More Button */}
                         <div className="mt-auto">
-                          <button className="group/btn w-full flex items-center justify-center gap-2 px-4 sm:px-6 py-2 sm:py-3 bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-lg sm:rounded-xl border border-white/10 hover:border-white/20 transition-all duration-300">
+                          <Link to={`/${createSlug(service.title)}`}  className="group/btn w-full flex items-center justify-center gap-2 px-4 sm:px-6 py-2 sm:py-3 bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-lg sm:rounded-xl border border-white/10 hover:border-white/20 transition-all duration-300">
                             <span className="text-white/80 group-hover/btn:text-white transition-colors duration-300 text-sm sm:text-base">Learn More</span>
                             <FaArrowRight className="w-3 h-3 sm:w-4 sm:h-4 transform group-hover/btn:translate-x-1 transition-transform duration-300" />
-                          </button>
+                          </Link>
                         </div>
                       </div>
                     </div>
@@ -657,10 +665,12 @@ const Services = () => {
 
               {/* CTA Section */}
               <div className="mt-12 sm:mt-16 lg:mt-20 text-center">
-                <button className="group relative px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-white rounded-xl font-semibold text-base sm:text-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 overflow-hidden w-full sm:w-auto">
-                  <span className="relative z-10">Get Started Today</span>
-                  <div className="absolute inset-0 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                </button>
+                <Link to="/contact">
+                  <button className="group relative px-6 sm:px-8 cursor-pointer py-3 sm:py-4 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-white rounded-xl font-semibold text-base sm:text-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 overflow-hidden w-full sm:w-auto">
+                    <span className="relative z-10">Get Started Today</span>
+                    <div className="absolute inset-0 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  </button>
+                </Link>
               </div>
             </div>
           </div>
